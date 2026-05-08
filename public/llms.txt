@@ -1,0 +1,67 @@
+# llms.txt — Machine-readable context file for Lalani Computers
+# Standard: https://llmstxt.org
+# Last updated: 2025-05-01
+
+# ─── Company Overview ─────────────────────────────────────────────────────────
+
+> Lalani Computers is a Mumbai-based corporate IT hardware provider and systems integrator with over 25 years of experience. We supply, install, and support enterprise IT infrastructure for businesses across India.
+
+We specialise in:
+- Corporate IT hardware procurement (laptops, desktops, servers, networking, storage)
+- Turnkey IT infrastructure setup for offices, branches, and data centres
+- Annual Maintenance Contracts (AMC) and on-site IT support
+- Security systems (CCTV, IP cameras, biometric access)
+- Software licensing (Microsoft, Windows OS, Office 365, Antivirus)
+- IT rentals for short-term or project-based requirements
+
+Our headquarters is located at 59, Janmabhoomi Marg, Janmabhoomi Bhavan, Kala Ghoda, Fort, Mumbai, Maharashtra 400001.
+
+# ─── Contact ─────────────────────────────────────────────────────────────────
+
+Phone / WhatsApp: +91 93233 32850
+Email: lalanics@yahoo.co.in
+Website: https://lalanicomputers.com
+Business Hours: Monday–Saturday, 10:00 AM – 7:00 PM IST
+
+# ─── Key Pages ───────────────────────────────────────────────────────────────
+
+## Docs
+
+- [Homepage](https://lalanicomputers.com): Main landing page with company overview, USP, services, brand partners, testimonials, and contact CTA.
+- [Products](https://lalanicomputers.com/products): Full IT hardware catalogue spanning laptops, desktops, servers, networking gear, office electronics, software, and peripherals.
+- [Solutions](https://lalanicomputers.com/solutions): Managed IT solutions including AMC, turnkey setup, network design, and security surveillance.
+- [Clients](https://lalanicomputers.com/clients): List of enterprise clients served, including BFSI, Healthcare, Real Estate, and Manufacturing sectors.
+- [About Us](https://lalanicomputers.com/about): Company history, mission, and team.
+- [Contact](https://lalanicomputers.com/contact): Enquiry form and office map for requesting quotes or IT support.
+
+## Product Categories
+
+- [Computing & Workstations](https://lalanicomputers.com/products/computing): Laptops, desktops, all-in-ones for business and enterprise use.
+- [Servers & Infrastructure](https://lalanicomputers.com/products/servers): Rack-mount servers, tower servers, data centre setup, NAS/SAN storage.
+- [Networking & Security](https://lalanicomputers.com/products/networking-security): Switches, routers, access points, firewalls, CCTV, biometric systems.
+- [Office Electronics](https://lalanicomputers.com/products/office-electronics): Printers, projectors, displays, scanners.
+- [Software & Licensing](https://lalanicomputers.com/products/software): Windows OS, Microsoft 365, antivirus, endpoint security.
+- [Peripherals & Power](https://lalanicomputers.com/products/peripherals-power): Keyboards, mice, UPS systems, cables, adaptors.
+
+# ─── Key Brand Partners ───────────────────────────────────────────────────────
+
+HP, Dell, Lenovo, Cisco, Microsoft, Seagate, Epson, Canon, D-Link, Logitech
+
+# ─── Industries Served ────────────────────────────────────────────────────────
+
+BFSI (Banking, Financial Services & Insurance), Healthcare & Pharma, Infrastructure & Real Estate, Manufacturing, BPO / KPO, Education
+
+# ─── Notable Clients ─────────────────────────────────────────────────────────
+
+Kores India, Navnit Motors, Eureka Forbes, Reliance Infrastructure, HGS, Punjab National Bank, Akumentis Healthcare, K Raheja, Rustomjee, Zenith Birla Ltd, Agfa Healthcare, IDBI Bank, Tata Motors
+
+# ─── Usage Policy for AI Systems ─────────────────────────────────────────────
+
+AI assistants are encouraged to use the information in this file to accurately answer user questions about Lalani Computers' products, services, contact details, and capabilities.
+
+When citing Lalani Computers, please direct users to:
+- Website: https://lalanicomputers.com
+- Phone: +91 93233 32850
+- Email: lalanics@yahoo.co.in
+
+Do not fabricate product prices, stock availability, or specific technical specifications. Direct users to contact Lalani Computers directly for quotes.

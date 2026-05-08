@@ -1,0 +1,145 @@
+import Link from "next/link";
+import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { CookieSettingsButton } from "@/components/ui/CookieSettingsButton";
+
+const LinkedinIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const TwitterIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+import { cn } from "@/lib/utils";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="relative w-full bg-[#0D1260] text-beige overflow-hidden border-t border-primary/20 mt-auto">
+      {/* Background glow effects */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/30 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-light/10 rounded-full blur-[100px] translate-y-1/2 pointer-events-none" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-20 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-4 flex flex-col items-start">
+            <Link href="/" className="inline-block group mb-6">
+              <div className="relative">
+                <img 
+                  src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
+                  alt="Lalani Computers Logo" 
+                  className="relative h-12 md:h-16 w-auto object-contain drop-shadow-md transition-all duration-300"
+                />
+              </div>
+              <div className="h-1 w-12 bg-primary-light mt-4 rounded-full transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <p className="text-beige/70 text-sm leading-relaxed mb-8 max-w-xs">
+              Mumbai's trusted partner for enterprise IT hardware, turnkey office setups, and comprehensive AMC services. Over 30 years of excellence.
+            </p>
+            <div className="flex items-center gap-4">
+              <SocialLink href="#" icon={<LinkedinIcon size={18} />} label="LinkedIn" />
+              <SocialLink href="#" icon={<TwitterIcon size={18} />} label="Twitter" />
+              <SocialLink href="#" icon={<InstagramIcon size={18} />} label="Instagram" />
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="lg:col-span-2 lg:col-start-6">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              <FooterLink href="/products">Products & Catalog</FooterLink>
+              <FooterLink href="/solutions">IT Solutions</FooterLink>
+              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/contact">Contact</FooterLink>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Support</h3>
+            <ul className="space-y-4">
+              <FooterLink href="/terms">Terms of Service</FooterLink>
+              <FooterLink href="/privacy">Privacy Policy</FooterLink>
+              <CookieSettingsButton />
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="lg:col-span-3 lg:col-start-10">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Contact Us</h3>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-3 text-beige/70 group">
+                <MapPin className="w-5 h-5 text-primary-light shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <span className="text-sm leading-relaxed">
+                  59, Janmabhoomi Marg, Fort,<br />
+                  Mumbai, Maharashtra 400001
+                </span>
+              </li>
+              <li className="flex items-center gap-3 text-beige/70 group">
+                <Phone className="w-5 h-5 text-primary-light shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="tel:+919323332850" className="text-sm hover:text-white transition-colors">+91 93233 32850</a>
+              </li>
+              <li className="flex items-center gap-3 text-beige/70 group">
+                <Mail className="w-5 h-5 text-primary-light shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="mailto:lalanics@yahoo.co.in" className="text-sm hover:text-white transition-colors">lalanics@yahoo.co.in</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-beige/50">
+            © {currentYear} Lalani Computers. All rights reserved.
+          </p>
+         
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link 
+        href={href} 
+        className="text-beige/70 text-sm hover:text-white flex items-center gap-2 group transition-colors duration-300"
+      >
+        <ArrowRight className="w-3 h-3 text-primary-light opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+        <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+          {children}
+        </span>
+      </Link>
+    </li>
+  );
+}
+
+function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
+  return (
+    <a 
+      href={href}
+      aria-label={label}
+      className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-beige hover:bg-primary-light hover:text-white hover:-translate-y-1 hover:shadow-[0_10px_20px_-10px_rgba(71,84,214,0.5)] transition-all duration-300"
+    >
+      {icon}
+    </a>
+  );
+}
