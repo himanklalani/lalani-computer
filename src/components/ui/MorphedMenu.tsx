@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -138,7 +138,7 @@ export function MorphedMenu(props: MorphedMenuProps) {
   const buttonWidth = isMobile ? "90px" : "110px";
   const buttonHeight = isMobile ? "40px" : "46px";
 
-  const perspectiveAnimation = {
+  const perspectiveAnimation: Variants = {
     initial: { opacity: 0, rotateX: 100, translateY: 80 },
     enter: (i: number) => ({
       opacity: 1,
@@ -156,7 +156,7 @@ export function MorphedMenu(props: MorphedMenuProps) {
     exit: { opacity: 0 },
   };
 
-  const footerAnimation = {
+  const footerAnimation: Variants = {
     initial: { opacity: 0, y: 20 },
     enter: (i: number) => ({
       opacity: 1,
@@ -172,7 +172,7 @@ export function MorphedMenu(props: MorphedMenuProps) {
     exit: { opacity: 0 },
   };
 
-  const menuAnimation = {
+  const menuAnimation: Variants = {
     open: {
       width: isMobile ? menuWidthMobile : menuWidthDesktop,
       height: isMobile ? menuHeightMobile : menuHeightDesktop,
