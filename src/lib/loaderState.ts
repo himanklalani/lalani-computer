@@ -8,6 +8,8 @@ export const loaderState = {
   subscribe(listener: (isLoading: boolean) => void) {
     this.listeners.add(listener);
     listener(this.isLoading);
-    return () => this.listeners.delete(listener);
+    return () => {
+      this.listeners.delete(listener);
+    };
   }
 };
