@@ -63,6 +63,8 @@ export default function Footer() {
                 <img 
                   src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
                   alt="" 
+                  width={160}
+                  height={64}
                   className="opacity-0 relative h-12 md:h-16 w-auto object-contain pointer-events-none"
                 />
                 <motion.div 
@@ -72,7 +74,9 @@ export default function Footer() {
                   <motion.img 
                     layoutId={isMobile && isInView ? "brand-logo-image" : undefined}
                     src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
-                    alt="Lalani Computers Logo" 
+                    alt="Lalani Computers Logo"
+                    width={160}
+                    height={64}
                     className="h-12 md:h-16 w-auto object-contain drop-shadow-md"
                   />
                 </motion.div>

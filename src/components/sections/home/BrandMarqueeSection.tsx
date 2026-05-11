@@ -7,16 +7,16 @@ import { FadeIn } from "@/components/ui/FadeIn";
 
 export function BrandMarqueeSection() {
   const brands = [
-    { name: "Seagate", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156127/Seagate_logo_PNG1_jopsej.png" },
-    { name: "HP", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156127/hp_logo_PNG1_hbrlze.png" },
-    { name: "Lenovo", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156126/Lenovo_logo_PNG3_tsfbai.png" },
-    { name: "Logitech", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156126/Logitech_logo_PNG1_fa6htk.png" },
-    { name: "Dell", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156126/Dell_logo_PNG1_zhkn0x.png" },
-    { name: "Microsoft", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156126/microsoft_PNG7_jxxm1x.png" },
-    { name: "Cisco", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156126/Cisco_logo_PNG2_ona0bh.png" },
-    { name: "D-Link", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156126/D_Link_logo_PNG2_txazgd.png" },
-    { name: "Epson", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156125/Epson-Logo-PNG-14_pbj8pv.png" },
-    { name: "Canon", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1778156125/Canon_logo_PNG1_vewjfo.png" }
+    { name: "Seagate", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156127/Seagate_logo_PNG1_jopsej.png" },
+    { name: "HP", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156127/hp_logo_PNG1_hbrlze.png" },
+    { name: "Lenovo", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156126/Lenovo_logo_PNG3_tsfbai.png" },
+    { name: "Logitech", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156126/Logitech_logo_PNG1_fa6htk.png" },
+    { name: "Dell", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156126/Dell_logo_PNG1_zhkn0x.png" },
+    { name: "Microsoft", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156126/microsoft_PNG7_jxxm1x.png" },
+    { name: "Cisco", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156126/Cisco_logo_PNG2_ona0bh.png" },
+    { name: "D-Link", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156126/D_Link_logo_PNG2_txazgd.png" },
+    { name: "Epson", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156125/Epson-Logo-PNG-14_pbj8pv.png" },
+    { name: "Canon", logo: "https://res.cloudinary.com/dzc0mfs9z/image/upload/w_240,h_96,c_fit,f_auto,q_auto/v1778156125/Canon_logo_PNG1_vewjfo.png" }
   ];
 
   return (
@@ -33,7 +33,11 @@ export function BrandMarqueeSection() {
               <div key={i} className="inline-flex items-center justify-center transition-transform hover:scale-110">
                 <img 
                   src={brand.logo} 
-                  alt={`${brand.name} Logo`} 
+                  alt={`${brand.name} Logo`}
+                  width={120}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
                   className="h-8 md:h-12 w-auto max-w-[120px] object-contain opacity-90 hover:opacity-100 transition-all duration-300"
                   onError={(e) => {
                     // Fallback to text if image fails to load

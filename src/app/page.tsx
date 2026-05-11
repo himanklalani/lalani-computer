@@ -1,15 +1,42 @@
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { USPStripSection } from "@/components/sections/home/USPStripSection";
-import { ProductCategoryGridSection } from "@/components/sections/home/ProductCategoryGridSection";
-import { BrandMarqueeSection } from "@/components/sections/home/BrandMarqueeSection";
-import { ImageShowcaseSection } from "@/components/sections/home/ImageShowcaseSection";
-import { SolutionsOverviewSection } from "@/components/sections/home/SolutionsOverviewSection";
-import { DeliveryAndServiceSection } from "@/components/sections/home/DeliveryAndServiceSection";
-import { ClientsStripSection } from "@/components/sections/home/ClientsStripSection";
-import { TestimonialsSection } from "@/components/sections/home/TestimonialsSection";
-import { RequirementCTASection } from "@/components/sections/home/RequirementCTASection";
+import dynamic from "next/dynamic";
 
 import { Metadata } from "next";
+
+// Lazy-load below-fold sections to reduce initial JS bundle
+const ProductCategoryGridSection = dynamic(
+  () => import("@/components/sections/home/ProductCategoryGridSection").then(m => m.ProductCategoryGridSection),
+  { ssr: true }
+);
+const BrandMarqueeSection = dynamic(
+  () => import("@/components/sections/home/BrandMarqueeSection").then(m => m.BrandMarqueeSection),
+  { ssr: true }
+);
+const ImageShowcaseSection = dynamic(
+  () => import("@/components/sections/home/ImageShowcaseSection").then(m => m.ImageShowcaseSection),
+  { ssr: true }
+);
+const SolutionsOverviewSection = dynamic(
+  () => import("@/components/sections/home/SolutionsOverviewSection").then(m => m.SolutionsOverviewSection),
+  { ssr: true }
+);
+const DeliveryAndServiceSection = dynamic(
+  () => import("@/components/sections/home/DeliveryAndServiceSection").then(m => m.DeliveryAndServiceSection),
+  { ssr: true }
+);
+const ClientsStripSection = dynamic(
+  () => import("@/components/sections/home/ClientsStripSection").then(m => m.ClientsStripSection),
+  { ssr: true }
+);
+const TestimonialsSection = dynamic(
+  () => import("@/components/sections/home/TestimonialsSection").then(m => m.TestimonialsSection),
+  { ssr: true }
+);
+const RequirementCTASection = dynamic(
+  () => import("@/components/sections/home/RequirementCTASection").then(m => m.RequirementCTASection),
+  { ssr: true }
+);
 
 export const metadata: Metadata = {
   title: "Corporate IT Hardware & Turnkey Solutions Mumbai",

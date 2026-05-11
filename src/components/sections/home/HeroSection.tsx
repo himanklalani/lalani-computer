@@ -54,6 +54,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover"
           src="https://res.cloudinary.com/dzc0mfs9z/video/upload/q_auto,f_auto/v1/Untitled_design_uozjqh.mp4"
         />
