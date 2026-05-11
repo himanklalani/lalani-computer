@@ -239,12 +239,16 @@ export function CardStack<T extends CardStackItem>({
                 <button
                   key={it.id}
                   onClick={() => setActive(idx)}
-                  className={cn(
-                    "h-2 rounded-full transition-all duration-300",
-                    on ? "w-6 bg-primary" : "w-2 bg-primary/25 hover:bg-primary/50"
-                  )}
+                  className="p-3 -mx-3 group focus:outline-none touch-manipulation"
                   aria-label={`Go to ${it.title}`}
-                />
+                >
+                  <div 
+                    className={cn(
+                      "h-2 rounded-full transition-all duration-300",
+                      on ? "w-6 bg-primary" : "w-2 bg-primary/25 group-hover:bg-primary/50"
+                    )}
+                  />
+                </button>
               );
             })}
           </div>
