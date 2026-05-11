@@ -58,6 +58,8 @@ const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
           <img
             src={image}
             alt={title}
+            width={320}
+            height={448}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
@@ -241,7 +243,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
             >
               {projects.map((p) => (
                 <div key={p.id} className="min-w-full h-full relative">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover select-none" />
+                  <img src={p.image} alt={p.title} width={800} height={600} className="w-full h-full object-cover select-none" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40 pointer-events-none" />
                 </div>
               ))}
