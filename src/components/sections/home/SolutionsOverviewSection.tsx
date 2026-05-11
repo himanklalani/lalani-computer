@@ -154,7 +154,7 @@ export function SolutionsOverviewSection() {
           <h2 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-text-dark leading-tight tracking-tight">
             Turnkey Solutions &amp; Services
           </h2>
-          <p className="mt-6 text-text-dark/60 text-lg leading-relaxed">
+          <p className="mt-6 text-text-dark/80 text-lg leading-relaxed">
             Beyond individual product sales, we design and deploy robust IT infrastructures.
           </p>
         </div>
@@ -195,7 +195,7 @@ export function SolutionsOverviewSection() {
                     <h3 className="font-heading font-bold text-2xl md:text-3xl text-text-dark mb-2 leading-tight">
                       {sol.title}
                     </h3>
-                    <p className="text-xs font-medium uppercase tracking-widest text-text-dark/50 mb-6">
+                    <p className="text-xs font-medium uppercase tracking-widest text-text-dark/70 mb-6">
                       For: {sol.audience}
                     </p>
                     <ul className="space-y-3 mb-8">

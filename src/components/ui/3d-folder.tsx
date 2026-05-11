@@ -255,7 +255,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 text-center md:text-left">
               <div className="flex-1 min-w-0">
-                <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary/50 mb-1">{categoryTitle}</p>
+                <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary/70 mb-1">{categoryTitle}</p>
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-primary tracking-tight">{currentProject?.title}</h3>
                 <div className="flex items-center justify-center md:justify-start gap-4 mt-3">
                   <div className="flex items-center gap-1.5 px-2.5 py-1 bg-beige rounded-full border border-primary/10">
@@ -267,7 +267,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
                       />
                     ))}
                   </div>
-                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary/40">{internalIndex + 1} / {totalProjects}</p>
+                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary/70">{internalIndex + 1} / {totalProjects}</p>
                 </div>
               </div>
             </div>
@@ -482,15 +482,15 @@ export const AnimatedFolder: React.FC<AnimatedFolderProps> = ({
                 pointerEvents: isHovered ? "auto" : "none"
               }}
             >
-              {subtitle && <p className="text-xs text-text-dark/50 font-medium leading-tight mb-1">{subtitle}</p>}
-              <p className="text-[10px] font-black text-primary/40 uppercase tracking-widest">
+              {subtitle && <p className="text-xs text-text-dark/70 font-medium leading-tight mb-1">{subtitle}</p>}
+              <p className="text-[10px] font-black text-primary/70 uppercase tracking-widest">
                 {projects.length} {projects.length === 1 ? "item" : "items"}
               </p>
             </div>
 
             {/* Hint (Shown by default) */}
             <div
-              className="absolute inset-0 flex items-center justify-center text-[10px] font-black uppercase tracking-[0.25em] text-primary/20 transition-all duration-500"
+              className="absolute inset-0 flex items-center justify-center text-[10px] font-black uppercase tracking-[0.25em] text-primary/50 transition-all duration-500"
               style={{ 
                 opacity: isHovered ? 0 : 1, 
                 transform: isHovered ? "translateY(-10px)" : "translateY(0)",

@@ -88,7 +88,7 @@ export function USPStripSection() {
     <section className="bg-white py-16 border-y border-primary/10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         {/* Section label */}
-        <p className="text-center text-xs font-heading font-bold uppercase tracking-[0.2em] text-primary/40 mb-10">
+        <p className="text-center text-xs font-heading font-bold uppercase tracking-[0.2em] text-primary/70 mb-10">
           Why choose Lalani Computers
         </p>
 
@@ -170,7 +170,7 @@ function USPCard({ item, active }: { item: USPItem; active: boolean }) {
         </p>
         <p
           className={`text-xs sm:text-sm leading-relaxed ${
-            active ? "text-white/70" : "text-text-dark/55"
+            active ? "text-white/70" : "text-text-dark/75"
           }`}
         >
           {item.subtitle}

@@ -119,13 +119,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <div className="mt-4 sm:mt-6">
         <p className={cn(
           "text-xs sm:text-sm font-bold uppercase tracking-wider",
-          isCenter ? "text-beige/80" : "text-primary/60"
+          isCenter ? "text-beige/80" : "text-primary/80"
         )}>
           {testimonial.by}
         </p>
         <p className={cn(
           "text-[10px] sm:text-xs mt-0.5 sm:mt-1",
-          isCenter ? "text-beige/60" : "text-text-dark/40"
+          isCenter ? "text-beige/80" : "text-text-dark/70"
         )}>
           Google Review
         </p>

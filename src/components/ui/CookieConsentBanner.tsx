@@ -39,7 +39,7 @@ export function CookieConsentBanner() {
               </div>
               <div>
                 <h2 className="text-sm font-bold text-primary tracking-tight">We value your privacy</h2>
-                <p className="text-xs text-text-dark/50 mt-0.5">lalanicomputers.com</p>
+                <p className="text-xs text-text-dark/70 mt-0.5">lalanicomputers.com</p>
               </div>
             </div>
             <button
@@ -73,7 +73,7 @@ export function CookieConsentBanner() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold text-text-dark">Essential</p>
-                  <p className="text-[11px] text-text-dark/50 mt-0.5">Required for the site to function. Cannot be disabled.</p>
+                  <p className="text-[11px] text-text-dark/70 mt-0.5">Required for the site to function. Cannot be disabled.</p>
                 </div>
                 <div className="w-10 h-5 bg-primary rounded-full flex items-center justify-end pr-0.5 cursor-not-allowed opacity-70">
                   <div className="w-4 h-4 bg-white rounded-full shadow-sm" />
@@ -84,7 +84,7 @@ export function CookieConsentBanner() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold text-text-dark">Analytics</p>
-                  <p className="text-[11px] text-text-dark/50 mt-0.5">Helps us understand how visitors use the site.</p>
+                  <p className="text-[11px] text-text-dark/70 mt-0.5">Helps us understand how visitors use the site.</p>
                 </div>
                 <button
                   role="switch"
@@ -100,7 +100,7 @@ export function CookieConsentBanner() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold text-text-dark">Marketing</p>
-                  <p className="text-[11px] text-text-dark/50 mt-0.5">Used to show relevant ads and track campaigns.</p>
+                  <p className="text-[11px] text-text-dark/70 mt-0.5">Used to show relevant ads and track campaigns.</p>
                 </div>
                 <button
                   role="switch"

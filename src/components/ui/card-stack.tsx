@@ -239,7 +239,7 @@ export function CardStack<T extends CardStackItem>({
                 <button
                   key={it.id}
                   onClick={() => setActive(idx)}
-                  className="p-3 -mx-3 group focus:outline-none touch-manipulation"
+                  className="min-w-[48px] min-h-[48px] flex items-center justify-center group focus:outline-none touch-manipulation"
                   aria-label={`Go to ${it.title}`}
                 >
                   <div 
