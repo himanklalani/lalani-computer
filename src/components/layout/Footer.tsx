@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { CookieSettingsButton } from "@/components/ui/CookieSettingsButton";
+import { useRef, useEffect, useState } from "react";
+import { useInView, motion } from "framer-motion";
+import { scrollState } from "@/lib/scrollState";
 
 const LinkedinIcon = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -27,9 +32,23 @@ import { cn } from "@/lib/utils";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const footerRef = useRef(null);
+  const isInView = useInView(footerRef, { margin: "0px 0px -50px 0px" });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    scrollState.setFooterVisible(isInView);
+  }, [isInView]);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
-    <footer className="relative w-full bg-[#0D1260] text-beige overflow-hidden border-t border-primary/20 mt-auto">
+    <footer ref={footerRef} className="relative w-full bg-[#0D1260] text-beige overflow-hidden border-t border-primary/20 mt-auto">
       {/* Background glow effects */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/30 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-light/10 rounded-full blur-[100px] translate-y-1/2 pointer-events-none" />
@@ -40,12 +59,23 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col items-start">
             <Link href="/" className="inline-block group mb-6">
-              <div className="relative">
+              <div className="relative h-12 md:h-16">
                 <img 
                   src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
-                  alt="Lalani Computers Logo" 
-                  className="relative h-12 md:h-16 w-auto object-contain drop-shadow-md transition-all duration-300"
+                  alt="" 
+                  className="opacity-0 relative h-12 md:h-16 w-auto object-contain pointer-events-none"
                 />
+                <motion.div 
+                  layoutId={isMobile && isInView ? "brand-logo" : undefined}
+                  className="absolute inset-0 flex items-center"
+                >
+                  <motion.img 
+                    layoutId={isMobile && isInView ? "brand-logo-image" : undefined}
+                    src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
+                    alt="Lalani Computers Logo" 
+                    className="h-12 md:h-16 w-auto object-contain drop-shadow-md"
+                  />
+                </motion.div>
               </div>
               <div className="h-1 w-12 bg-primary-light mt-4 rounded-full transition-all duration-300 group-hover:w-full" />
             </Link>

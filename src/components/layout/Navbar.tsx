@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MorphedMenu } from "@/components/ui/MorphedMenu";
 import { loaderState } from "@/lib/loaderState";
+import { scrollState } from "@/lib/scrollState";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [loading, setLoading] = useState(loaderState.isLoading);
+  const [footerVisible, setFooterVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -16,15 +19,27 @@ export default function Navbar() {
     return loaderState.subscribe(setLoading);
   }, []);
 
+  useEffect(() => {
+    return scrollState.subscribe(setFooterVisible);
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // On non-home pages, loaderState is immediately false so everything shows instantly
   const menuVisible = !loading;
+  const shouldShowLogo = !loading && !(isMobile && footerVisible);
 
   return (
     <>
       <div className="fixed top-6 left-4 md:left-6 lg:left-12 z-50 pointer-events-none">
         <Link href="/" className="inline-flex items-center gap-2 pointer-events-auto">
           <AnimatePresence>
-            {!loading && (
+            {shouldShowLogo && (
               <motion.div 
                 layoutId="brand-logo"
                 className="bg-transparent px-0 py-0 rounded-none shadow-none flex items-center justify-center border-transparent"
