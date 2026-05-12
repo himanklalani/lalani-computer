@@ -11,16 +11,31 @@ export function CookieConsentBanner() {
   const [analyticsChecked, setAnalyticsChecked] = useState(false);
   const [marketingChecked, setMarketingChecked] = useState(false);
   const [dismissed, setDismissed] = useState(false);
-  const [isSiteLoaded, setIsSiteLoaded] = useState(!loaderState.isLoading);
+  const [showBanner, setShowBanner] = useState(false);
 
   React.useEffect(() => {
-    return loaderState.subscribe((loading) => {
-      setIsSiteLoaded(!loading);
+    let timeout: NodeJS.Timeout;
+    
+    const triggerDelay = () => {
+      timeout = setTimeout(() => setShowBanner(true), 1800);
+    };
+
+    if (!loaderState.isLoading) {
+      triggerDelay();
+    }
+
+    const unsubscribe = loaderState.subscribe((loading) => {
+      if (!loading) triggerDelay();
     });
+
+    return () => {
+      unsubscribe();
+      if (timeout) clearTimeout(timeout);
+    };
   }, []);
 
-  // Don't show if we haven't checked localStorage yet, if already responded/dismissed, or if site preloader is running
-  if (!isLoaded || consent.given || dismissed || !isSiteLoaded) return null;
+  // Don't show if we haven't checked localStorage yet, if already responded/dismissed, or if we haven't hit our 2s delay
+  if (!isLoaded || consent.given || dismissed || !showBanner) return null;
 
   const handleSaveCustom = () => {
     updateConsent({ analytics: analyticsChecked, marketing: marketingChecked });
