@@ -70,7 +70,7 @@ const categories = [
     projects: [
       { id: "pp1", image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=800&q=80", title: "Mechanical Keyboards", href: "/products/peripherals-power" },
       { id: "pp2", image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80", title: "Office Mice", href: "/products/peripherals-power" },
-      { id: "pp3", image: "https://images.unsplash.com/photo-1624823183597-29362ee27fc6?auto=format&fit=crop&w=800&q=80", title: "Accessories & Consumables", href: "/products/peripherals-power" },
+      { id: "pp3", image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=800&q=80", title: "Accessories & Consumables", href: "/products/peripherals-power" },
       { id: "pp4", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=800&q=80", title: "Cables & Adaptors", href: "/products/peripherals-power" },
     ],
   },
