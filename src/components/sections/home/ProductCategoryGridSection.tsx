@@ -11,10 +11,10 @@ const categories = [
     href: "/products/computing",
     accentColor: "#1925AA",
     projects: [
-      { id: "c1", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80", title: "Business Ultrabooks", href: "/products/computing" },
-      { id: "c2", image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80", title: "Tower Workstations", href: "/products/computing" },
-      { id: "c3", image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=800&q=80", title: "All-in-One Desktops", href: "/products/computing" },
-      { id: "c4", image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80", title: "Creator Laptops", href: "/products/computing" },
+      { id: "c1", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=400&q=60", title: "Business Ultrabooks", href: "/products/computing" },
+      { id: "c2", image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=400&q=60", title: "Tower Workstations", href: "/products/computing" },
+      { id: "c3", image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=60", title: "All-in-One Desktops", href: "/products/computing" },
+      { id: "c4", image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=400&q=60", title: "Creator Laptops", href: "/products/computing" },
     ],
   },
   {
@@ -23,9 +23,9 @@ const categories = [
     href: "/products/servers",
     accentColor: "#121A7A",
     projects: [
-      { id: "s1", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80", title: "Rack Mount Servers", href: "/products/servers" },
-      { id: "s2", image: "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=800&q=80", title: "Data Centre Setup", href: "/products/servers" },
-      { id: "s3", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80", title: "Server Rentals", href: "/products/servers" },
+      { id: "s1", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=60", title: "Rack Mount Servers", href: "/products/servers" },
+      { id: "s2", image: "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=400&q=60", title: "Data Centre Setup", href: "/products/servers" },
+      { id: "s3", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=400&q=60", title: "Server Rentals", href: "/products/servers" },
     ],
   },
   {
@@ -34,10 +34,10 @@ const categories = [
     href: "/products/networking-security",
     accentColor: "#0D1260",
     projects: [
-      { id: "ns1", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80", title: "Core Switches & APs", href: "/products/networking-security" },
-      { id: "ns2", image: "https://images.unsplash.com/photo-1580508174046-170816f65662?auto=format&fit=crop&w=800&q=80", title: "Next-Gen Firewalls", href: "/products/networking-security" },
-      { id: "ns3", image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80", title: "IP Camera Systems", href: "/products/networking-security" },
-      { id: "ns4", image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=800&q=80", title: "Biometric Access", href: "/products/networking-security" },
+      { id: "ns1", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=60", title: "Core Switches & APs", href: "/products/networking-security" },
+      { id: "ns2", image: "https://images.unsplash.com/photo-1580508174046-170816f65662?auto=format&fit=crop&w=400&q=60", title: "Next-Gen Firewalls", href: "/products/networking-security" },
+      { id: "ns3", image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=400&q=60", title: "IP Camera Systems", href: "/products/networking-security" },
+      { id: "ns4", image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=400&q=60", title: "Biometric Access", href: "/products/networking-security" },
     ],
   },
   {
@@ -46,9 +46,9 @@ const categories = [
     href: "/products/office-electronics",
     accentColor: "#2D35B5",
     projects: [
-      { id: "oe1", image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=800&q=80", title: "Laser & MFP Printers", href: "/products/office-electronics" },
-      { id: "oe2", image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80", title: "Projectors & Displays", href: "/products/office-electronics" },
-      { id: "oe3", image: "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?auto=format&fit=crop&w=800&q=80", title: "Monitors", href: "/products/office-electronics" },
+      { id: "oe1", image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=400&q=60", title: "Laser & MFP Printers", href: "/products/office-electronics" },
+      { id: "oe2", image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=400&q=60", title: "Projectors & Displays", href: "/products/office-electronics" },
+      { id: "oe3", image: "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?auto=format&fit=crop&w=400&q=60", title: "Monitors", href: "/products/office-electronics" },
     ],
   },
   {
@@ -57,9 +57,9 @@ const categories = [
     href: "/products/software",
     accentColor: "#1925AA",
     projects: [
-      { id: "sl1", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80", title: "Windows OS Licences", href: "/products/software" },
-      { id: "sl2", image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=800&q=80", title: "Microsoft 365", href: "/products/software" },
-      { id: "sl3", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80", title: "Antivirus & Security", href: "/products/software" },
+      { id: "sl1", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=60", title: "Windows OS Licences", href: "/products/software" },
+      { id: "sl2", image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=400&q=60", title: "Microsoft 365", href: "/products/software" },
+      { id: "sl3", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=400&q=60", title: "Antivirus & Security", href: "/products/software" },
     ],
   },
   {
@@ -68,10 +68,10 @@ const categories = [
     href: "/products/peripherals-power",
     accentColor: "#121A7A",
     projects: [
-      { id: "pp1", image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=800&q=80", title: "Mechanical Keyboards", href: "/products/peripherals-power" },
-      { id: "pp2", image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80", title: "Office Mice", href: "/products/peripherals-power" },
-      { id: "pp3", image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=800&q=80", title: "Accessories & Consumables", href: "/products/peripherals-power" },
-      { id: "pp4", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=800&q=80", title: "Cables & Adaptors", href: "/products/peripherals-power" },
+      { id: "pp1", image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=400&q=60", title: "Mechanical Keyboards", href: "/products/peripherals-power" },
+      { id: "pp2", image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=400&q=60", title: "Office Mice", href: "/products/peripherals-power" },
+      { id: "pp3", image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=400&q=60", title: "Accessories & Consumables", href: "/products/peripherals-power" },
+      { id: "pp4", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=400&q=60", title: "Cables & Adaptors", href: "/products/peripherals-power" },
     ],
   },
 ];

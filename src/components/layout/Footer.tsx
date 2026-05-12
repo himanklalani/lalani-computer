@@ -61,7 +61,7 @@ export default function Footer() {
             <Link href="/" className="inline-block group mb-6">
               <div className="relative h-12 md:h-16">
                 <img 
-                  src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
+                  src="https://res.cloudinary.com/dzc0mfs9z/image/upload/w_400,f_auto,q_auto/logo_tafyhr" 
                   alt="" 
                   width={160}
                   height={64}
@@ -73,7 +73,7 @@ export default function Footer() {
                 >
                   <motion.img 
                     layoutId={isMobile && isInView ? "brand-logo-image" : undefined}
-                    src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
+                    src="https://res.cloudinary.com/dzc0mfs9z/image/upload/w_400,f_auto,q_auto/logo_tafyhr" 
                     alt="Lalani Computers Logo"
                     width={160}
                     height={64}

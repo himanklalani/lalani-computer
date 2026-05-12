@@ -47,7 +47,7 @@ export default function Navbar() {
               >
                 <motion.img 
                   layoutId="brand-logo-image"
-                  src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
+                  src="https://res.cloudinary.com/dzc0mfs9z/image/upload/w_400,f_auto,q_auto/logo_tafyhr" 
                   alt="Lalani Computers Logo"
                   width={120}
                   height={48}

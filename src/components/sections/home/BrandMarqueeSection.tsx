@@ -27,7 +27,7 @@ export function BrandMarqueeSection() {
         </div>
       </FadeIn>
       <FadeIn delay={0.2}>
-        <div className="relative flex overflow-x-hidden group">
+        <div className="relative flex overflow-x-hidden group min-h-[56px] md:min-h-[72px]">
           <div className="flex animate-marquee space-x-16 md:space-x-24 py-4 items-center whitespace-nowrap will-change-transform group-hover:[animation-play-state:paused]">
             {[...brands, ...brands, ...brands].map((brand, i) => (
               <div key={i} className="inline-flex items-center justify-center transition-transform hover:scale-110">

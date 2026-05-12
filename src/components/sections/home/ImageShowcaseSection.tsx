@@ -7,25 +7,25 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 /* ── 16 Unsplash images (IT / corporate / tech themed) ── */
 const images = [
   // Column 1
-  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
-  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80",
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=60",
+  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=60",
+  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&q=60",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=60",
   // Column 2
-  "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80",
-  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80",
-  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
-  "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
+  "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&q=60",
+  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=60",
+  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=60",
+  "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&q=60",
   // Column 3
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80",
-  "https://images.unsplash.com/photo-1560732488-6b0df240254a?w=600&q=80",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
-  "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=60",
+  "https://images.unsplash.com/photo-1560732488-6b0df240254a?w=400&q=60",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=60",
+  "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&q=60",
   // Column 4
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80",
-  "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&q=80",
-  "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=600&q=80",
-  "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=600&q=80",
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=60",
+  "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=60",
+  "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=400&q=60",
+  "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=400&q=60",
 ];
 
 /* ── Per-image stagger entrance ── */
@@ -112,7 +112,7 @@ function ParallaxColumn({
             src={src}
             alt={`Showcase image ${colIndex * 4 + i + 1}`}
             fill
-            sizes="(max-width: 768px) 50vw, 25vw"
+            sizes="(max-width: 768px) 45vw, 20vw"
             className="object-cover"
             loading="lazy"
           />

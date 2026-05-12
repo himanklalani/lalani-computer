@@ -67,7 +67,7 @@ export default function LoaderOverlay() {
           >
             <motion.img 
               layoutId="brand-logo-image"
-              src="https://res.cloudinary.com/dzc0mfs9z/image/upload/f_auto,q_auto/logo_tafyhr" 
+              src="https://res.cloudinary.com/dzc0mfs9z/image/upload/w_400,f_auto,q_auto/logo_tafyhr" 
               alt="Lalani Computers Logo" 
               className="h-16 md:h-20 w-auto object-contain drop-shadow-2xl"
               transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
