@@ -18,6 +18,14 @@ const marqueeData = [
   "What is the most cost-effective hardware?",
   "How do we ensure seamless remote work?",
   "What are the latest compliance standards?",
+  "What laptop specs should I buy for office use?",
+  "Which workstation is best for CAD and 3D modeling?",
+  "How much RAM do we need for heavy multitasking?",
+  "Should we buy or lease our IT hardware?",
+  "Which desktop PC is best for video editing?",
+  "How do we set up a secure office Wi-Fi network?",
+  "What is the best firewall for small businesses?",
+  "Which server configuration is best for virtualization?"
 ];
 
 const features = [
