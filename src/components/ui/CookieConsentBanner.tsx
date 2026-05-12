@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useCookieConsent } from "@/components/providers/CookieConsentProvider";
 import { loaderState } from "@/lib/loaderState";
 import { Shield, X, ChevronDown, ChevronUp } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function CookieConsentBanner() {
   const { isLoaded, consent, acceptAll, acceptEssential, updateConsent } = useCookieConsent();
@@ -42,12 +43,18 @@ export function CookieConsentBanner() {
   };
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Cookie consent"
-      className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-[420px] z-[9999] animate-in fade-in slide-in-from-bottom-12 duration-700 ease-out"
-    >
+    <AnimatePresence>
+      <motion.div
+        key="cookie-banner"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Cookie consent"
+        className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-[420px] z-[9999]"
+      >
       <div className="bg-white border border-primary/10 rounded-2xl shadow-2xl shadow-primary/10 overflow-hidden">
         
         {/* Top accent bar */}
@@ -173,6 +180,7 @@ export function CookieConsentBanner() {
           </div>
         </div>
       </div>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
