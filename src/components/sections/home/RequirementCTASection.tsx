@@ -31,7 +31,7 @@ const marqueeData = [
 const features = [
   {
     description:
-      "No jargon, no overcomplication — just clear, actionable IT strategies you can rely on to grow your operations confidently.",
+      "No jargon, no overcomplication just clear, actionable IT strategies you can rely on to grow your operations confidently.",
     icon: Zap,
     title: "We make things simple",
   },
