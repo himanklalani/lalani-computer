@@ -69,9 +69,9 @@ const Marquee = ({ children, reverse = false, duration = "40s", repeat = 4 }: { 
 };
 
 export function RequirementCTASection() {
-  const m1 = marqueeData.slice(0, 4);
-  const m2 = marqueeData.slice(4, 8);
-  const m3 = marqueeData.slice(8, 12);
+  const m1 = marqueeData.slice(0, 7);
+  const m2 = marqueeData.slice(7, 14);
+  const m3 = marqueeData.slice(14, 20);
 
   return (
     <section className="relative bg-white pt-24 pb-16 overflow-hidden border-t border-primary/10">
