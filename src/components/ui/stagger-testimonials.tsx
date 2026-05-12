@@ -48,7 +48,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
     <div
       onClick={() => handleMove(position)}
       className={cn(
-        "absolute left-1/2 top-1/2 cursor-pointer border-2 p-5 sm:p-6 transition-all duration-500 ease-in-out flex flex-col justify-between",
+        "absolute left-1/2 top-1/2 cursor-pointer border-2 p-5 sm:p-6 transition-all duration-500 ease-in-out flex flex-col justify-between will-change-transform",
         isCenter 
           ? "z-10 bg-primary text-beige border-primary" 
           : "z-0 bg-white text-text-dark border-primary/10 hover:border-primary/30"

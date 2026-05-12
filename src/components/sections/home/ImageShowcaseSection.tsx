@@ -95,7 +95,7 @@ function ParallaxColumn({
   return (
     <motion.div
       ref={colRef}
-      className="flex flex-col gap-6 md:gap-8 flex-1 min-w-0"
+      className="flex flex-col gap-6 md:gap-8 flex-1 min-w-0 will-change-transform"
       style={{ y }}
     >
       {imgs.map((src, i) => (

@@ -186,7 +186,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-primary/80 backdrop-blur-2xl"
+        className="absolute inset-0 bg-primary/80 md:backdrop-blur-2xl backdrop-blur-sm"
         style={{ opacity: animationPhase === "initial" && !isClosing ? 0 : 1, transition: "opacity 600ms cubic-bezier(0.16, 1, 0.3, 1)" }}
       />
 

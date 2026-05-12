@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useCookieConsent } from "@/components/providers/CookieConsentProvider";
+import { loaderState } from "@/lib/loaderState";
 import { Shield, X, ChevronDown, ChevronUp } from "lucide-react";
 
 export function CookieConsentBanner() {
@@ -10,9 +11,16 @@ export function CookieConsentBanner() {
   const [analyticsChecked, setAnalyticsChecked] = useState(false);
   const [marketingChecked, setMarketingChecked] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const [isSiteLoaded, setIsSiteLoaded] = useState(!loaderState.isLoading);
 
-  // Don't show if we haven't checked localStorage yet, or if already responded/dismissed
-  if (!isLoaded || consent.given || dismissed) return null;
+  React.useEffect(() => {
+    return loaderState.subscribe((loading) => {
+      setIsSiteLoaded(!loading);
+    });
+  }, []);
+
+  // Don't show if we haven't checked localStorage yet, if already responded/dismissed, or if site preloader is running
+  if (!isLoaded || consent.given || dismissed || !isSiteLoaded) return null;
 
   const handleSaveCustom = () => {
     updateConsent({ analytics: analyticsChecked, marketing: marketingChecked });
