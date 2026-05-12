@@ -27,12 +27,12 @@ export default function LoaderOverlay() {
     }
 
     // Shrink the background mask
-    const t1 = setTimeout(() => setPhase("shrink"), 600);
+    const t1 = setTimeout(() => setPhase("shrink"), 650);
 
     // Finish loading and trigger the FLIP transition to Navbar
     const t2 = setTimeout(() => {
       loaderState.setLoading(false);
-    }, 1100);
+    }, 1250);
 
     return () => {
       clearTimeout(t1);
