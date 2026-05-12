@@ -37,7 +37,7 @@ const categories = [
       { id: "ns1", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80", title: "Core Switches & APs", href: "/products/networking-security" },
       { id: "ns2", image: "https://images.unsplash.com/photo-1580508174046-170816f65662?auto=format&fit=crop&w=800&q=80", title: "Next-Gen Firewalls", href: "/products/networking-security" },
       { id: "ns3", image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80", title: "IP Camera Systems", href: "/products/networking-security" },
-      { id: "ns4", image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80", title: "Biometric Access", href: "/products/networking-security" },
+      { id: "ns4", image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=800&q=80", title: "Biometric Access", href: "/products/networking-security" },
     ],
   },
   {
@@ -70,7 +70,7 @@ const categories = [
     projects: [
       { id: "pp1", image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=800&q=80", title: "Mechanical Keyboards", href: "/products/peripherals-power" },
       { id: "pp2", image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80", title: "Office Mice", href: "/products/peripherals-power" },
-      { id: "pp3", image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=800&q=80", title: "UPS Power Backup", href: "/products/peripherals-power" },
+      { id: "pp3", image: "https://images.unsplash.com/photo-1624823183597-29362ee27fc6?auto=format&fit=crop&w=800&q=80", title: "Accessories & Consumables", href: "/products/peripherals-power" },
       { id: "pp4", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=800&q=80", title: "Cables & Adaptors", href: "/products/peripherals-power" },
     ],
   },
