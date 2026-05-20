@@ -233,7 +233,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
       >
         <div className="relative overflow-hidden rounded-[inherit] bg-warm-bg1 border border-primary/10 shadow-[0_35px_60px_-15px_rgba(25,37,170,0.4)]">
           {/* Image strip */}
-          <div className="relative overflow-hidden aspect-[4/3] md:aspect-[16/10]">
+          <div className="relative overflow-hidden w-full aspect-[4/3] md:aspect-[16/10] max-h-[50vh] md:max-h-[60vh]">
             <div
               className="flex w-full h-full"
               style={{

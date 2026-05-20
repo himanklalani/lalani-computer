@@ -35,7 +35,7 @@ const categories = [
     accentColor: "#0D1260",
     projects: [
       { id: "ns1", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=60", title: "Core Switches & APs", href: "/products/networking-security" },
-      { id: "ns2", image: "https://images.unsplash.com/photo-1580508174046-170816f65662?auto=format&fit=crop&w=400&q=60", title: "Next-Gen Firewalls", href: "/products/networking-security" },
+      { id: "ns2", image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMEQxMjYwIi8+PC9zdmc+", title: "Next-Gen Firewalls", href: "/products/networking-security" },
       { id: "ns3", image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=400&q=60", title: "IP Camera Systems", href: "/products/networking-security" },
       { id: "ns4", image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=400&q=60", title: "Biometric Access", href: "/products/networking-security" },
     ],
@@ -47,7 +47,7 @@ const categories = [
     accentColor: "#2D35B5",
     projects: [
       { id: "oe1", image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=400&q=60", title: "Laser & MFP Printers", href: "/products/office-electronics" },
-      { id: "oe2", image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=400&q=60", title: "Projectors & Displays", href: "/products/office-electronics" },
+      { id: "oe2", image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=400&q=60", title: "Projectors & Displays", href: "/products/office-electronics" },
       { id: "oe3", image: "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?auto=format&fit=crop&w=400&q=60", title: "Monitors", href: "/products/office-electronics" },
     ],
   },
