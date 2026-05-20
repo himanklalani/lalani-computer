@@ -123,16 +123,29 @@ export default function AboutPage() {
           </div>
         </FadeIn>
         <div className="flex flex-wrap justify-center gap-12">
-          {/* Placeholder for leadership. Can be expanded based on exact names. */}
-          {[1, 2, 3].map((item) => (
-            <FadeIn key={item} delay={item * 0.1} direction="up">
+          {[
+            {
+              name: "Khemchand Lalani",
+              role: "Founder",
+              image: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1779284466/dadapic2_r0nade.png",
+              // transform: "scale(Size) translate(Right/Left%, Down/Up%)"
+              // e.g., translate(-10%, 15%) moves it Left 10% and Down 15%.
+              imageStyle: { transform: "scale(1.3) translate(0%, 0%)" },
+            },
+            {
+              name: "Vikrant Lalani",
+              role: "Managing Director",
+              image: "https://res.cloudinary.com/dzc0mfs9z/image/upload/v1779284465/papapic_zqvnh9.png",
+              imageStyle: { transform: "scale(1.4) translate(0%, 5%)" },
+            }
+          ].map((leader, i) => (
+            <FadeIn key={leader.name} delay={i * 0.1} direction="up">
               <div className="text-center group w-64">
-                <div className="w-48 h-48 mx-auto bg-primary/10 rounded-full overflow-hidden mb-6 relative border-4 border-white shadow-xl transition-transform duration-300 group-hover:scale-105">
-                  <Image src={`https://images.unsplash.com/photo-[placeholder]?w=400&h=400&fit=crop`} alt="Leadership Placeholder" fill className="object-cover bg-card-dark/20 text-transparent" />
-                  <div className="absolute inset-0 flex items-center justify-center font-heading text-primary/30">Photo</div>
+                <div className="w-48 h-48 mx-auto bg-white rounded-full overflow-hidden mb-6 relative border-4 border-white shadow-xl transition-transform duration-300 group-hover:scale-105">
+                  <Image src={leader.image} alt={leader.name} fill className="object-contain bg-white" style={leader.imageStyle} />
                 </div>
-                <Typography variant="h3" className="mb-1">Leadership Name</Typography>
-                <Typography variant="small" className="text-primary font-medium uppercase tracking-widest">Director</Typography>
+                <Typography variant="h3" className="mb-1">{leader.name}</Typography>
+                <Typography variant="small" className="text-primary font-medium uppercase tracking-widest">{leader.role}</Typography>
               </div>
             </FadeIn>
           ))}

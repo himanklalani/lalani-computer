@@ -92,6 +92,21 @@ async function captureViewport(): Promise<THREE.CanvasTexture> {
   return new THREE.CanvasTexture(offscreen);
 }
 
+// ─── WebGL support probe ───────────────────────────────────────────────────
+function isWebGLSupported(): boolean {
+  try {
+    const testCanvas = document.createElement("canvas");
+    const ctx = testCanvas.getContext("webgl2") || testCanvas.getContext("webgl");
+    if (!ctx) return false;
+    // Lose the context so the browser can GC it
+    const ext = (ctx as WebGLRenderingContext).getExtension("WEBGL_lose_context");
+    ext?.loseContext();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 // ─── Renderer singleton ────────────────────────────────────────────────────
 let _renderer: THREE.WebGLRenderer | null = null;
 function getRenderer(canvas: HTMLCanvasElement) {
@@ -116,6 +131,8 @@ export function PageTransition() {
 
   // ── Three.js setup ─────────────────────────────────────────────────────────
   useEffect(() => {
+    if (!isWebGLSupported()) return; // silently skip — no WebGL available
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 

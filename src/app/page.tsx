@@ -51,6 +51,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <RequirementCTASection />
       <USPStripSection />
       <ProductCategoryGridSection />
       <BrandMarqueeSection />
@@ -59,7 +60,6 @@ export default function Home() {
       <DeliveryAndServiceSection />
       <ClientsStripSection />
       <TestimonialsSection />
-      <RequirementCTASection />
     </>
   );
 }
