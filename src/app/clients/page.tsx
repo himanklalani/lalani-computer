@@ -24,12 +24,12 @@ export default function ClientsPage() {
   ];
 
   const industries = [
-    { title: "BFSI", icon: <Building2 className="w-8 h-8" />, desc: "Branch rollouts, secure endpoint setups, and high-availability server racks." },
-    { title: "Infrastructure & Real Estate", icon: <HardHat className="w-8 h-8" />, desc: "Site office networking, biometric access, and rugged workstations." },
-    { title: "Healthcare & Pharma", icon: <HeartPulse className="w-8 h-8" />, desc: "Compliance-ready data storage, specialized displays, and surveillance." },
-    { title: "Manufacturing", icon: <Factory className="w-8 h-8" />, desc: "Factory-floor Wi-Fi, industrial PCs, and CCTV monitoring." },
-    { title: "BPO / KPO", icon: <Headphones className="w-8 h-8" />, desc: "Mass deployment of thin clients, headsets, and UPS backups." },
-    { title: "Education", icon: <GraduationCap className="w-8 h-8" />, desc: "Smart classroom projectors, lab PCs, and campus-wide networking." },
+    { title: "BFSI", icon: <Building2 className="w-8 h-8" />, desc: "Branch rollouts, secure endpoint setups, and high-availability server racks.", href: "/clients/industries/bfsi" },
+    { title: "Infrastructure & Real Estate", icon: <HardHat className="w-8 h-8" />, desc: "Site office networking, biometric access, and rugged workstations.", href: "/clients/industries/infrastructure" },
+    { title: "Healthcare & Pharma", icon: <HeartPulse className="w-8 h-8" />, desc: "Compliance-ready data storage, specialized displays, and surveillance.", href: "/clients/industries/healthcare" },
+    { title: "Manufacturing", icon: <Factory className="w-8 h-8" />, desc: "Factory-floor Wi-Fi, industrial PCs, and CCTV monitoring.", href: "/clients/industries/manufacturing" },
+    { title: "BPO / KPO", icon: <Headphones className="w-8 h-8" />, desc: "Mass deployment of thin clients, headsets, and UPS backups.", href: "/clients/industries/bpo-kpo" },
+    { title: "Education", icon: <GraduationCap className="w-8 h-8" />, desc: "Smart classroom projectors, lab PCs, and campus-wide networking.", href: "/clients/industries/education" },
   ];
 
   return (
@@ -83,16 +83,18 @@ export default function ClientsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((ind, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm h-full flex flex-col hover:shadow-lg transition-shadow duration-300 group">
-                  <div className="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:bg-primary/20">
-                    {ind.icon}
+                <Link href={ind.href} className="block h-full">
+                  <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm h-full flex flex-col hover:shadow-lg transition-shadow duration-300 group">
+                    <div className="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:bg-primary/20">
+                      {ind.icon}
+                    </div>
+                    <Typography variant="h3" className="mb-3">{ind.title}</Typography>
+                    <Typography variant="body" className="opacity-80 flex-grow mb-6">{ind.desc}</Typography>
+                    <span className="text-primary font-medium text-left mt-auto flex items-center">
+                      View Recommended Setup <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
                   </div>
-                  <Typography variant="h3" className="mb-3">{ind.title}</Typography>
-                  <Typography variant="body" className="opacity-80 flex-grow mb-6">{ind.desc}</Typography>
-                  <button className="text-primary font-medium text-left mt-auto hover:underline flex items-center">
-                    View Recommended Setup <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                  </button>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>

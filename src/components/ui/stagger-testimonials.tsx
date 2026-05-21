@@ -7,21 +7,21 @@ import { cn } from "@/lib/utils";
 const SQRT_5000 = Math.sqrt(5000);
 
 export const testimonials = [
-  { tempId: 14, testimonial: "I wanted to buy a laptop for work & was unsure of specs. Mr. Vikrant suggested a better model that saved me money. They are genuine and even suggest checking prices elsewhere. Best quote & complimentary accessories! Highly recommend.", by: "Vishwa Patel", rating: 5 },
-  { tempId: 0, testimonial: "Very nice service, staff is really good and supportive. I bought laptop charger from this shop they delivered it at my place. Nice service", by: "Akanksh Bodakhe", rating: 5 },
-  { tempId: 1, testimonial: "Been taking Computers & Services from them for more than 15 years now. Best in class.", by: "Pinakci Kathotia", rating: 5 },
-  { tempId: 2, testimonial: "Very Prompt service... Mr. Vikrant Lalani always provides genuine peripherals with competitive prices.", by: "Parag Shah", rating: 5 },
-  { tempId: 3, testimonial: "Best in Class Solution with affordable options meeting all our requirements.", by: "Ajay Khubchandani", rating: 5 },
-  { tempId: 4, testimonial: "Great help in buying laptop, printer, or any computer needs.", by: "Shraddha Agarwal", rating: 5 },
-  { tempId: 5, testimonial: "Found rarely available items", by: "Khush Jain", rating: 5 },
-  { tempId: 6, testimonial: "Guarantee for genuine products.", by: "Ravishankar Nadar", rating: 5 },
-  { tempId: 7, testimonial: "Small place but ok", by: "Darshan Maurya", rating: 4 },
-  { tempId: 8, testimonial: "Great service!", by: "Khushbu Patekar", rating: 5 },
-  { tempId: 9, testimonial: "Best service! 😀", by: "Dev", rating: 5 },
-  { tempId: 10, testimonial: "Excellent service", by: "Aditi Jain", rating: 5 },
-  { tempId: 11, testimonial: "Best products", by: "Shaurya Khandpur", rating: 5 },
-  { tempId: 12, testimonial: "Best in city", by: "Salu Rocks", rating: 5 },
-  { tempId: 13, testimonial: "Mr. Vikrant Lalani is a nice person.", by: "Puneet Lalani", rating: 5 }
+  { tempId: 1, testimonial: "I wanted to buy a laptop for work & was unsure of specs. Mr. Vikrant suggested a better model that saved me money. They are genuine and even suggest checking prices elsewhere. Best quote & complimentary accessories! Highly recommend.", by: "Vishwa Patel", rating: 5 },
+  { tempId: 2, testimonial: "Very nice service, staff is really good and supportive. I bought laptop charger from this shop they delivered it at my place. Nice service", by: "Akanksh Bodakhe", rating: 5 },
+  { tempId: 3, testimonial: "Been taking Computers & Services from them for more than 15 years now. Best in class.", by: "Pinakci Kathotia", rating: 5 },
+  { tempId: 4, testimonial: "Very Prompt service... Mr. Vikrant Lalani always provides genuine peripherals with competitive prices.", by: "Parag Shah", rating: 5 },
+  { tempId: 5, testimonial: "Best in Class Solution with affordable options meeting all our requirements.", by: "Ajay Khubchandani", rating: 5 },
+  { tempId: 6, testimonial: "Great help in buying laptop, printer, or any computer needs.", by: "Shraddha Agarwal", rating: 5 },
+  { tempId: 7, testimonial: "Found rarely available items", by: "Khush Jain", rating: 5 },
+  { tempId: 8, testimonial: "Guarantee for genuine products.", by: "Ravishankar Nadar", rating: 5 },
+  { tempId: 9, testimonial: "Small place but ok", by: "Darshan Maurya", rating: 4 },
+  { tempId: 10, testimonial: "Great service!", by: "Khushbu Patekar", rating: 5 },
+  { tempId: 11, testimonial: "Best service! 😀", by: "Dev", rating: 5 },
+  { tempId: 12, testimonial: "Excellent service", by: "Aditi Jain", rating: 5 },
+  { tempId: 13, testimonial: "Best products", by: "Shaurya Khandpur", rating: 5 },
+  { tempId: 14, testimonial: "Best in city", by: "Salu Rocks", rating: 5 },
+  { tempId: 15, testimonial: "Mr. Vikrant Lalani is a nice person.", by: "Puneet Lalani", rating: 5 }
 ];
 
 interface TestimonialCardProps {

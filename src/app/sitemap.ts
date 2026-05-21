@@ -81,5 +81,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.65,
     },
+
+    // ── Industry expertise pages ────────────────────────────────────────────
+    {
+      url: `${BASE}/clients/industries/bfsi`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/clients/industries/healthcare`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/clients/industries/infrastructure`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/clients/industries/manufacturing`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/clients/industries/bpo-kpo`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/clients/industries/education`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ]
 }
