@@ -50,7 +50,7 @@ export default function ProductsPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Product Catalogue</Typography>
-            <Typography variant="h1" className="mb-6">From Laptops to LTO Tapes — Everything Your IT Needs Under One Roof.</Typography>
+            <Typography variant="h1" className="mb-6">From Laptops to LTO Tapes, Everything Your IT Needs Under One Roof.</Typography>
             <Typography variant="lead">
               We maintain a massive inventory of corporate IT hardware from top global brands, ensuring you get exactly what you need, when you need it.
             </Typography>
