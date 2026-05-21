@@ -15,11 +15,6 @@ const LinkedinIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
-const TwitterIcon = ({ size = 24, className = "" }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-  </svg>
-);
 
 const InstagramIcon = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -87,9 +82,8 @@ export default function Footer() {
               Mumbai's trusted partner for enterprise IT hardware, turnkey office setups, and comprehensive AMC services. Over 30 years of excellence.
             </p>
             <div className="flex items-center gap-4">
-              <SocialLink href="#" icon={<LinkedinIcon size={18} />} label="LinkedIn" />
-              <SocialLink href="#" icon={<TwitterIcon size={18} />} label="Twitter" />
-              <SocialLink href="#" icon={<InstagramIcon size={18} />} label="Instagram" />
+              <SocialLink href="https://www.linkedin.com/in/vikrant-lalani-821b5b6" icon={<LinkedinIcon size={18} />} label="LinkedIn" />
+              <SocialLink href="https://www.instagram.com/lalanicomputers?igsh=MmZka3I4MGRkcWRr" icon={<InstagramIcon size={18} />} label="Instagram" />
             </div>
           </div>
 

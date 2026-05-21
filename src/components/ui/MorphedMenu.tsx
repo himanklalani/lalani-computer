@@ -58,8 +58,8 @@ const defaultProps = {
     { title: "Contact", url: "/contact" },
   ],
   footerLinksData: [
-    { title: "LinkedIn", url: "#" },
-    { title: "Twitter", url: "#" },
+    { title: "LinkedIn", url: "https://www.linkedin.com/in/vikrant-lalani-821b5b6" },
+    { title: "Instagram", url: "https://www.instagram.com/lalanicomputers?igsh=MmZka3I4MGRkcWRr" },
   ],
 };
 
