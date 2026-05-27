@@ -22,7 +22,10 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL('https://www.lalanicomputers.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: "Lalani Computers | Corporate IT Hardware & Turnkey Solutions Mumbai",
     template: "%s | Lalani Computers",

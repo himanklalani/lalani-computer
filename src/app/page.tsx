@@ -39,7 +39,7 @@ const RequirementCTASection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Corporate IT Hardware & Turnkey Solutions Mumbai",
+  title: "Lalani Computers | Corporate IT Hardware & Turnkey Solutions Mumbai",
   description: "Mumbai's trusted partner for enterprise IT hardware, peripherals, turnkey office setups, and AMC services. Over 30 years of excellence.",
   openGraph: {
     title: "Lalani Computers | Corporate IT Hardware & Turnkey Solutions Mumbai",
