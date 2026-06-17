@@ -8,8 +8,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Infrastructure & Real Estate IT | Site Office & Construction IT Kits",
-  description: "Turnkey IT kits for construction sites, sales offices, and real estate campuses. Rugged hardware, P2P wireless links, and CCTV — built to survive dust and weather.",
+  title: "Real Estate & Infra IT Setups Mumbai | Lalani Computers",
+  description: "Reliable site office networking, biometric access, and rugged workstations for infrastructure projects. Turnkey IT deployments and AMC in Mumbai.",
 };
 
 const siteKits = [
@@ -68,7 +68,7 @@ export default function InfrastructurePage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Industry Expertise</Typography>
-            <Typography variant="h1" className="mb-6">Infrastructure & Real Estate IT</Typography>
+            <Typography variant="h1" className="mb-6">Turnkey IT Setups & Site Office Networking for Real Estate</Typography>
             <Typography variant="lead">
               Rugged, dust-proof IT kits built for construction sites, sales galleries, and multi-site campuses. Engineered to survive harsh conditions and deploy fast.
             </Typography>

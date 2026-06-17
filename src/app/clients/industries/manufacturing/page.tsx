@@ -8,8 +8,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manufacturing IT Solutions | Factory Floor Networking & Industrial PCs",
-  description: "IT hardware kits for manufacturing plants — factory-floor Wi-Fi, ruggedized workstations, SCADA-ready networking, and 24/7 CCTV monitoring solutions.",
+  title: "Manufacturing IT & Networking Mumbai | Lalani Computers",
+  description: "Robust factory-floor Wi-Fi, industrial PCs, and extensive CCTV monitoring. Reliable turnkey IT deployments and AMC for Mumbai's manufacturing sector.",
 };
 
 const factoryKits = [
@@ -68,7 +68,7 @@ export default function ManufacturingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Industry Expertise</Typography>
-            <Typography variant="h1" className="mb-6">Manufacturing & Industrial IT</Typography>
+            <Typography variant="h1" className="mb-6">Industrial IT Setups & Factory-Floor Networking for Manufacturing</Typography>
             <Typography variant="lead">
               Industrial-grade IT kits built for factory floors — vibration-proof, dust-sealed, and engineered for 24/7 uptime alongside heavy machinery.
             </Typography>

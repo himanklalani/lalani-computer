@@ -8,8 +8,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Healthcare IT Solutions | Hospital Room Kits & Medical Infrastructure",
-  description: "Pre-configured IT deployment kits for hospitals, clinics, and pharma labs. Room-ready boxes with cables, switches, displays, and surveillance — direct deployment by your staff.",
+  title: "Healthcare IT Solutions & Surveillance | Lalani Computers",
+  description: "Compliance-ready data storage, specialized displays, and secure CCTV surveillance for healthcare & pharma. Turnkey IT setups and reliable AMC in Mumbai.",
 };
 
 const roomKits = [
@@ -77,7 +77,7 @@ export default function HealthcarePage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Industry Expertise</Typography>
-            <Typography variant="h1" className="mb-6">Healthcare & Pharmaceutical IT</Typography>
+            <Typography variant="h1" className="mb-6">Specialized IT Hardware & Surveillance for Healthcare & Pharma</Typography>
             <Typography variant="lead">
               Curated, room-ready hardware boxes for every zone in your hospital. Your maintenance team unpacks, mounts, and connects — no IT specialist required for deployment.
             </Typography>

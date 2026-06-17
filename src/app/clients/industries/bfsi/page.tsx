@@ -8,8 +8,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BFSI IT Solutions | Branch Rollouts & Secure Infrastructure",
-  description: "Lalani Computers powers secure IT infrastructure for banks, NBFCs, and financial institutions. Branch-ready deployment kits, endpoint security, and compliance-grade hardware.",
+  title: "BFSI IT & Secure Networking Solutions | Lalani Computers",
+  description: "Turnkey IT setups, secure endpoint deployments, and high-availability server racks for the BFSI sector. Reliable networking and AMC by Lalani Computers.",
 };
 
 const deploymentKits = [
@@ -66,7 +66,7 @@ export default function BFSIPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Industry Expertise</Typography>
-            <Typography variant="h1" className="mb-6">Banking, Financial Services & Insurance</Typography>
+            <Typography variant="h1" className="mb-6">Secure IT Infrastructure & Networking Solutions for BFSI</Typography>
             <Typography variant="lead">
               From branch rollouts to data center refreshes — we deliver compliance-grade IT hardware kits that your team can deploy in hours, not weeks.
             </Typography>

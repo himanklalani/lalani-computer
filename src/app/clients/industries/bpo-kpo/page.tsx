@@ -8,8 +8,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BPO/KPO IT Solutions | Mass Seat Deployment & Call Center Hardware",
-  description: "Bulk IT deployment kits for BPOs and KPOs. Thin clients, headsets, UPS backups, and high-density networking — scaled for 500 to 5000+ seat operations.",
+  title: "BPO / KPO IT Hardware & Deployments | Lalani Computers",
+  description: "Mass deployment of thin clients, commercial headsets, and reliable UPS backups for BPOs and KPOs. Turnkey IT setups and comprehensive AMC in Mumbai.",
 };
 
 const seatKits = [
@@ -68,7 +68,7 @@ export default function BPOPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Industry Expertise</Typography>
-            <Typography variant="h1" className="mb-6">BPO & KPO IT Infrastructure</Typography>
+            <Typography variant="h1" className="mb-6">Mass IT Hardware Deployment & Turnkey Setups for BPO / KPO</Typography>
             <Typography variant="lead">
               Mass-deploy 500 to 5,000+ agent seats with pre-configured hardware kits. Each seat arrives in a single box — plug in and go live in minutes.
             </Typography>

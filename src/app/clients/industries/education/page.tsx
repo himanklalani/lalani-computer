@@ -8,8 +8,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Education IT Solutions | Smart Classroom & Campus Networking Kits",
-  description: "IT hardware kits for schools, colleges, and universities. Smart classroom projectors, computer lab setups, campus-wide Wi-Fi, and examination center infrastructure.",
+  title: "Education IT Solutions & Networking | Lalani Computers",
+  description: "Campus-wide networking, lab PCs, and smart projectors for educational institutions. Reliable turnkey IT deployment and AMC services in Mumbai.",
 };
 
 const campusKits = [
@@ -68,7 +68,7 @@ export default function EducationPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Industry Expertise</Typography>
-            <Typography variant="h1" className="mb-6">Education & Campus IT</Typography>
+            <Typography variant="h1" className="mb-6">Campus Networking & IT Hardware Solutions for Education</Typography>
             <Typography variant="lead">
               Complete IT kits for smart classrooms, computer labs, and campus-wide networking. Delivered ready to deploy — your maintenance team handles the rest.
             </Typography>
