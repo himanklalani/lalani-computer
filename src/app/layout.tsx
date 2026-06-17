@@ -22,7 +22,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.lalanicomputers.com'),
+  metadataBase: new URL('https://lalanicomputers.com'),
   alternates: {
     canonical: '/',
   },
