@@ -22,7 +22,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lalanicomputers.com'),
+  metadataBase: new URL('https://www.lalanicomputers.com'),
   alternates: {
     canonical: '/',
   },
@@ -54,8 +54,8 @@ const jsonLd = {
   "@type": "LocalBusiness",
   "name": "Lalani Computers",
   "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-  "@id": "https://lalanicomputers.com",
-  "url": "https://lalanicomputers.com",
+  "@id": "https://www.lalanicomputers.com",
+  "url": "https://www.lalanicomputers.com",
   "telephone": "+919323332850",
   "address": {
     "@type": "PostalAddress",
