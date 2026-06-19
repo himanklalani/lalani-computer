@@ -21,6 +21,7 @@ const solutions = [
       "Ready-to-use workstations",
     ],
     yOffset: "0px",   // Card 01: baseline
+    href: "/solutions/office-setup"
   },
   {
     num: "02",
@@ -32,6 +33,7 @@ const solutions = [
       "Dedicated account managers",
     ],
     yOffset: "40px",  // Card 02: slightly lower
+    href: "/solutions/amc-support"
   },
   {
     num: "03",
@@ -43,6 +45,7 @@ const solutions = [
       "Remote monitoring setups",
     ],
     yOffset: "20px",  // Card 03: mid offset
+    href: "/solutions/surveillance-security"
   },
   {
     num: "04",
@@ -54,6 +57,7 @@ const solutions = [
       "Secure firewall configuration",
     ],
     yOffset: "60px",  // Card 04: lowest (broken grid)
+    href: "/solutions/networking-wifi"
   },
 ];
 
@@ -207,7 +211,7 @@ export function SolutionsOverviewSection() {
                       ))}
                     </ul>
                     <Link
-                      href="/solutions"
+                      href={sol.href}
                       className="inline-flex items-center gap-2 text-primary font-semibold text-sm
                                  uppercase tracking-widest hover:gap-4 transition-all duration-300
                                  focus-visible:outline-none focus-visible:underline"

@@ -22,13 +22,13 @@ const deploymentKits = [
   {
     name: "Branch Networking Kit",
     icon: <Wifi className="w-6 h-6" />,
-    contents: ["24-Port Managed PoE Switch", "Enterprise Access Point", "Hardware Firewall (UTM)", "Cat6A Patch Cables (Pre-cut)", "Wall-Mount Server Rack (6U)", "Structured Cabling Kit"],
+    contents: [<span key="1"><Link href="/products/networking-security" className="hover:text-primary transition-colors underline decoration-primary/30">24-Port Managed PoE Switch</Link></span>, "Enterprise Access Point", "Hardware Firewall (UTM)", "Cat6A Patch Cables (Pre-cut)", "Wall-Mount Server Rack (6U)", "Structured Cabling Kit"],
     useCase: "Everything needed to wire up a branch from zero — WAN uplink to last-mile desk drops.",
   },
   {
     name: "Server Room Starter Kit",
     icon: <Server className="w-6 h-6" />,
-    contents: ["Rack Server (Xeon, 64GB ECC)", "2TB SAS RAID Storage", "Online UPS (3KVA)", "42U Floor-Standing Rack", "Environmental Monitor (Temp/Humidity)", "KVM Console"],
+    contents: [<span key="1"><Link href="/products/servers" className="hover:text-primary transition-colors underline decoration-primary/30">Rack Server (Xeon, 64GB ECC)</Link></span>, "2TB SAS RAID Storage", <span key="2"><Link href="/products/peripherals-power" className="hover:text-primary transition-colors underline decoration-primary/30">Online UPS (3KVA)</Link></span>, "42U Floor-Standing Rack", "Environmental Monitor (Temp/Humidity)", "KVM Console"],
     useCase: "Core banking applications, Active Directory, and local backups — everything in one shipment.",
   },
   {

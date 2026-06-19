@@ -57,7 +57,7 @@ export default function Footer() {
               <div className="relative h-12 md:h-16">
                 <img 
                   src="https://res.cloudinary.com/dzc0mfs9z/image/upload/w_400,f_auto,q_auto/logo_tafyhr" 
-                  alt="" 
+                  alt="Lalani Computers Logo" 
                   width={160}
                   height={64}
                   className="opacity-0 relative h-12 md:h-16 w-auto object-contain pointer-events-none"
@@ -89,21 +89,25 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 lg:col-start-6">
-            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Quick Links</h3>
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">IT Solutions</h3>
             <ul className="space-y-4">
-              <FooterLink href="/products">Products & Catalog</FooterLink>
-              <FooterLink href="/solutions">IT Solutions</FooterLink>
-              <FooterLink href="/about">About Us</FooterLink>
-              <FooterLink href="/contact">Contact</FooterLink>
+              <FooterLink href="/products">All Products</FooterLink>
+              <FooterLink href="/products/servers">Servers & Storage</FooterLink>
+              <FooterLink href="/products/networking-security">Networking</FooterLink>
+              <FooterLink href="/solutions">Turnkey IT Setups</FooterLink>
+              <FooterLink href="/clients/industries/bfsi">BFSI IT Services</FooterLink>
             </ul>
           </div>
 
           {/* Support */}
           <div className="lg:col-span-2">
-            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Support</h3>
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Company</h3>
             <ul className="space-y-4">
-              <FooterLink href="/terms">Terms of Service</FooterLink>
-              <FooterLink href="/privacy">Privacy Policy</FooterLink>
+              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/clients">Our Clients</FooterLink>
+              <FooterLink href="/contact">Contact Sales</FooterLink>
+              <FooterLink href="/terms">Terms</FooterLink>
+              <FooterLink href="/privacy">Privacy</FooterLink>
               <CookieSettingsButton />
             </ul>
           </div>

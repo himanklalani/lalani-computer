@@ -47,9 +47,34 @@ export const metadata: Metadata = {
   }
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Lalani Computers",
+  "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+  "@id": "https://www.lalanicomputers.com",
+  "url": "https://www.lalanicomputers.com",
+  "telephone": "+919323332850",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "59, Janmabhoomi Marg, Janmabhoomi Bhavan, Fort",
+    "addressLocality": "Mumbai",
+    "postalCode": "400001",
+    "addressCountry": "IN"
+  },
+  "areaServed": ["Mumbai", "India"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "10:00",
+    "closes": "19:00"
+  }
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <HeroSection />
       <RequirementCTASection />
       <USPStripSection />

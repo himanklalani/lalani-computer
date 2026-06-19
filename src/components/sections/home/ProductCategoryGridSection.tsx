@@ -113,6 +113,7 @@ export function ProductCategoryGridSection() {
               subtitle={cat.subtitle}
               projects={cat.projects}
               accentColor={cat.accentColor}
+              href={cat.href}
               className="w-[85vw] max-w-[320px] md:w-full"
             />
           ))}

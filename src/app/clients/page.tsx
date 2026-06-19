@@ -11,8 +11,8 @@ import { SwipeHint } from "@/components/ui/SwipeHint";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Clients | Trusted by Leading Indian Enterprises",
-  description: "Lalani Computers powers the IT infrastructure of top organizations across BFSI, Healthcare, and Manufacturing sectors in India.",
+  title: "Enterprise IT Hardware Clients | Corporate IT Procurement Mumbai",
+  description: "Lalani Computers powers the IT infrastructure of top organizations in Mumbai across BFSI, Healthcare, and Manufacturing sectors with reliable hardware & turnkey setups.",
 };
 
 export default function ClientsPage() {

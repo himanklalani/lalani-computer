@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Turnkey IT Solutions | Networking & Surveillance",
-  description: "End-to-end IT infrastructure deployment for corporate offices. From network design and cabling to CCTV installation and Annual Maintenance Contracts (AMC).",
+  title: "Turnkey IT Solutions & New Office Setup in Mumbai",
+  description: "End-to-end corporate IT infrastructure deployment in Mumbai. We provide structured cabling, server room setup, Wi-Fi networking, and comprehensive IT AMC services.",
 };
 
 export default function SolutionsPage() {
@@ -19,25 +19,29 @@ export default function SolutionsPage() {
       title: "New Office IT Setup",
       useCase: "Branch rollouts, startup offices, and expansions.",
       process: "Assessment → Proposal → Procurement → Deployment → AMC",
-      deliverables: ["Workstations & Laptops", "Structured Cabling", "Servers & Racks", "UPS & Power Backup", "Networking Gear (Switches/Routers)"],
+      deliverables: [<span key="1"><Link href="/products/computing" className="hover:text-primary transition-colors underline decoration-primary/30">Workstations & Laptops</Link></span>, "Structured Cabling", <span key="2"><Link href="/products/servers" className="hover:text-primary transition-colors underline decoration-primary/30">Servers & Racks</Link></span>, <span key="3"><Link href="/products/peripherals-power" className="hover:text-primary transition-colors underline decoration-primary/30">UPS & Power Backup</Link></span>, <span key="4"><Link href="/products/networking-security" className="hover:text-primary transition-colors underline decoration-primary/30">Networking Gear (Switches/Routers)</Link></span>],
+      href: "/solutions/office-setup"
     },
     {
       title: "Surveillance & Security Infrastructure",
       useCase: "Warehouses, hospitals, schools, and corporate campuses.",
       process: "Site Survey → Coverage Plan → Installation → Testing → Handover",
-      deliverables: ["IP CCTV & NVR/DVR", "Biometric Access Control", "Video Door Phones", "Remote Monitoring Setup"],
+      deliverables: [<span key="1"><Link href="/products/networking-security" className="hover:text-primary transition-colors underline decoration-primary/30">IP CCTV & NVR/DVR</Link></span>, <span key="2"><Link href="/products/networking-security" className="hover:text-primary transition-colors underline decoration-primary/30">Biometric Access Control</Link></span>, "Video Door Phones", "Remote Monitoring Setup"],
+      href: "/solutions/surveillance-security"
     },
     {
       title: "Enterprise Networking & Wi-Fi",
       useCase: "Multi-floor offices, manufacturing plants, and educational institutes.",
       process: "Network Design → Cabling → Hardware Setup → Configuration → Optimization",
-      deliverables: ["High-density Access Points", "Managed Switches", "Hardware Firewalls", "Load Balancers"],
+      deliverables: [<span key="1"><Link href="/products/networking-security" className="hover:text-primary transition-colors underline decoration-primary/30">High-density Access Points</Link></span>, <span key="2"><Link href="/products/networking-security" className="hover:text-primary transition-colors underline decoration-primary/30">Managed Switches</Link></span>, <span key="3"><Link href="/products/networking-security" className="hover:text-primary transition-colors underline decoration-primary/30">Hardware Firewalls</Link></span>, "Load Balancers"],
+      href: "/solutions/networking-wifi"
     },
     {
       title: "Data Center & Server Room Refresh",
       useCase: "Legacy system upgrades and on-premise cloud infrastructure.",
       process: "Capacity Planning → Migration Strategy → Hardware Swap → Testing",
-      deliverables: ["Tower/Rack Servers", "NAS/SAN Storage", "LTO Tape Backup", "Precision Cooling Recommendations"],
+      deliverables: [<span key="1"><Link href="/products/servers" className="hover:text-primary transition-colors underline decoration-primary/30">Tower/Rack Servers</Link></span>, <span key="2"><Link href="/products/servers" className="hover:text-primary transition-colors underline decoration-primary/30">NAS/SAN Storage</Link></span>, "LTO Tape Backup", "Precision Cooling Recommendations"],
+      href: "/solutions/data-center"
     },
   ];
 
@@ -96,7 +100,9 @@ export default function SolutionsPage() {
             <FadeIn key={i} delay={0.1} direction={i % 2 === 0 ? "left" : "right"}>
               <div className="bg-white rounded-3xl p-8 lg:p-12 border border-primary/10 shadow-lg flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-1">
-                  <Typography variant="h2" className="text-primary mb-4">{sol.title}</Typography>
+                  <Typography variant="h2" className="text-primary mb-4">
+                    <Link href={sol.href} className="hover:opacity-80 transition-opacity">{sol.title}</Link>
+                  </Typography>
                   <Typography variant="body" className="font-medium text-text-dark mb-2">Ideal For: <span className="font-normal opacity-80">{sol.useCase}</span></Typography>
                   <Typography variant="body" className="font-medium text-text-dark mb-6">Process: <span className="font-normal opacity-80">{sol.process}</span></Typography>
                 </div>

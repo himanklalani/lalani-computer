@@ -23,9 +23,6 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lalanicomputers.com'),
-  alternates: {
-    canonical: '/',
-  },
   title: {
     default: "Lalani Computers | Corporate IT Hardware & Turnkey Solutions Mumbai",
     template: "%s | Lalani Computers",
@@ -37,7 +34,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/",
     siteName: "Lalani Computers",
     title: "Lalani Computers | Corporate IT Hardware & Turnkey Solutions",
     description: "Mumbai's trusted partner for enterprise IT hardware, peripherals, turnkey office setups, and AMC services.",
@@ -49,29 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Lalani Computers",
-  "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-  "@id": "https://www.lalanicomputers.com",
-  "url": "https://www.lalanicomputers.com",
-  "telephone": "+919323332850",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "59, Janmabhoomi Marg, Janmabhoomi Bhavan, Fort",
-    "addressLocality": "Mumbai",
-    "postalCode": "400001",
-    "addressCountry": "IN"
-  },
-  "areaServed": ["Mumbai", "India"],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    "opens": "10:00",
-    "closes": "19:00"
-  }
-};
+
 
 export default function RootLayout({
   children,
@@ -88,10 +62,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col relative overflow-x-hidden">
         <CookieConsentProvider>

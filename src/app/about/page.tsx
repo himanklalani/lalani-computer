@@ -10,8 +10,8 @@ import { Clock, Users, Zap, Award } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Lalani Computers | 30+ Years of Excellence",
-  description: "Learn about Lalani Computers, Mumbai's leading IT hardware supplier with over three decades of experience serving corporate India.",
+  title: "About Lalani Computers | Mumbai's Leading B2B IT Supplier",
+  description: "Learn about Lalani Computers, Mumbai's leading IT hardware supplier and enterprise solutions provider with over 30 years of experience serving corporate India.",
 };
 
 export default function AboutPage() {

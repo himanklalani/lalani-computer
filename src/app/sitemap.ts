@@ -82,6 +82,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
     },
 
+    // ── Turnkey Solutions pages ──────────────────────────────────────────────
+    {
+      url: `${BASE}/solutions/office-setup`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/solutions/networking-wifi`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/solutions/surveillance-security`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/solutions/data-center`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE}/solutions/amc-support`,
+      lastModified: lastMod,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+
     // ── Industry expertise pages ────────────────────────────────────────────
     {
       url: `${BASE}/clients/industries/bfsi`,

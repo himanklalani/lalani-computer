@@ -288,10 +288,11 @@ export interface AnimatedFolderProps {
   projects: FolderProject[];
   className?: string;
   accentColor?: string;
+  href?: string;
 }
 
 export const AnimatedFolder: React.FC<AnimatedFolderProps> = ({
-  title, subtitle, projects, className, accentColor = "#1925AA",
+  title, subtitle, projects, className, accentColor = "#1925AA", href
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -471,7 +472,7 @@ export const AnimatedFolder: React.FC<AnimatedFolderProps> = ({
             className="text-lg font-heading font-bold text-primary transition-all duration-500"
             style={{ transform: isHovered ? "translateY(-8px)" : "translateY(0)", letterSpacing: isHovered ? "-0.01em" : "0" }}
           >
-            {title}
+            {href ? <Link href={href} className="hover:underline" onClick={(e) => e.stopPropagation()}>{title}</Link> : title}
           </h3>
           
           <div className="relative w-full h-12 mt-1">
@@ -485,9 +486,15 @@ export const AnimatedFolder: React.FC<AnimatedFolderProps> = ({
               }}
             >
               {subtitle && <p className="text-xs text-text-dark/70 font-medium leading-tight mb-1">{subtitle}</p>}
-              <p className="text-[10px] font-black text-primary/70 uppercase tracking-widest">
-                {projects.length} {projects.length === 1 ? "item" : "items"}
-              </p>
+              {href ? (
+                <Link href={href} onClick={(e) => e.stopPropagation()} className="text-[10px] font-black text-primary uppercase tracking-widest hover:underline mt-1">
+                  View Full Catalog →
+                </Link>
+              ) : (
+                <p className="text-[10px] font-black text-primary/70 uppercase tracking-widest mt-1">
+                  {projects.length} {projects.length === 1 ? "item" : "items"}
+                </p>
+              )}
             </div>
 
             {/* Hint (Shown by default) */}
