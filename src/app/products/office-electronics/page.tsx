@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CheckCircle2, Printer, Tv, PhoneCall, MonitorPlay, ShieldCheck, Network } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -38,6 +39,25 @@ const electronicTypes = [
     features: ["IP-PBX telephony systems", "Corporate desk IP phones", "Call recording and IVR routing", "Headsets for BPO/KPO environments"],
     brands: "Matrix, Panasonic, Grandstream, Jabra",
   },
+];
+
+const faqs = [
+  {
+    question: "Do you offer AMC for enterprise printers and copiers?",
+    answer: "Yes, we offer comprehensive Annual Maintenance Contracts (AMC) that cover toner replacement, drum maintenance, and routine servicing for high-volume network printers from brands like HP, Canon, and Epson."
+  },
+  {
+    question: "What brands do you supply for video conferencing setups?",
+    answer: "We supply and integrate premium A/V solutions from Logitech, Poly, and Cisco Webex, ensuring full compatibility with platforms like Microsoft Teams and Zoom."
+  },
+  {
+    question: "Can you integrate IP-PBX telecom systems with our existing IT network?",
+    answer: "Yes, we specialize in deploying scalable IP-PBX and VoIP telephony systems from Matrix, Panasonic, and Grandstream that seamlessly integrate into your current network infrastructure."
+  },
+  {
+    question: "Do you arrange on-site demonstrations for high-end projectors?",
+    answer: "Yes, for large-scale deployments like boardroom setups or auditorium displays, we can arrange on-site demonstrations to ensure the equipment meets your exact visual requirements."
+  }
 ];
 
 
@@ -192,6 +212,13 @@ export default function OfficeElectronicsPage() {
             </FadeIn>
           </div>
         </div>
+      </Section>
+
+      <Section variant="white" className="border-t border-primary/10">
+        <FadeIn>
+          <Typography variant="h2" className="text-center mb-8">Frequently Asked Questions</Typography>
+          <FAQAccordion items={faqs} />
+        </FadeIn>
       </Section>
     </>
   );

@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CheckCircle2, Wifi, Shield, Lock, Router, Network, Cable, ShieldAlert, ShieldCheck, ClipboardCheck, Truck } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -38,6 +39,25 @@ const networkTypes = [
     features: ["High-definition IP Dome/Bullet Cameras", "Network Video Recorders (NVR) with 90-day retention", "PTZ cameras for warehouses", "Biometric & RFID access control"],
     brands: "Hikvision, CP Plus, Dahua",
   },
+];
+
+const faqs = [
+  {
+    question: "Do you provide installation and configuration for networking equipment?",
+    answer: "Yes, our certified engineers handle everything from basic router setup to complex SD-WAN deployments and structured cabling across your entire office."
+  },
+  {
+    question: "What brands do you supply for enterprise firewalls and switches?",
+    answer: "We partner with top-tier brands including Cisco, Fortinet, SonicWall, Sophos, Aruba, and Juniper to provide robust and scalable network infrastructure."
+  },
+  {
+    question: "Can you help with Wi-Fi dead zones in a large corporate office?",
+    answer: "Absolutely. We conduct comprehensive wireless site surveys and deploy high-density access points (like Ubiquiti UniFi or Cisco Meraki) to ensure seamless roaming and eliminate dead zones."
+  },
+  {
+    question: "Are your CCTV and surveillance systems compliant with corporate audit standards?",
+    answer: "Yes, we provide network video recorders (NVRs) with up to 90-day retention policies, ensuring your surveillance setup meets strict compliance and audit requirements."
+  }
 ];
 
 
@@ -192,6 +212,13 @@ export default function NetworkingSecurityPage() {
             </FadeIn>
           </div>
         </div>
+      </Section>
+
+      <Section variant="white" className="border-t border-primary/10">
+        <FadeIn>
+          <Typography variant="h2" className="text-center mb-8">Frequently Asked Questions</Typography>
+          <FAQAccordion items={faqs} />
+        </FadeIn>
       </Section>
 
       <Section variant="light" className="border-t border-primary/10">
