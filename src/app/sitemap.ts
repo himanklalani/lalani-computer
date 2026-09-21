@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.lalanicomputers.com'
+const BASE = process.env.NODE_ENV === 'production'
+  ? 'https://www.lalanicomputers.com'
+  : (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.lalanicomputers.com')
 
 const lastMod = new Date('2025-05-01')
 
