@@ -139,6 +139,34 @@ export default function ComputingPage() {
         </div>
       </Section>
 
+      {/* B2C Price Intent Hook - Under 50k */}
+      <Section variant="white" className="border-t border-primary/10">
+        <div className="max-w-5xl mx-auto bg-warm-bg1 p-8 rounded-3xl border border-primary/10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-8">
+          <FadeIn direction="left" className="flex-1">
+            <Typography variant="eyebrow" className="text-primary mb-2">Consumer Specials</Typography>
+            <Typography variant="h2" className="mb-4">Best Business Laptops Under ₹50,000</Typography>
+            <Typography variant="body" className="text-text-dark/80 mb-6">
+              Looking for individual purchases? Browse our curated list of budget-friendly, high-performance laptops perfect for students and home offices.
+            </Typography>
+            <Link href="/products/computing/best-laptops-under-50000">
+              <Button size="lg">View Top Laptops Under 50k</Button>
+            </Link>
+          </FadeIn>
+          <FadeIn direction="right" className="flex-1 w-full grid grid-cols-2 gap-4">
+            <div className="bg-white p-6 rounded-2xl border border-primary/10 text-center shadow-sm">
+              <Laptop className="w-8 h-8 text-primary mx-auto mb-3" />
+              <Typography variant="small" className="font-bold text-text-dark">HP Series</Typography>
+              <Typography variant="small" className="text-primary font-bold">From ₹42,000</Typography>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-primary/10 text-center shadow-sm">
+              <Laptop className="w-8 h-8 text-primary mx-auto mb-3" />
+              <Typography variant="small" className="font-bold text-text-dark">Dell Series</Typography>
+              <Typography variant="small" className="text-primary font-bold">From ₹45,500</Typography>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
       <Section variant="white" className="border-t border-primary/10">
         <FadeIn>
           <Typography variant="h2" className="text-center mb-4">Our Computing Portfolio</Typography>
@@ -261,6 +289,21 @@ export default function ComputingPage() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </Section>
+
+      {/* Internal Linking - Buyback */}
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
+          <FadeIn>
+            <Typography variant="h3" className="mb-4">Upgrading Your Fleet?</Typography>
+            <Typography variant="lead" className="mb-6">
+              Don't let your old laptops gather dust. We buy back corporate fleets of aging laptops and desktops with secure data wiping.
+            </Typography>
+            <Link href="/solutions/it-asset-buyback">
+              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore IT Asset Buyback</Button>
+            </Link>
+          </FadeIn>
         </div>
       </Section>
 

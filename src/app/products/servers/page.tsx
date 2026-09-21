@@ -249,6 +249,21 @@ export default function ServersPage() {
         </div>
       </Section>
 
+      {/* Internal Linking - Buyback */}
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
+          <FadeIn>
+            <Typography variant="h3" className="mb-4">Upgrading your data center?</Typography>
+            <Typography variant="lead" className="mb-6">
+              We offer fair-market IT Asset Buyback for your old storage servers, ensuring secure data wiping and e-waste compliance.
+            </Typography>
+            <Link href="/solutions/it-asset-buyback">
+              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore Buyback & Wholesale</Button>
+            </Link>
+          </FadeIn>
+        </div>
+      </Section>
+
       {/* FAQ Section */}
       <Section variant="white" className="border-t border-primary/10">
         <div className="max-w-4xl mx-auto mb-12 text-center">

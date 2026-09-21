@@ -90,13 +90,13 @@ export default function RepairsPage() {
       <Section variant="light" className="pt-16 pb-12">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
-            <Typography variant="eyebrow">EXPERT IT SERVICE CENTER</Typography>
+            <Typography variant="eyebrow">DOORSTEP & ON-SITE IT HARDWARE SUPPORT</Typography>
             <Typography variant="h1" className="mb-6">IT Hardware Repair & Upgrades</Typography>
             <Typography variant="lead">
               From dead motherboards to massive SSD speed upgrades. Trust Mumbai's IT hardware experts to revive laptops, desktops, and servers for both individuals and corporate fleets.
             </Typography>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact"><Button size="lg">Book a Diagnostic Check</Button></Link>
+              <Link href="/repair#service-booking"><Button size="lg">Book Doorstep / On-Site Service</Button></Link>
             </div>
           </FadeIn>
         </div>
@@ -108,7 +108,7 @@ export default function RepairsPage() {
             <FadeIn direction="left">
               <Typography variant="h2" className="mb-6">Hardware Repair Capabilities</Typography>
               <Typography variant="body" className="mb-8 text-text-dark/80">
-                We operate a secure, enterprise-grade repair facility capable of handling single-unit fixes or massive corporate fleet refurbishments.
+                We provide scheduled doorstep pickups across Mumbai MMR and on-site corporate engineer dispatch capable of handling single-unit fixes or massive corporate fleet refurbishments.
               </Typography>
               <ul className="space-y-4">
                 {deliverables.map((item, i) => (
@@ -170,6 +170,21 @@ export default function RepairsPage() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </Section>
+
+      {/* Internal Linking - Buyback */}
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
+          <FadeIn>
+            <Typography variant="h3" className="mb-4">Too Expensive to Repair?</Typography>
+            <Typography variant="lead" className="mb-6">
+              If your legacy hardware is beyond economical repair, don't throw it away. We buy back old, broken corporate IT assets for parts and secure recycling.
+            </Typography>
+            <Link href="/solutions/it-asset-buyback">
+              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore IT Asset Buyback</Button>
+            </Link>
+          </FadeIn>
         </div>
       </Section>
 

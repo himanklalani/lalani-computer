@@ -153,6 +153,21 @@ export default function OfficeSetupPage() {
         </div>
       </Section>
 
+      {/* Internal Linking - Buyback */}
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
+          <FadeIn>
+            <Typography variant="h3" className="mb-4">Closing an Old Branch?</Typography>
+            <Typography variant="lead" className="mb-6">
+              Moving to a new office means retiring old hardware. We buy back your aging servers, laptops, and networking gear with secure data wiping.
+            </Typography>
+            <Link href="/solutions/it-asset-buyback">
+              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore IT Asset Buyback</Button>
+            </Link>
+          </FadeIn>
+        </div>
+      </Section>
+
       <Section variant="white" className="border-t border-primary/10">
         <div className="max-w-4xl mx-auto mb-12 text-center">
           <FadeIn>

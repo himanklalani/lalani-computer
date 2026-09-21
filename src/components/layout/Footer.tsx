@@ -95,6 +95,8 @@ export default function Footer() {
               <FooterLink href="/products/servers">Servers & Storage</FooterLink>
               <FooterLink href="/products/networking-security">Networking</FooterLink>
               <FooterLink href="/solutions">Turnkey IT Setups</FooterLink>
+              <FooterLink href="/repair">Hardware Repairs</FooterLink>
+              <FooterLink href="/buyback">Corporate IT Buyback</FooterLink>
               <FooterLink href="/clients/industries/bfsi">BFSI IT Services</FooterLink>
             </ul>
           </div>

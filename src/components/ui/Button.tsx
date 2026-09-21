@@ -18,19 +18,19 @@ type Props = ButtonProps | AnchorProps;
 export const Button = React.forwardRef<HTMLElement, Props>(
   ({ variant = "primary", size = "md", isLoading = false, className = "", children, ...props }, ref) => {
     
-    const baseStyles = "inline-flex items-center justify-center font-medium transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none rounded-lg";
+    const baseStyles = "inline-flex items-center justify-center whitespace-nowrap font-medium transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none rounded-lg text-center leading-normal";
     
     const variants = {
-      primary: "bg-primary text-beige hover:bg-primary-dark",
+      primary: "bg-primary text-white hover:bg-primary-dark",
       secondary: "border-2 border-primary text-primary hover:bg-primary/5",
       ghost: "text-primary hover:bg-primary/10",
       darkCard: "bg-white/10 text-white hover:bg-white/20 border border-white/20",
     };
 
     const sizes = {
-      sm: "h-11 md:h-9 px-4 text-sm", // Mobile first: 44px min-height
-      md: "h-12 md:h-10 px-6 text-base", // Mobile first: 48px
-      lg: "h-14 md:h-12 px-8 text-lg", // Mobile first: 56px
+      sm: "min-h-[2.5rem] px-4 py-2 text-sm", // 40px min-height
+      md: "min-h-[2.75rem] px-5 py-2.5 text-sm md:text-base", // 44px min-height
+      lg: "min-h-[3rem] px-6 py-3 text-base md:text-lg", // 48px min-height
     };
 
     const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;

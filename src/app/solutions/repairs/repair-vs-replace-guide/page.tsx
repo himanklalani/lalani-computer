@@ -79,9 +79,9 @@ export default function RepairVsReplaceGuide() {
       description="A definitive guide for individuals and IT managers on when to repair existing IT infrastructure and when to invest in new hardware procurement."
       introTitle="Making the Right IT Investment Decision"
       introParagraphs={[
-        "One of the most common questions our Mumbai service center receives is: 'Is this worth fixing, or should I just buy a new one?'",
-        "Whether you are an individual with a broken gaming laptop or a corporate IT manager looking at a fleet of sluggish workstations, making the wrong choice can cost you significant time and money.",
-        "In this guide, the certified hardware engineers at Lalani Computers break down exactly how to evaluate your aging IT infrastructure and make a financially sound decision."
+        "One of the most common questions our Mumbai hardware engineering team receives is: 'Is this worth fixing, or should I just buy a new one?'",
+        "Whether you are an individual with a broken laptop or a corporate IT manager looking at a fleet of sluggish workstations, making the wrong choice can cost you significant time and money.",
+        "In this guide, the experienced hardware engineers at Lalani Computers break down exactly how to evaluate your aging IT infrastructure and make a financially sound decision."
       ]}
       sections={sections}
       conclusionTitle="Final Verdict"
@@ -91,8 +91,8 @@ export default function RepairVsReplaceGuide() {
         "At Lalani Computers, we offer both enterprise-grade repair services and bulk hardware procurement, ensuring you get unbiased advice on what's best for your budget."
       ]}
       ctaTitle="Need an Expert Opinion?"
-      ctaDescription="Bring your machine to our Mumbai service center, or contact us to schedule a fleet assessment. We will tell you honestly if it's worth repairing."
-      ctaButtonText="Book a Diagnostic Check"
+      ctaDescription="Schedule a doorstep hardware diagnosis in Mumbai or book an on-site corporate fleet assessment. We will tell you honestly if it's worth repairing."
+      ctaButtonText="Book Doorstep Diagnostic"
       ctaWhatsAppMessage="Hi, I would like to get a diagnostic assessment for my IT hardware to see if it should be repaired or replaced."
     />
   );

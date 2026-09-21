@@ -94,6 +94,18 @@ const solutions = [
     ],
     yOffset: "20px",
     href: "/solutions/storage-server-supplier-mumbai"
+  },
+  {
+    num: "08",
+    title: "IT Asset Buyback & Wholesale",
+    audience: "Enterprises & Local IT Shops",
+    features: [
+      "Fair-market procurement",
+      "Secure data wiping",
+      "Refurbished server wholesale",
+    ],
+    yOffset: "60px",
+    href: "/solutions/it-asset-buyback"
   }
 ];
 

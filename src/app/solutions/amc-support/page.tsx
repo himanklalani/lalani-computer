@@ -10,7 +10,7 @@ import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions/amc-support' },
-  title: "Corporate IT AMC & Support Services Mumbai | Lalani Computers",
+  title: "Computer AMC in Mumbai | Computer Network LAN AMC",
   description: "Comprehensive Annual Maintenance Contracts (AMC), preventative maintenance, and on-site IT troubleshooting for corporate teams in Mumbai.",
 };
 
@@ -89,7 +89,7 @@ export default function AMCSupportPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <Typography variant="eyebrow">Zero Downtime</Typography>
-            <Typography variant="h1" className="mb-6">Annual Maintenance & Support</Typography>
+            <Typography variant="h1" className="mb-6">Computer AMC & Network LAN AMC in Mumbai</Typography>
             <Typography variant="lead">
               Keep your corporate team running smoothly with our dedicated AMC services. We handle the IT headaches so you can focus on your business.
             </Typography>

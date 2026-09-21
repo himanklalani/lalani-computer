@@ -10,6 +10,7 @@ import { FloatingContactButtons } from "@/components/ui/FloatingContactButtons";
 import { CookieConsentProvider } from "@/components/providers/CookieConsentProvider";
 import { CookieConsentBanner } from "@/components/ui/CookieConsentBanner";
 import { GTMScript } from "@/components/analytics/GTMScript";
+import { StickyConversionBar } from "@/components/conversion/StickyConversionBar";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -137,6 +138,7 @@ export default function RootLayout({
           <PageTransition />
           <ScrollProgressBar />
           <FloatingContactButtons />
+          <StickyConversionBar />
           <LoaderOverlay />
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-primary focus:text-beige">
             Skip to main content

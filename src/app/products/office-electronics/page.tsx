@@ -214,6 +214,21 @@ export default function OfficeElectronicsPage() {
         </div>
       </Section>
 
+      {/* Internal Linking - Buyback */}
+      <Section variant="light" className="border-t border-primary/10">
+        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
+          <FadeIn>
+            <Typography variant="h3" className="mb-4">Retiring Old IT Equipment?</Typography>
+            <Typography variant="lead" className="mb-6">
+              When upgrading your office electronics, don't let old IT assets become a liability. We offer secure buyback and responsible e-waste disposal.
+            </Typography>
+            <Link href="/solutions/it-asset-buyback">
+              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore IT Asset Buyback</Button>
+            </Link>
+          </FadeIn>
+        </div>
+      </Section>
+
       <Section variant="white" className="border-t border-primary/10">
         <FadeIn>
           <Typography variant="h2" className="text-center mb-8">Frequently Asked Questions</Typography>

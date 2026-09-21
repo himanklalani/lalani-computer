@@ -59,18 +59,18 @@ export function HeroSection() {
           src="https://res.cloudinary.com/dzc0mfs9z/video/upload/q_auto,f_auto/v1/Untitled_design_uozjqh.mp4"
         />
         {/* Premium Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-[#000000]/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1925AA]/30 via-transparent to-transparent mix-blend-multiply" />
+        <div className="absolute inset-0 bg-[#000000]/60 sm:bg-[#000000]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1925AA]/60 via-transparent to-transparent mix-blend-multiply" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 w-full flex flex-col items-center text-center mt-6 sm:mt-12">
         
-        {/* Eyebrow */}
+        {/* Eyebrow - Hidden on phones completely, preserved as before on desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(12px)", scale: 0.95 }}
           animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="inline-flex items-center gap-2 bg-[#1925AA]/80 border border-[#1925AA]/50 text-[#E8E6E0] text-xs font-heading font-bold uppercase tracking-widest px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-6 sm:mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(25,37,170,0.4)]"
+          className="hidden sm:inline-flex items-center gap-2 bg-[#1925AA]/80 border border-[#1925AA]/50 text-[#E8E6E0] text-xs font-heading font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 sm:mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(25,37,170,0.4)]"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#E8E6E0] animate-pulse" />
           Mumbai's Premier IT Hardware Supplier
@@ -91,32 +91,46 @@ export function HeroSection() {
           From single high-end laptops for home offices to turnkey data center deployments. We deliver genuine IT hardware faster than e-commerce.
         </motion.p>
 
-        {/* SEO Contextual Links — Row 1: Enterprise / B2B */}
+        {/* SEO Contextual Links — Desktop: 2-Row text layout with bullet dots */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={isLoaded ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.1, duration: 0.8 }}
-          className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
+          className="mt-8 hidden sm:flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
         >
           <a href="/solutions/office-network-setup-india" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Office Network Setup Company India</a>
-          <span className="hidden sm:inline opacity-30">•</span>
+          <span className="opacity-30">•</span>
           <a href="/solutions/enterprise-servers-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Enterprise Servers in Mumbai</a>
-          <span className="hidden sm:inline opacity-30">•</span>
+          <span className="opacity-30">•</span>
           <a href="/solutions/storage-server-supplier-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Colocation &amp; Storage Server Supplier</a>
         </motion.div>
 
-        {/* SEO Contextual Links — Row 2: Individual / B2C */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={isLoaded ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-3 flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
+          className="mt-3 hidden sm:flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
         >
           <a href="/products/computing" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Laptops &amp; Desktops</a>
-          <span className="hidden sm:inline opacity-30">•</span>
+          <span className="opacity-30">•</span>
           <a href="/solutions/custom-pc-builds" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Custom PC Builds</a>
-          <span className="hidden sm:inline opacity-30">•</span>
+          <span className="opacity-30">•</span>
           <a href="/solutions/repairs" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Hardware Repairs</a>
+        </motion.div>
+
+        {/* SEO Contextual Links — Mobile: Clean Pills */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1.1, duration: 0.8 }}
+          className="mt-8 flex sm:hidden flex-wrap justify-center gap-2 max-w-3xl"
+        >
+          <a href="/solutions/office-network-setup-india" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Office Network Setup</a>
+          <a href="/solutions/enterprise-servers-mumbai" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Enterprise Servers</a>
+          <a href="/solutions/storage-server-supplier-mumbai" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Colocation</a>
+          <a href="/products/computing" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Laptops &amp; Desktops</a>
+          <a href="/solutions/custom-pc-builds" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Custom PCs</a>
+          <a href="/solutions/repairs" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Hardware Repairs</a>
         </motion.div>
 
       </div>

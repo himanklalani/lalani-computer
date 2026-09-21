@@ -41,6 +41,10 @@ const RequirementCTASection = dynamic(
   () => import("@/components/sections/home/RequirementCTASection").then(m => m.RequirementCTASection),
   { ssr: true }
 );
+const BuybackCTASection = dynamic(
+  () => import("@/components/sections/home/BuybackCTASection").then(m => m.BuybackCTASection),
+  { ssr: true }
+);
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -108,6 +112,7 @@ export default function Home() {
       <DeliveryAndServiceSection />
       <ClientsStripSection />
       <GuidesOverviewSection />
+      <BuybackCTASection />
       <TestimonialsSection />
     </>
   );
