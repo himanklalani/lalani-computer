@@ -127,6 +127,33 @@ export default async function RepairCategoryPage({ params }: PageProps) {
 
   const whatsAppMessage = `Hi, I need help with an IT hardware repair (${category.title}). Can we schedule a doorstep pickup or on-site visit?`;
 
+  // Context-aware buyback mapping for BER (Beyond Economical Repair) / ITAD liquidation
+  const buybackBridgeConfig = (() => {
+    if (slug === "servers") {
+      return {
+        title: "Retiring Aging Compute Nodes? Server & Storage Buyback",
+        description: "If your Dell PowerEdge, HPE ProLiant, or SAN storage arrays have reached end-of-life or replacement parts are uneconomical, recover residual capital. We provide careful on-site de-racking, NIST 800-88 compliant drive wiping, and immediate RTGS settlement.",
+        ctaText: "Explore Enterprise Server Buyback",
+        ctaHref: "/buyback/enterprise-servers-storage"
+      };
+    }
+    if (slug === "networking-infrastructure") {
+      return {
+        title: "Upgrading Network Core? Liquidate Switches & Firewalls",
+        description: "Replacing legacy Cisco Catalyst, Aruba switches, or enterprise firewalls? Don't let functional network hardware depreciate in server rooms. Lalani Computers buys back enterprise switches, routers, and commercial Wi-Fi gear in bulk.",
+        ctaText: "Explore Network Switch Buyback",
+        ctaHref: "/buyback/networking-switches-infrastructure"
+      };
+    }
+    // Default for laptop-desktop-repairs, motherboard-component-repair, etc.
+    return {
+      title: "Hardware Beyond Economical Repair? Liquidate Your Fleet",
+      description: "If severe motherboard corrosion, cracked chassis, or generational obsolescence make repair costs uneconomical, recover top residual value instead. We offer bulk corporate laptop buyback with NIST 800-88 compliant data wiping and immediate payment.",
+      ctaText: "Explore Corporate Laptop Buyback",
+      ctaHref: "/buyback/corporate-it-fleets"
+    };
+  })();
+
   return (
     <>
       <script
@@ -324,6 +351,41 @@ export default async function RepairCategoryPage({ params }: PageProps) {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Beyond Economical Repair (Cross-Funnel Buyback Bridge) */}
+      <Section variant="light" className="py-12 bg-white border-t border-primary/10">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
+          <div className="p-6 md:p-8 rounded-3xl bg-warm-bg1/60 border border-primary/15 shadow-sm space-y-4">
+            <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-text-dark">
+              {buybackBridgeConfig.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-text-dark/75 leading-relaxed">
+              {buybackBridgeConfig.description}
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <Link href={buybackBridgeConfig.ctaHref} className="flex-1 sm:flex-none">
+                <Button 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+                >
+                  <span>{buybackBridgeConfig.ctaText}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="/buyback" className="flex-1 sm:flex-none">
+                <Button 
+                  variant="outline" 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-white hover:bg-warm-bg1 text-text-dark border-primary/20 font-semibold py-3 px-6 text-sm rounded-xl transition-all"
+                >
+                  View All ITAD Programs
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </Section>

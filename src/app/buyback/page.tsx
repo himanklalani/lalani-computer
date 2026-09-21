@@ -481,6 +481,191 @@ export default function BuybackPortalPage() {
         </div>
       </Section>
 
+      {/* Refurbish & Extend Fleet Lifecycle (Cross-Funnel Repair Bridge) */}
+      <Section variant="light" className="py-16 md:py-20 bg-warm-bg1/40 border-t border-primary/10">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="text-primary font-bold text-xs uppercase tracking-wider mb-3">
+              Fleet Lifecycle Extension
+            </div>
+            <Typography variant="h2" className="text-text-dark text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
+              Not Ready to Retire Your Fleet? Extend Lifespan with Component Repairs
+            </Typography>
+            <Typography variant="lead" className="text-text-dark/75 text-sm sm:text-base leading-relaxed">
+              Before liquidating serviceable corporate systems or budgeting for expensive new OEM replacements, consider component-level diagnostics. From motherboard IC fixes to genuine display and battery replacements, we restore hardware performance at 60%–75% lower cost.
+            </Typography>
+          </div>
+
+          {/* 3 Core Repair Assurance Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
+            <div className="p-5 rounded-2xl bg-white border border-primary/10 shadow-sm flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-sm sm:text-base text-text-dark mb-1">
+                  30-Day Service Warranty
+                </h4>
+                <p className="text-xs text-text-dark/70 leading-relaxed">
+                  Comprehensive 30-day warranty backing all replaced components, soldered circuits, and serviced subsystems.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-white border border-primary/10 shadow-sm flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 border border-emerald-100">
+                <Cpu className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-sm sm:text-base text-text-dark mb-1">
+                  Chip-Level Engineering
+                </h4>
+                <p className="text-xs text-text-dark/70 leading-relaxed">
+                  We isolate and replace specific failed MOSFETs, PWM controllers, and power ICs instead of costly board swaps.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-white border border-primary/10 shadow-sm flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 border border-blue-100">
+                <Truck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-sm sm:text-base text-text-dark mb-1">
+                  Doorstep & On-Site Dispatch
+                </h4>
+                <p className="text-xs text-text-dark/70 leading-relaxed">
+                  Scheduled courier pickup across Mumbai MMR or field technician visits directly to your corporate facility.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Category Repair Deep Links */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <Link
+              href="/repair/laptop-desktop-repairs"
+              className="group p-5 rounded-2xl bg-white hover:bg-warm-bg1/60 border border-primary/15 hover:border-primary/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-9 h-9 rounded-xl bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center mb-3 transition-colors">
+                  <Laptop className="w-4 h-4" />
+                </div>
+                <h3 className="font-heading font-bold text-base text-text-dark group-hover:text-primary transition-colors mb-1.5">
+                  Laptop & Desktop Care
+                </h3>
+                <p className="text-xs text-text-dark/70 leading-relaxed">
+                  FHD/IPS displays, OEM batteries, keyboards, hinge fabrication, and SSD speed upgrades.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-primary/10 flex items-center justify-between text-xs font-semibold text-primary">
+                <span>View Repair Options</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+
+            <Link
+              href="/repair/motherboard-component-repair"
+              className="group p-5 rounded-2xl bg-white hover:bg-warm-bg1/60 border border-primary/15 hover:border-primary/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-9 h-9 rounded-xl bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center mb-3 transition-colors">
+                  <Cpu className="w-4 h-4" />
+                </div>
+                <h3 className="font-heading font-bold text-base text-text-dark group-hover:text-primary transition-colors mb-1.5">
+                  Motherboard Diagnostics
+                </h3>
+                <p className="text-xs text-text-dark/70 leading-relaxed">
+                  Short circuit diagnosis, 19V rail tracing, charging IC swaps, and liquid damage recovery.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-primary/10 flex items-center justify-between text-xs font-semibold text-primary">
+                <span>View Board Diagnostics</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+
+            <Link
+              href="/repair/servers"
+              className="group p-5 rounded-2xl bg-white hover:bg-warm-bg1/60 border border-primary/15 hover:border-primary/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-9 h-9 rounded-xl bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center mb-3 transition-colors">
+                  <Server className="w-4 h-4" />
+                </div>
+                <h3 className="font-heading font-bold text-base text-text-dark group-hover:text-primary transition-colors mb-1.5">
+                  Server & Storage Uptime
+                </h3>
+                <p className="text-xs text-text-dark/70 leading-relaxed">
+                  RAID controller rebuilds, hot-swap PSU replacements, SAS backplanes, and 4-hour SLA on-site dispatch.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-primary/10 flex items-center justify-between text-xs font-semibold text-primary">
+                <span>View Server Support</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+
+            <Link
+              href="/repair/networking-infrastructure"
+              className="group p-5 rounded-2xl bg-white hover:bg-warm-bg1/60 border border-primary/15 hover:border-primary/40 transition-all duration-300 shadow-sm flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-9 h-9 rounded-xl bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center mb-3 transition-colors">
+                  <Network className="w-4 h-4" />
+                </div>
+                <h3 className="font-heading font-bold text-base text-text-dark group-hover:text-primary transition-colors mb-1.5">
+                  Switch & Wi-Fi Repair
+                </h3>
+                <p className="text-xs text-text-dark/70 leading-relaxed">
+                  PoE auxiliary supply repair, burnt SFP+/RJ45 ports, and enterprise firewall diagnostic service.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-primary/10 flex items-center justify-between text-xs font-semibold text-primary">
+                <span>View Network Repair</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </div>
+
+          {/* Action Row */}
+          <div className="p-6 md:p-8 rounded-3xl bg-white border border-primary/15 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h4 className="font-heading font-bold text-base sm:text-lg text-text-dark mb-1">
+                Have individual units or fleet batches requiring diagnostics?
+              </h4>
+              <p className="text-xs sm:text-sm text-text-dark/70">
+                Book scheduled doorstep pickup in Mumbai MMR or dispatch an engineer to your corporate office.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto flex-shrink-0">
+              <Link href="/repair" className="w-full sm:w-auto">
+                <Button 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 text-sm rounded-xl shadow-md transition-all"
+                >
+                  Book Hardware Diagnosis & Repair →
+                </Button>
+              </Link>
+              <a
+                href="https://wa.me/919323332850?text=Hi,%20we%20have%20hardware%20needing%20repair%20or%20servicing.%20Can%20we%20discuss%20doorstep%20pickup%20or%20an%20on-site%20visit?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <Button 
+                  variant="outline" 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-white hover:bg-warm-bg1 text-text-dark border-primary/25 font-semibold py-3 px-6 text-sm rounded-xl transition-all"
+                >
+                  WhatsApp Repair Desk
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* FAQ Section */}
       <Section variant="light" className="py-16 bg-white border-t border-primary/10">
         <div className="max-w-4xl mx-auto px-4 md:px-6">

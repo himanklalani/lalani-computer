@@ -16,7 +16,8 @@ import {
   ArrowRight,
   ChevronRight,
   BatteryCharging,
-  HardDrive
+  HardDrive,
+  Banknote
 } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
@@ -437,13 +438,177 @@ export default function RepairHubPage() {
                 2. On-Site Corporate Engineer Dispatch
               </h3>
               <p className="text-sm text-text-dark/75 leading-relaxed">
-                For corporate clients, data center cages, and office fleets. Our certified hardware technicians arrive at your facility equipped with replacement parts, SSDs, and diagnostic gear to service machines directly in your office.
+                For corporate clients, data center cages, and office fleets. Our experienced hardware technicians arrive at your facility equipped with replacement parts, SSDs, and diagnostic gear to service machines directly in your office.
               </p>
               <div className="text-xs text-text-dark/80 space-y-1 pt-2 font-medium">
                 <div>• Emergency 4-hour SLA response for mission-critical servers</div>
                 <div>• Fleet thermal servicing, RAM/SSD upgrades & OS deployments</div>
                 <div>• Dedicated enterprise account coordinator</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Beyond Economical Repair / Corporate Buyback Bridge */}
+      <Section variant="dark" className="py-16 md:py-20 bg-primary-dark text-white border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="text-primary-light font-bold text-xs uppercase tracking-wider mb-3">
+              Asset Lifecycle & Residual Capital Recovery
+            </div>
+            <Typography variant="h2" className="text-white text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
+              Hardware Beyond Economical Repair or Reaching IT Refresh?
+            </Typography>
+            <Typography variant="lead" className="text-beige/80 text-sm sm:text-base leading-relaxed">
+              When hardware repair costs exceed the residual book value, or your enterprise is upgrading entire device fleets, don&apos;t let depreciating assets sit idle. Liquidate corporate laptops, decommissioned rack servers, and network switches with itemized serial verification and immediate settlement.
+            </Typography>
+          </div>
+
+          {/* 3 Core Assurance Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
+            <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 text-primary-light">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-sm sm:text-base text-white mb-1">
+                  NIST 800-88 Compliant Sanitization
+                </h4>
+                <p className="text-xs text-beige/70 leading-relaxed">
+                  Cryptographic multi-pass data wiping with itemized drive wipe audit logs for internal IT records.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 text-emerald-400">
+                <Banknote className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-sm sm:text-base text-white mb-1">
+                  Immediate Corporate RTGS
+                </h4>
+                <p className="text-xs text-beige/70 leading-relaxed">
+                  Full upfront valuation and payout within 24 hours of physical serial audit, backed by official GST invoices.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 text-blue-400">
+                <Truck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-sm sm:text-base text-white mb-1">
+                  On-Site De-Racking & Pickup
+                </h4>
+                <p className="text-xs text-beige/70 leading-relaxed">
+                  Direct logistics across Mumbai MMR and Pan-India hubs. Our crew handles anti-static packing and rack extraction.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Category Liquidation Deep Links */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <Link
+              href="/buyback/corporate-it-fleets"
+              className="group p-6 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary-light/40 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-primary text-primary-light group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                  <Laptop className="w-5 h-5" />
+                </div>
+                <h3 className="font-heading font-bold text-lg text-white group-hover:text-primary-light transition-colors mb-2">
+                  Corporate Laptop Fleets
+                </h3>
+                <p className="text-xs text-beige/70 leading-relaxed">
+                  Bulk buyback for Dell Latitude, HP EliteBook, Lenovo ThinkPad & MacBook fleets. Tested, cosmetically worn, or mixed batches.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-primary-light group-hover:text-white">
+                <span>View Fleet Buyback</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+
+            <Link
+              href="/buyback/enterprise-servers-storage"
+              className="group p-6 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary-light/40 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-primary text-primary-light group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                  <Server className="w-5 h-5" />
+                </div>
+                <h3 className="font-heading font-bold text-lg text-white group-hover:text-primary-light transition-colors mb-2">
+                  Enterprise Servers & SAN
+                </h3>
+                <p className="text-xs text-beige/70 leading-relaxed">
+                  1U–4U Dell PowerEdge, HPE ProLiant, Supermicro racks, SAN arrays, and ECC RDIMM memory modules from retired data centers.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-primary-light group-hover:text-white">
+                <span>View Server Buyback</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+
+            <Link
+              href="/buyback/networking-switches-infrastructure"
+              className="group p-6 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary-light/40 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-primary text-primary-light group-hover:text-white flex items-center justify-center mb-4 transition-colors">
+                  <Network className="w-5 h-5" />
+                </div>
+                <h3 className="font-heading font-bold text-lg text-white group-hover:text-primary-light transition-colors mb-2">
+                  Managed Switches & Network
+                </h3>
+                <p className="text-xs text-beige/70 leading-relaxed">
+                  Cisco Catalyst, Aruba, Fortinet firewalls, and enterprise access points liquidated with quick serial audits and settlement.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-primary-light group-hover:text-white">
+                <span>View Network Buyback</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </div>
+
+          {/* Action Row */}
+          <div className="p-6 md:p-8 rounded-3xl bg-white/5 border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h4 className="font-heading font-bold text-base sm:text-lg text-white mb-1">
+                Have an asset list or surplus hardware inventory?
+              </h4>
+              <p className="text-xs sm:text-sm text-beige/70">
+                Upload your manifest or get an instant valuation offer from our corporate procurement desk.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto flex-shrink-0">
+              <Link href="/buyback" className="w-full sm:w-auto">
+                <Button 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 text-sm rounded-xl shadow-md transition-all"
+                >
+                  Explore IT Asset Buyback & ITAD →
+                </Button>
+              </Link>
+              <a
+                href="https://wa.me/919323332850?text=Hi,%20we%20have%20retired%20or%20faulty%20hardware%20that%20might%20be%20beyond%20economical%20repair.%20Can%20we%20discuss%20a%20buyback%20valuation?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <Button 
+                  variant="darkCard" 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold py-3 px-6 text-sm rounded-xl transition-all"
+                >
+                  WhatsApp ITAD Desk
+                </Button>
+              </a>
             </div>
           </div>
         </div>

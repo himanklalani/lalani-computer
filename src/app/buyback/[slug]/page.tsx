@@ -127,6 +127,33 @@ export default async function BuybackCategoryPage({ params }: PageProps) {
 
   const whatsAppMessage = `Hi, we are looking for a corporate IT buyback quotation for ${category.title}. Can we discuss on-site audit and valuation?`;
 
+  // Context-aware repair mapping for lifecycle extension
+  const repairBridgeConfig = (() => {
+    if (slug === "enterprise-servers-storage" || slug === "enterprise-servers") {
+      return {
+        title: "Need Server Remediation, Fan/PSU Replacement or RAID Rebuilds?",
+        description: "Experiencing unexpected hardware alarms or amber drive lights on production compute nodes? Our experienced technicians provide rapid on-site dispatch across Mumbai data centers with ready spare parts and 30-day warranty coverage.",
+        ctaText: "Explore Server & Storage Repair",
+        ctaHref: "/repair/servers"
+      };
+    }
+    if (slug === "networking-switches-infrastructure" || slug === "networking-switches") {
+      return {
+        title: "PoE Power Supply Fault or Burnt SFP+ Port on Core Switches?",
+        description: "Don't discard high-performance Cisco, Aruba, or Fortinet equipment due to auxiliary power faults or damaged optical ports. We provide component-level diagnostics and circuit-level repairs backed by a 30-day warranty.",
+        ctaText: "Explore Network Switch Repair",
+        ctaHref: "/repair/networking-infrastructure"
+      };
+    }
+    // Default for corporate-it-fleets, bulk-laptops, etc.
+    return {
+      title: "Have Units with Repairable Faults? Screen, Battery & Logic Board Repairs",
+      description: "Before writing off corporate laptops due to cracked displays, degraded batteries, or boot issues, let our engineering team diagnose them. We provide genuine OEM parts, chip-level logic board repairs, 30-day warranty, and scheduled doorstep collection across Mumbai MMR.",
+      ctaText: "Explore Laptop & Desktop Repairs",
+      ctaHref: "/repair/laptop-desktop-repairs"
+    };
+  })();
+
   return (
     <>
       <script
@@ -332,6 +359,41 @@ export default async function BuybackCategoryPage({ params }: PageProps) {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Refurbish Alternative (Cross-Funnel Repair Bridge) */}
+      <Section variant="light" className="py-12 bg-white border-t border-primary/10">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
+          <div className="p-6 md:p-8 rounded-3xl bg-warm-bg1/60 border border-primary/15 shadow-sm space-y-4">
+            <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-text-dark">
+              {repairBridgeConfig.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-text-dark/75 leading-relaxed">
+              {repairBridgeConfig.description}
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <Link href={repairBridgeConfig.ctaHref} className="flex-1 sm:flex-none">
+                <Button 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+                >
+                  <span>{repairBridgeConfig.ctaText}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="/repair" className="flex-1 sm:flex-none">
+                <Button 
+                  variant="outline" 
+                  size="md" 
+                  className="w-full sm:w-auto whitespace-nowrap bg-white hover:bg-warm-bg1 text-text-dark border-primary/20 font-semibold py-3 px-6 text-sm rounded-xl transition-all"
+                >
+                  View All Repair Services
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </Section>

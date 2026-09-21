@@ -68,7 +68,7 @@ const SERVICE_MODELS = [
   {
     id: "onsite",
     title: "On-Site Corporate Visit",
-    desc: "Certified hardware technician dispatched directly to your business premises.",
+    desc: "Experienced hardware technician dispatched directly to your business premises.",
     icon: Building
   }
 ];
