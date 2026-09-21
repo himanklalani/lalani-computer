@@ -23,7 +23,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { RepairServiceBooking } from "@/components/conversion/RepairServiceBooking";
-import { REPAIR_CATEGORIES, RepairCategory } from "@/lib/data/repairData";
+import { REPAIR_CATEGORIES, RepairCategory, PRIMARY_REPAIR_CATEGORIES } from "@/lib/data/repairData";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -126,6 +126,11 @@ export default async function RepairCategoryPage({ params }: PageProps) {
   };
 
   const whatsAppMessage = `Hi, I need help with an IT hardware repair (${category.title}). Can we schedule a doorstep pickup or on-site visit?`;
+
+  // Sibling repair categories (excluding current category)
+  const siblingRepairCategories = PRIMARY_REPAIR_CATEGORIES.filter(
+    (cat) => cat.slug !== category.slug && cat.slug !== slug
+  );
 
   // Context-aware buyback mapping for BER (Beyond Economical Repair) / ITAD liquidation
   const buybackBridgeConfig = (() => {
@@ -415,6 +420,73 @@ export default async function RepairCategoryPage({ params }: PageProps) {
           </div>
 
           <FAQAccordion items={category.faqs} />
+        </div>
+      </Section>
+
+      {/* Sibling Repair Services Navigation */}
+      <Section variant="dark" className="py-16 bg-primary-dark text-white border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <Typography variant="eyebrow" className="text-primary-light mb-2">Related Support</Typography>
+            <Typography variant="h2" className="text-white text-2xl sm:text-3xl font-extrabold mb-3">
+              Explore Other Hardware Repair Services
+            </Typography>
+            <Typography variant="lead" className="text-beige/70 text-xs sm:text-sm">
+              Need diagnostics or component replacements for other office systems? Scheduled doorstep collection across Mumbai MMR and on-site corporate engineer visits.
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {siblingRepairCategories.map((sibling) => (
+              <div
+                key={sibling.slug}
+                className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-primary-light/40 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary-light">
+                    {sibling.turnaroundTime}
+                  </span>
+                  <h3 className="text-lg font-heading font-bold text-white mt-1 mb-2 group-hover:text-primary-light transition-colors">
+                    {sibling.title}
+                  </h3>
+                  <p className="text-xs text-beige/70 leading-relaxed mb-4 line-clamp-2">
+                    {sibling.subheadline}
+                  </p>
+
+                  <div className="space-y-1.5 pt-2 border-t border-white/10 text-xs text-beige/80">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                      <span>{sibling.warrantyPeriod}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                      <span>Doorstep Pickup / On-Site</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-white/10">
+                  <Link
+                    href={`/repair/${sibling.slug}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-primary-light hover:text-white transition-colors"
+                  >
+                    <span>View Failure Modes & Steps</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/repair"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-primary-light hover:text-white transition-colors"
+            >
+              <span>View All IT Hardware Repair Services</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </Section>
     </>

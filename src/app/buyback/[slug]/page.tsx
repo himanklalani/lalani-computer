@@ -23,7 +23,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CorporateAssetInquiry } from "@/components/conversion/CorporateAssetInquiry";
-import { BUYBACK_CATEGORIES, BuybackCategory } from "@/lib/data/buybackData";
+import { BUYBACK_CATEGORIES, BuybackCategory, PRIMARY_BUYBACK_CATEGORIES } from "@/lib/data/buybackData";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -126,6 +126,11 @@ export default async function BuybackCategoryPage({ params }: PageProps) {
   };
 
   const whatsAppMessage = `Hi, we are looking for a corporate IT buyback quotation for ${category.title}. Can we discuss on-site audit and valuation?`;
+
+  // Sibling buyback categories (excluding current category)
+  const siblingBuybackCategories = PRIMARY_BUYBACK_CATEGORIES.filter(
+    (cat) => cat.slug !== category.slug && cat.slug !== slug
+  );
 
   // Context-aware repair mapping for lifecycle extension
   const repairBridgeConfig = (() => {
@@ -423,6 +428,73 @@ export default async function BuybackCategoryPage({ params }: PageProps) {
           </div>
 
           <FAQAccordion items={category.faqs} />
+        </div>
+      </Section>
+
+      {/* Sibling Buyback Categories Navigation */}
+      <Section variant="dark" className="py-16 bg-primary-dark text-white border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <Typography variant="eyebrow" className="text-primary-light mb-2">Other Asset Classes</Typography>
+            <Typography variant="h2" className="text-white text-2xl sm:text-3xl font-extrabold mb-3">
+              Explore Other Corporate Liquidation Programs
+            </Typography>
+            <Typography variant="lead" className="text-beige/70 text-xs sm:text-sm">
+              Retiring a mixed IT environment? We provide on-site serial audits, NIST 800-88 compliant drive wiping, and immediate RTGS settlement.
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {siblingBuybackCategories.map((sibling) => (
+              <div
+                key={sibling.slug}
+                className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-primary-light/40 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary-light">
+                    {sibling.payoutTimeline}
+                  </span>
+                  <h3 className="text-lg font-heading font-bold text-white mt-1 mb-2 group-hover:text-primary-light transition-colors">
+                    {sibling.title}
+                  </h3>
+                  <p className="text-xs text-beige/70 leading-relaxed mb-4 line-clamp-2">
+                    {sibling.subheadline}
+                  </p>
+
+                  <div className="space-y-1.5 pt-2 border-t border-white/10 text-xs text-beige/80">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                      <span>{sibling.pickupCoverage}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                      <span>NIST 800-88 Compliant Data Wiping</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-white/10">
+                  <Link
+                    href={`/buyback/${sibling.slug}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-primary-light hover:text-white transition-colors"
+                  >
+                    <span>View Evaluation Criteria</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/buyback"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-primary-light hover:text-white transition-colors"
+            >
+              <span>View All Corporate ITAD Programs</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </Section>
     </>
