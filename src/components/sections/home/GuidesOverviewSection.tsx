@@ -41,7 +41,7 @@ export function GuidesOverviewSection() {
     <Section variant="light" className="border-t border-primary/10">
       <div className="max-w-5xl mx-auto">
         <FadeIn className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+          <div className="hidden sm:inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
             <BookOpen className="w-3.5 h-3.5" />
             Expert IT Guides & Resources
           </div>

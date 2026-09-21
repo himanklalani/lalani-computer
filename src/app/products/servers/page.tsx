@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Server, Database, Activity, HardDrive, ShieldCheck, LineChart, Truck, Wrench, Settings, Briefcase } from "lucide-react";
+import { CheckCircle2, Server, Database, Activity, HardDrive, ShieldCheck, LineChart, Truck, Wrench, Settings, Briefcase, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -249,18 +249,64 @@ export default function ServersPage() {
         </div>
       </Section>
 
-      {/* Internal Linking - Buyback */}
-      <Section variant="light" className="border-t border-primary/10">
-        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
-          <FadeIn>
-            <Typography variant="h3" className="mb-4">Upgrading your data center?</Typography>
-            <Typography variant="lead" className="mb-6">
-              We offer fair-market IT Asset Buyback for your old storage servers, ensuring secure data wiping and e-waste compliance.
+      {/* Enterprise Infrastructure Lifecycle: Server Repair & Decommissioning Buyback */}
+      <Section variant="light" className="border-t border-primary/10 py-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <Typography variant="eyebrow" className="text-primary mb-2">Enterprise Infrastructure Lifecycle</Typography>
+            <Typography variant="h2" className="text-2xl sm:text-3xl font-extrabold text-text-dark">
+              Server Maintenance or Data Center Liquidation
             </Typography>
-            <Link href="/solutions/it-asset-buyback">
-              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore Buyback & Wholesale</Button>
-            </Link>
-          </FadeIn>
+            <Typography variant="lead" className="text-sm sm:text-base text-text-dark/70 mt-2">
+              Beyond enterprise server procurement, Lalani Computers provides mission-critical hardware repairs and turnkey decommissioning across Mumbai data centers.
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: Enterprise Server Repair */}
+            <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <Wrench className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
+                  Server Hardware Maintenance & Repair
+                </h3>
+                <p className="text-sm text-text-dark/80 leading-relaxed mb-6">
+                  Degraded RAID arrays, redundant PSU failures, SAS backplane faults, and memory panics on Dell PowerEdge, HPE ProLiant, and Lenovo racks. Emergency on-site dispatch with a <strong>30-day parts warranty</strong>.
+                </p>
+              </div>
+              <div>
+                <Link href="/repair/servers">
+                  <Button variant="secondary" className="w-full sm:w-auto hover:bg-primary hover:text-white transition-colors">
+                    Book Server Maintenance
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: Server & Storage Buyback */}
+            <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-100">
+                  <RefreshCw className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
+                  Decommissioned Server & Storage Buyback
+                </h3>
+                <p className="text-sm text-text-dark/80 leading-relaxed mb-6">
+                  Consolidating server rooms or upgrading clusters? We liquidate 1U–4U rack servers, SAN/NAS storage arrays, and enterprise online UPS units with <strong>instant RTGS payment</strong> and certified drive sanitization.
+                </p>
+              </div>
+              <div>
+                <Link href="/buyback/enterprise-servers-storage">
+                  <Button className="w-full sm:w-auto bg-primary text-white hover:bg-primary-dark">
+                    Liquidate Server Infrastructure
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 

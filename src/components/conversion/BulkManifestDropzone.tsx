@@ -206,7 +206,7 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
             Supported formats: <strong className="text-text-dark">.xlsx, .xls, .csv, .pdf</strong> (Up to 15MB)
           </p>
         </div>
-        <div className="inline-flex items-center gap-2 text-xs text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full font-medium border border-emerald-200 self-start sm:self-auto">
+        <div className="hidden sm:inline-flex items-center gap-2 text-xs text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full font-medium border border-emerald-200 self-start sm:self-auto">
           <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
           <span>100% Confidential • Direct Audit</span>
         </div>

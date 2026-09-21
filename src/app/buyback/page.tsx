@@ -182,7 +182,7 @@ export default function BuybackPortalPage() {
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
         <div className="max-w-5xl mx-auto text-center relative z-10 px-4">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-primary-light border border-white/15 text-xs font-bold uppercase tracking-wider mb-6">
+            <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-primary-light border border-white/15 text-xs font-bold uppercase tracking-wider mb-6">
               <Building className="w-3.5 h-3.5" />
               <span>Corporate IT Hardware Buyback • Mumbai MMR & Pan-India</span>
             </div>
@@ -423,7 +423,7 @@ export default function BuybackPortalPage() {
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-4 max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-primary-light text-xs font-bold uppercase tracking-wider">
+              <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-primary-light text-xs font-bold uppercase tracking-wider">
                 <Cpu className="w-3.5 h-3.5" />
                 <span>The Lalani B2B Procurement Advantage</span>
               </div>

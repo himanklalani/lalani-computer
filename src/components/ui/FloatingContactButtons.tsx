@@ -19,8 +19,36 @@ export function FloatingContactButtons() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
+  const [isStickyBarActive, setIsStickyBarActive] = useState(false);
+
   useEffect(() => {
     return loaderState.subscribe(setLoading);
+  }, []);
+
+  useEffect(() => {
+    const handleStickyBarChange = (e: Event) => {
+      const customEvent = e as CustomEvent<boolean>;
+      setIsStickyBarActive(Boolean(customEvent.detail));
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        if (!sessionStorage.getItem("sticky-bar-dismissed")) {
+          setIsStickyBarActive(true);
+        }
+      } else {
+        setIsStickyBarActive(false);
+      }
+    };
+
+    window.addEventListener("sticky-bar-visibility", handleStickyBarChange);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("sticky-bar-visibility", handleStickyBarChange);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const isVisible = !loading;
@@ -72,8 +100,12 @@ export function FloatingContactButtons() {
         duration: 0.6, 
         ease: [0.22, 1, 0.36, 1] 
       }}
-      className={`fixed bottom-6 right-6 z-[60] flex flex-col-reverse items-end gap-4 ${
-        !isVisible ? "pointer-events-none" : "pointer-events-auto"
+      className={`fixed right-6 md:right-8 z-[60] flex-col-reverse items-end gap-4 transition-all duration-300 ${
+        isStickyBarActive
+          ? "hidden md:flex md:bottom-20"
+          : "flex bottom-6"
+      } ${
+        !isVisible ? "pointer-events-none opacity-0" : ""
       }`}
     >
       {/* Main Trigger Button */}

@@ -190,7 +190,7 @@ export default function RepairHubPage() {
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
         <div className="max-w-5xl mx-auto text-center relative z-10 px-4">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-primary-light border border-white/15 text-xs font-bold uppercase tracking-wider mb-6">
+            <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-primary-light border border-white/15 text-xs font-bold uppercase tracking-wider mb-6">
               <Wrench className="w-3.5 h-3.5" />
               <span>Doorstep Pickup & On-Site Fleet Support • Mumbai MMR</span>
             </div>

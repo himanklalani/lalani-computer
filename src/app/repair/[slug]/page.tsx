@@ -149,7 +149,7 @@ export default async function RepairCategoryPage({ params }: PageProps) {
       <Section variant="dark" className="pt-16 pb-20 relative bg-primary-dark">
         <div className="max-w-5xl mx-auto text-center px-4">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-primary-light border border-white/15 text-xs font-bold uppercase tracking-wider mb-6">
+            <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-primary-light border border-white/15 text-xs font-bold uppercase tracking-wider mb-6">
               <Wrench className="w-3.5 h-3.5" />
               <span>{category.eyebrow}</span>
             </div>

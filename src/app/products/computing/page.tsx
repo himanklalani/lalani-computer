@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Laptop, Monitor, Cpu, Briefcase, User, Building, Package, ShieldCheck, Truck, RefreshCw, CreditCard } from "lucide-react";
+import { CheckCircle2, Laptop, Monitor, Cpu, Briefcase, User, Building, Package, ShieldCheck, Truck, RefreshCw, CreditCard, Wrench } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -292,18 +292,64 @@ export default function ComputingPage() {
         </div>
       </Section>
 
-      {/* Internal Linking - Buyback */}
-      <Section variant="light" className="border-t border-primary/10">
-        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
-          <FadeIn>
-            <Typography variant="h3" className="mb-4">Upgrading Your Fleet?</Typography>
-            <Typography variant="lead" className="mb-6">
-              Don't let your old laptops gather dust. We buy back corporate fleets of aging laptops and desktops with secure data wiping.
+      {/* Hardware Lifecycle Support: Doorstep Repair & Fleet Buyback */}
+      <Section variant="light" className="border-t border-primary/10 py-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <Typography variant="eyebrow" className="text-primary mb-2">Complete Hardware Lifecycle Care</Typography>
+            <Typography variant="h2" className="text-2xl sm:text-3xl font-extrabold text-text-dark">
+              Maintain or Liquidate Your Laptops & Desktops
             </Typography>
-            <Link href="/solutions/it-asset-buyback">
-              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore IT Asset Buyback</Button>
-            </Link>
-          </FadeIn>
+            <Typography variant="lead" className="text-sm sm:text-base text-text-dark/70 mt-2">
+              Beyond supplying new machines, Lalani Computers supports your existing fleet with doorstep hardware servicing and corporate liquidation across Mumbai.
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: Doorstep Repair & Maintenance */}
+            <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <Wrench className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
+                  Laptop & Desktop Repairs
+                </h3>
+                <p className="text-sm text-text-dark/80 leading-relaxed mb-6">
+                  Cracked screens, swollen batteries, broken hinges, slow HDD to SSD speed upgrades, and motherboard diagnostics. Scheduled doorstep pickup across Mumbai MMR with a <strong>30-day comprehensive warranty</strong>.
+                </p>
+              </div>
+              <div>
+                <Link href="/repair/laptop-desktop-repairs">
+                  <Button variant="secondary" className="w-full sm:w-auto hover:bg-primary hover:text-white transition-colors">
+                    Book Doorstep Repair
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: Corporate IT Fleet Buyback */}
+            <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-100">
+                  <RefreshCw className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
+                  Corporate Laptop Fleet Buyback
+                </h3>
+                <p className="text-sm text-text-dark/80 leading-relaxed mb-6">
+                  Upgrading your company workforce? Convert retired batches of 10 to 500+ Dell, HP, Lenovo, or Apple laptops into working capital with <strong>instant RTGS payment</strong> and compliant data wiping.
+                </p>
+              </div>
+              <div>
+                <Link href="/buyback/corporate-it-fleets">
+                  <Button className="w-full sm:w-auto bg-primary text-white hover:bg-primary-dark">
+                    Get Buyback Valuation
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 

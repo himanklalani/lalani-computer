@@ -4,7 +4,7 @@ import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
-import { CheckCircle2, Wifi, Shield, Lock, Router, Network, Cable, ShieldAlert, ShieldCheck, ClipboardCheck, Truck } from "lucide-react";
+import { CheckCircle2, Wifi, Shield, Lock, Router, Network, Cable, ShieldAlert, ShieldCheck, ClipboardCheck, Truck, Wrench, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -214,18 +214,64 @@ export default function NetworkingSecurityPage() {
         </div>
       </Section>
 
-      {/* Internal Linking - Buyback */}
-      <Section variant="light" className="border-t border-primary/10">
-        <div className="max-w-4xl mx-auto text-center bg-white p-8 rounded-3xl border border-primary/10 shadow-sm">
-          <FadeIn>
-            <Typography variant="h3" className="mb-4">Retiring Old Networking Gear?</Typography>
-            <Typography variant="lead" className="mb-6">
-              If you're upgrading your network backbone, we offer fair-market buyback for enterprise switches, firewalls, and routers.
+      {/* Network Infrastructure Lifecycle: Switch Repair & Surplus Buyback */}
+      <Section variant="light" className="border-t border-primary/10 py-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <Typography variant="eyebrow" className="text-primary mb-2">Network Infrastructure Lifecycle</Typography>
+            <Typography variant="h2" className="text-2xl sm:text-3xl font-extrabold text-text-dark">
+              Switch & Firewall Repair or Surplus Buyback
             </Typography>
-            <Link href="/solutions/it-asset-buyback">
-              <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore IT Asset Buyback</Button>
-            </Link>
-          </FadeIn>
+            <Typography variant="lead" className="text-sm sm:text-base text-text-dark/70 mt-2">
+              Keep your campus and office network connected with component-level switch repairs, or liquidate decommissioned Cisco and Aruba hardware.
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: Enterprise Switch Repair */}
+            <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <Wrench className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
+                  Enterprise Switch & Wi-Fi Repair
+                </h3>
+                <p className="text-sm text-text-dark/80 leading-relaxed mb-6">
+                  Blown internal PoE power modules, burnt SFP+ uplink ports, and corrupted ROMMON bootloaders on Cisco Catalyst, Aruba CX, and Fortinet switches. Doorstep pickup across Mumbai with a <strong>30-day warranty</strong>.
+                </p>
+              </div>
+              <div>
+                <Link href="/repair/networking-infrastructure">
+                  <Button variant="secondary" className="w-full sm:w-auto hover:bg-primary hover:text-white transition-colors">
+                    Book Switch Repair
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: Surplus Network Equipment Buyback */}
+            <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-100">
+                  <RefreshCw className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
+                  Surplus Network Gear Buyback
+                </h3>
+                <p className="text-sm text-text-dark/80 leading-relaxed mb-6">
+                  Upgrading your campus backbone or consolidating offices? We buy back surplus managed Gigabit/10G switches, commercial Wi-Fi APs, and firewalls with <strong>instant RTGS payment</strong> and prompt pickup.
+                </p>
+              </div>
+              <div>
+                <Link href="/buyback/networking-switches-infrastructure">
+                  <Button className="w-full sm:w-auto bg-primary text-white hover:bg-primary-dark">
+                    Sell Surplus Networking
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
