@@ -81,12 +81,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}/products/peripherals-power`,
       lastModified: lastMod,
       changeFrequency: 'weekly',
-      priority: 0.65,
-    },
-    {
-      url: `${BASE}/products/accessories`,
-      lastModified: lastMod,
-      changeFrequency: 'weekly',
       priority: 0.75,
     },
 

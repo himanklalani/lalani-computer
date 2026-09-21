@@ -16,6 +16,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/products/accessories',
+        destination: '/products/peripherals-power',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
