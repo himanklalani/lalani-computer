@@ -33,15 +33,15 @@ const defaultProps = {
   btnOpenBg: "var(--color-beige)",
   btnOpenColor: "var(--color-primary)",
   navFontSizeDesktop: 38,
-  navFontSizeMobile: 28,
+  navFontSizeMobile: 34,
   footerFontSizeDesktop: 18,
   footerFontSizeMobile: 16,
   btnFontSizeDesktop: 16,
-  btnFontSizeMobile: 14,
+  btnFontSizeMobile: 15,
   menuWidthDesktop: "460px",
   menuHeightDesktop: "620px",
-  menuWidthMobile: "92vw",
-  menuHeightMobile: "76vh",
+  menuWidthMobile: "min(460px, calc(100vw - 24px))",
+  menuHeightMobile: "min(620px, calc(100dvh - 32px))",
   mobileBreakpoint: 768,
   springStiffness: 60,
   springDamping: 14,
@@ -137,8 +137,8 @@ export function MorphedMenu(props: MorphedMenuProps) {
   }, [click]);
 
   const isMobile = windowWidth < mobileBreakpoint;
-  const buttonWidth = isMobile ? "90px" : "110px";
-  const buttonHeight = isMobile ? "40px" : "46px";
+  const buttonWidth = isMobile ? "105px" : "110px";
+  const buttonHeight = isMobile ? "44px" : "46px";
 
   const perspectiveAnimation: Variants = {
     initial: { opacity: 0, rotateX: 100, translateY: 80 },
@@ -229,14 +229,17 @@ export function MorphedMenu(props: MorphedMenuProps) {
         animate={click ? "open" : "closed"}
       >
         <div
+          className="[&::-webkit-scrollbar]:hidden"
           style={{
             display: "flex",
             flexDirection: "column",
-            marginLeft: isMobile ? "16px" : "40px",
-            marginTop: isMobile ? "12px" : "20px",
+            marginLeft: isMobile ? "32px" : "40px",
+            marginTop: isMobile ? "16px" : "20px",
             marginBottom: "4px",
             overflowY: "auto",
-            maxHeight: isMobile ? "calc(76vh - 90px)" : "calc(620px - 100px)",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            maxHeight: isMobile ? "calc(82vh - 90px)" : "calc(620px - 100px)",
             paddingRight: "16px",
           }}
         >
@@ -399,11 +402,20 @@ function Menubutton({
   const [hovered, setHovered] = useState(false);
   const fontSize = isMobile ? `${btnFontSizeMobile}px` : `${btnFontSizeDesktop}px`;
 
+  const handleMouseEnter = () => {
+    if (typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches) {
+      setHovered(true);
+    }
+  };
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
   return (
     <button
       onClick={() => setClick(!click)}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       aria-expanded={menuOpen}
       aria-haspopup="menu"
       aria-controls={menuId}
@@ -415,8 +427,8 @@ function Menubutton({
         right: "8px",
         cursor: "pointer",
         zIndex: 2,
-        width: isMobile ? "90px" : "110px",
-        height: isMobile ? "40px" : "46px",
+        width: isMobile ? "105px" : "110px",
+        height: isMobile ? "44px" : "46px",
         borderRadius: "8px",
         overflow: "hidden",
         border: "none",
