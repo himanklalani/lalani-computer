@@ -68,7 +68,7 @@ export default function ServersPage() {
         "name": "Do you provide on-site server rack installation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our certified engineers handle complete on-site racking, stacking, OS deployment, and custom RAID configurations across Mumbai, Navi Mumbai, and Thane."
+          "text": "Yes, our experienced systems engineers handle complete on-site racking, stacking, OS deployment, and custom RAID configurations across Mumbai, Navi Mumbai, and Thane."
         }
       }
     ]
@@ -85,7 +85,7 @@ export default function ServersPage() {
     },
     {
       question: "Do you provide on-site server rack installation?",
-      answer: "Yes, our certified engineers handle complete on-site racking, stacking, OS deployment, and custom RAID configurations across Mumbai, Navi Mumbai, and Thane."
+      answer: "Yes, our experienced systems engineers handle complete on-site racking, stacking, OS deployment, and custom RAID configurations across Mumbai, Navi Mumbai, and Thane."
     }
   ];
 
@@ -218,8 +218,8 @@ export default function ServersPage() {
                   <Wrench className="w-6 h-6" />
                 </div>
                 <div>
-                  <Typography variant="h3" className="text-white text-lg mb-1">Certified Engineers</Typography>
-                  <Typography variant="small" className="text-beige/75">On-site racking, stacking, and OS deployment by trained technical experts.</Typography>
+                  <Typography variant="h3" className="text-white text-lg mb-1">Experienced Systems Engineers</Typography>
+                  <Typography variant="small" className="text-beige/75">On-site racking, stacking, and OS deployment by seasoned technical experts.</Typography>
                 </div>
               </div>
             </FadeIn>
@@ -295,7 +295,7 @@ export default function ServersPage() {
                   Decommissioned Server & Storage Buyback
                 </h3>
                 <p className="text-sm text-text-dark/80 leading-relaxed mb-6">
-                  Consolidating server rooms or upgrading clusters? We liquidate 1U–4U rack servers, SAN/NAS storage arrays, and enterprise online UPS units with <strong>instant RTGS payment</strong> and certified drive sanitization.
+                  Consolidating server rooms or upgrading clusters? We liquidate 1U–4U rack servers, SAN/NAS storage arrays, and enterprise online UPS units with <strong>instant RTGS payment</strong> and NIST 800-88 compliant drive sanitization.
                 </p>
               </div>
               <div>

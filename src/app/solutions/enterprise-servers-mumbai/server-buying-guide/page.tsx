@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Enterprise Server Buying Guide 2026 | Lalani Computers",
@@ -59,13 +60,38 @@ export default function GuidePage() {
             {
               title: "Hardware RAID",
               desc: "Never rely on a single hard drive. Use a dedicated RAID controller card (like Dell PERC or HPE Smart Array) configured in RAID 5, 6, or 10. If a drive dies, the system keeps running, and you just slide a new one in without turning the server off."
+            },
+            {
+              title: "Server Maintenance & AMC",
+              desc: (
+                <>
+                  When backplanes, VRMs, or power supplies degrade in production, relying on standard turnaround times risks prolonged downtime. Explore our{" "}
+                  <Link href="/repair/servers" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+                    enterprise server repair &amp; SLA maintenance
+                  </Link>{" "}
+                  for on-site Mumbai diagnostics and component replacement.
+                </>
+              )
             }
           ]
         }
       ]}
       conclusionTitle="Buy the Right Compute"
       conclusionParagraphs={[
-        "Don't guess your workload requirements. A poorly spec'd server leads to sluggish databases and angry employees."
+        "Don't guess your workload requirements. A poorly spec'd server leads to sluggish databases and angry employees.",
+        (
+          <span key="server-lifecycle-bridge">
+            Upgrading your existing data center or decommissioning older rack nodes? We provide on-site{" "}
+            <Link href="/repair/servers" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+              server repairs &amp; upgrades
+            </Link>{" "}
+            to extend hardware life, as well as an enterprise{" "}
+            <Link href="/buyback/enterprise-servers-storage" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+              server &amp; storage buyback program
+            </Link>{" "}
+            featuring careful on-site de-racking, compliant data wiping, and immediate RTGS settlement.
+          </span>
+        )
       ]}
       ctaTitle="Need Help Sizing Your Server?"
       ctaDescription="Tell us about the applications and databases you need to run. Our server architects will design a custom Dell or HPE configuration tailored to your workload."

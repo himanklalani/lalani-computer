@@ -32,7 +32,7 @@ export default function AMCSupportPage() {
         "name": "Do you provide on-site IT support across Mumbai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our certified engineers are dispatched across Mumbai for physical hardware troubleshooting, network repairs, and preventative maintenance."
+          "text": "Yes, our experienced engineers are dispatched across Mumbai for physical hardware troubleshooting, network repairs, and preventative maintenance."
         }
       },
       {
@@ -57,7 +57,7 @@ export default function AMCSupportPage() {
   const faqItems = [
     {
       question: "Do you provide on-site IT support across Mumbai?",
-      answer: "Yes, our certified engineers are dispatched across Mumbai for physical hardware troubleshooting, network repairs, and preventative maintenance."
+      answer: "Yes, our experienced engineers are dispatched across Mumbai for physical hardware troubleshooting, network repairs, and preventative maintenance."
     },
     {
       question: "What does a comprehensive IT AMC cover?",
@@ -172,7 +172,7 @@ export default function AMCSupportPage() {
             <div className="p-8 md:p-12 bg-white border border-primary/10 shadow-lg rounded-2xl flex flex-col items-center text-center max-w-3xl mx-auto">
               <Typography variant="h2" className="mb-4">Ready to Secure Your IT Infrastructure?</Typography>
               <Typography variant="body" className="text-text-dark/80 mb-8 max-w-xl">
-                Tell us about your team size and requirements, and we'll provide a transparent AMC proposal.
+                Tell us about your team size and requirements, and we&apos;ll provide a transparent AMC proposal.
               </Typography>
               <a 
                 href={`https://wa.me/919323332850?text=${encodeURIComponent(`Hi, I am looking for a corporate IT AMC. Can we discuss a quote?`)}`} 

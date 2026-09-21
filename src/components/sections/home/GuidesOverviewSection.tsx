@@ -9,7 +9,7 @@ const guides = [
   {
     tag: "Repairs · Individual & Corporate",
     title: "IT Hardware: Repair vs. Replace Guide 2026",
-    desc: "When is it worth fixing? Our certified engineers break down exactly how to evaluate aging hardware and make the right financial decision.",
+    desc: "When is it worth fixing? Our experienced hardware specialists break down exactly how to evaluate aging hardware and make the right financial decision.",
     url: "/solutions/repairs/repair-vs-replace-guide",
     tagColor: "bg-orange-100 text-orange-700",
   },
@@ -49,7 +49,7 @@ export function GuidesOverviewSection() {
             Read Before You Buy
           </Typography>
           <Typography variant="lead" className="max-w-2xl mx-auto text-text-dark/70">
-            Free expert guides from our certified engineers — helping individuals and corporate IT teams make smarter procurement decisions.
+            Free expert guides from our experienced hardware specialists — helping individuals and corporate IT teams make smarter procurement decisions.
           </Typography>
         </FadeIn>
 

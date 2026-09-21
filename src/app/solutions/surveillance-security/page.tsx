@@ -32,7 +32,7 @@ export default function SurveillanceSecurityPage() {
         "name": "Do you provide professional CCTV installation for offices in Mumbai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our certified technicians conduct comprehensive site surveys to eliminate blind spots and install high-resolution IP cameras with surveillance-grade NVR storage."
+          "text": "Yes, our experienced technicians conduct comprehensive site surveys to eliminate blind spots and install high-resolution IP cameras with surveillance-grade NVR storage."
         }
       },
       {
@@ -57,7 +57,7 @@ export default function SurveillanceSecurityPage() {
   const faqItems = [
     {
       question: "Do you provide professional CCTV installation for offices in Mumbai?",
-      answer: "Yes, our certified technicians conduct comprehensive site surveys to eliminate blind spots and install high-resolution IP cameras with surveillance-grade NVR storage."
+      answer: "Yes, our experienced technicians conduct comprehensive site surveys to eliminate blind spots and install high-resolution IP cameras with surveillance-grade NVR storage."
     },
     {
       question: "Which CCTV brands do you recommend for corporate security?",

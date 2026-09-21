@@ -44,7 +44,7 @@ const networkTypes = [
 const faqs = [
   {
     question: "Do you provide installation and configuration for networking equipment?",
-    answer: "Yes, our certified engineers handle everything from basic router setup to complex SD-WAN deployments and structured cabling across your entire office."
+    answer: "Yes, our experienced network engineers handle everything from basic router setup to complex SD-WAN deployments and structured cabling across your entire office."
   },
   {
     question: "What brands do you supply for enterprise firewalls and switches?",
@@ -93,7 +93,7 @@ export default function NetworkingSecurityPage() {
         <FadeIn>
           <Typography variant="h2" className="text-center mb-4">Our Networking Portfolio</Typography>
           <Typography variant="lead" className="text-center mb-12 max-w-2xl mx-auto">
-            Build a resilient IT backbone with top-tier global brands, delivered and installed by our certified engineers.
+            Build a resilient IT backbone with top-tier global brands, delivered and installed by our experienced network engineers.
           </Typography>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -140,7 +140,7 @@ export default function NetworkingSecurityPage() {
           <FadeIn>
             <Typography variant="h2" className="text-white text-center mb-8">Why Trust Lalani with Your Network?</Typography>
             <Typography variant="lead" className="text-center text-beige/70 mb-12">
-              Networking isn't just plugging in cables. We ensure bottleneck-free data flow and impenetrable perimeter security.
+              Networking isn&apos;t just plugging in cables. We ensure bottleneck-free data flow and impenetrable perimeter security.
             </Typography>
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -32,7 +32,7 @@ export default function EnterpriseServersMumbaiPage() {
         "name": "Do you supply enterprise servers from top brands like Dell, HP, and Lenovo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we are authorized partners for major brands including Dell EMC, HPE, Lenovo, and Cisco. We supply both brand new and certified refurbished enterprise servers based on your budget requirements."
+          "text": "Yes, we source and supply genuine hardware from major enterprise brands including Dell EMC, HPE, Lenovo, and Cisco. We supply both brand new and quality-tested refurbished enterprise servers based on your budget requirements."
         }
       },
       {
@@ -40,7 +40,7 @@ export default function EnterpriseServersMumbaiPage() {
         "name": "Do you help with server installation and OS configuration in Mumbai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. Our certified engineers handle physical rack mounting, cabling, BIOS configuration, RAID setup, and OS installation (Windows Server, Linux, VMware) directly at your Mumbai office."
+          "text": "Absolutely. Our experienced server engineers handle physical rack mounting, cabling, BIOS configuration, RAID setup, and OS installation (Windows Server, Linux, VMware) directly at your Mumbai office."
         }
       },
       {
@@ -57,11 +57,11 @@ export default function EnterpriseServersMumbaiPage() {
   const faqItems = [
     {
       question: "Do you supply enterprise servers from top brands like Dell, HP, and Lenovo?",
-      answer: "Yes, we are authorized partners for major brands including Dell EMC, HPE, Lenovo, and Cisco. We supply both brand new and certified refurbished enterprise servers based on your budget requirements."
+      answer: "Yes, we source and supply genuine hardware from major enterprise brands including Dell EMC, HPE, Lenovo, and Cisco. We supply both brand new and quality-tested refurbished enterprise servers based on your budget requirements."
     },
     {
       question: "Do you help with server installation and OS configuration in Mumbai?",
-      answer: "Absolutely. Our certified engineers handle physical rack mounting, cabling, BIOS configuration, RAID setup, and OS installation (Windows Server, Linux, VMware) directly at your Mumbai office."
+      answer: "Absolutely. Our experienced server engineers handle physical rack mounting, cabling, BIOS configuration, RAID setup, and OS installation (Windows Server, Linux, VMware) directly at your Mumbai office."
     },
     {
       question: "What is the lead time for delivering enterprise servers in Mumbai?",

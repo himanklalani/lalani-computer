@@ -93,7 +93,7 @@ export default function RepairsPage() {
             <Typography variant="eyebrow">DOORSTEP & ON-SITE IT HARDWARE SUPPORT</Typography>
             <Typography variant="h1" className="mb-6">IT Hardware Repair & Upgrades</Typography>
             <Typography variant="lead">
-              From dead motherboards to massive SSD speed upgrades. Trust Mumbai's IT hardware experts to revive laptops, desktops, and servers for both individuals and corporate fleets.
+              From dead motherboards to massive SSD speed upgrades. Trust Mumbai&apos;s IT hardware experts to revive laptops, desktops, and servers for both individuals and corporate fleets.
             </Typography>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/repair#service-booking"><Button size="lg">Book Doorstep / On-Site Service</Button></Link>
@@ -164,7 +164,7 @@ export default function RepairsPage() {
                   <Wrench className="w-8 h-8" />
                 </div>
                 <div>
-                  <Typography variant="h3">Certified Engineers</Typography>
+                  <Typography variant="h3">Experienced Engineers</Typography>
                   <Typography variant="small" className="text-text-dark/70">Deep component-level diagnostic expertise.</Typography>
                 </div>
               </div>
@@ -179,9 +179,9 @@ export default function RepairsPage() {
           <FadeIn>
             <Typography variant="h3" className="mb-4">Too Expensive to Repair?</Typography>
             <Typography variant="lead" className="mb-6">
-              If your legacy hardware is beyond economical repair, don't throw it away. We buy back old, broken corporate IT assets for parts and secure recycling.
+              If your legacy hardware is beyond economical repair, don&apos;t throw it away. We buy back old, broken corporate IT assets for parts and secure recycling.
             </Typography>
-            <Link href="/solutions/it-asset-buyback">
+            <Link href="/buyback">
               <Button variant="secondary" className="hover:bg-primary hover:text-white transition-colors">Explore IT Asset Buyback</Button>
             </Link>
           </FadeIn>
@@ -207,7 +207,7 @@ export default function RepairsPage() {
             <div className="p-8 md:p-12 bg-white border border-primary/10 shadow-lg rounded-2xl flex flex-col items-center text-center max-w-3xl mx-auto">
               <Typography variant="h2" className="mb-4">Ready to Revive Your Hardware?</Typography>
               <Typography variant="body" className="text-text-dark/80 mb-8 max-w-xl">
-                Tell us about your IT hardware issue, and our certified engineers will provide a transparent diagnostic estimate.
+                Tell us about your IT hardware issue, and our experienced hardware engineers will provide a transparent diagnostic estimate.
               </Typography>
               <a 
                 href={`https://wa.me/919323332850?text=${encodeURIComponent(`Hi, I need help with an IT hardware repair. Can we discuss a quote?`)}`} 

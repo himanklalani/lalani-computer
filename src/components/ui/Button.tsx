@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 import { Loader2 } from "lucide-react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "darkCard";
+type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "darkCard";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface BaseProps {
@@ -23,6 +23,7 @@ export const Button = React.forwardRef<HTMLElement, Props>(
     const variants = {
       primary: "bg-primary text-white hover:bg-primary-dark",
       secondary: "border-2 border-primary text-primary hover:bg-primary/5",
+      outline: "border border-primary/20 text-primary hover:bg-primary/5",
       ghost: "text-primary hover:bg-primary/10",
       darkCard: "bg-white/10 text-white hover:bg-white/20 border border-white/20",
     };

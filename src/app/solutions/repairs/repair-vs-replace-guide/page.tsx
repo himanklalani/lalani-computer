@@ -1,6 +1,7 @@
 import React from "react";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: '/solutions/repairs/repair-vs-replace-guide' },
@@ -44,15 +45,39 @@ export default function RepairVsReplaceGuide() {
       bullets: [
         {
           title: "Motherboard Failure (Dead Laptop):",
-          desc: "Often caused by short circuits. Our chip-level engineers can often repair the motherboard for a small fee, saving you from a costly replacement."
+          desc: (
+            <>
+              Often caused by blown MOSFETs, shorted capacitors, or power rail faults. Our chip-level technicians restore circuits via{" "}
+              <Link href="/repair/motherboard-component-repair" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+                motherboard &amp; micro-soldering repairs
+              </Link>{" "}
+              with a 30-day service warranty, saving you from a costly replacement.
+            </>
+          )
         },
         {
           title: "Swollen Batteries & Broken Hinges:",
-          desc: "These are standard wear-and-tear items. Replacing a battery or screen hinge is extremely affordable and should not be a reason to throw away a good laptop."
+          desc: (
+            <>
+              These are standard wear-and-tear items. Replacing a battery or screen hinge is routine and affordable through our{" "}
+              <Link href="/repair/laptop-desktop-repairs" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+                laptop &amp; desktop repair services
+              </Link>{" "}
+              with convenient doorstep pickup across Mumbai.
+            </>
+          )
         },
         {
-          title: "Liquid Spills:",
-          desc: "If water or coffee is spilled on a laptop, immediately turn it off and bring it to a repair center. If the motherboard is severely corroded, replacement of the machine might be the only option."
+          title: "Liquid Spills & Unfixable Damage:",
+          desc: (
+            <>
+              If water or coffee is spilled on a laptop, immediately disconnect the power and schedule a doorstep collection. If liquid ingress has permanently corroded multi-layer circuitry, trade it in via our{" "}
+              <Link href="/buyback/corporate-it-fleets" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+                corporate IT fleet buyback program
+              </Link>{" "}
+              for salvage credit and immediate RTGS settlement.
+            </>
+          )
         }
       ]
     },
@@ -62,7 +87,14 @@ export default function RepairVsReplaceGuide() {
       bullets: [
         {
           title: "Data Destruction vs. Data Migration:",
-          desc: "If you replace machines, what happens to the old data? Lalani Computers provides secure data wiping and migration services to ensure compliance."
+          desc: (
+            <>
+              When decommissioning aging machines, Lalani Computers provides tamper-proof NIST 800-88 compliant data wiping with itemized serial audit logs as part of our{" "}
+              <Link href="/buyback" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+                corporate IT asset buyback process
+              </Link>.
+            </>
+          )
         },
         {
           title: "TPM 2.0 and Windows 11:",
@@ -87,8 +119,20 @@ export default function RepairVsReplaceGuide() {
       conclusionTitle="Final Verdict"
       conclusionParagraphs={[
         "Before making a massive capital investment in new hardware, always get a diagnostic check on your existing fleet.",
-        "A simple ₹3,000 SSD upgrade can often make a 4-year-old laptop perform faster than a brand new entry-level machine.",
-        "At Lalani Computers, we offer both enterprise-grade repair services and bulk hardware procurement, ensuring you get unbiased advice on what's best for your budget."
+        "A simple SSD upgrade or RAM expansion can often make a 4-year-old laptop perform faster than a brand new entry-level machine.",
+        (
+          <span key="conclusion-bridge">
+            At Lalani Computers, we offer both enterprise-grade{" "}
+            <Link href="/repair" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+              hardware repair services
+            </Link>{" "}
+            (with doorstep pickup across Mumbai MMR) and{" "}
+            <Link href="/buyback" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">
+              corporate IT asset buyback &amp; liquidation
+            </Link>
+            , ensuring you receive honest, unbiased advice tailored to your budget.
+          </span>
+        )
       ]}
       ctaTitle="Need an Expert Opinion?"
       ctaDescription="Schedule a doorstep hardware diagnosis in Mumbai or book an on-site corporate fleet assessment. We will tell you honestly if it's worth repairing."

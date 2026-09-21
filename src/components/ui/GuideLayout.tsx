@@ -8,9 +8,9 @@ import Link from "next/link";
 
 export interface GuideSection {
   title: string;
-  intro?: string;
-  bullets?: { title: string; desc: string }[];
-  conclusion?: string;
+  intro?: string | React.ReactNode;
+  bullets?: { title: string; desc: string | React.ReactNode }[];
+  conclusion?: string | React.ReactNode;
 }
 
 export interface GuideLayoutProps {
@@ -18,10 +18,10 @@ export interface GuideLayoutProps {
   title: string;
   description: string;
   introTitle: string;
-  introParagraphs: string[];
+  introParagraphs: (string | React.ReactNode)[];
   sections: GuideSection[];
   conclusionTitle?: string;
-  conclusionParagraphs?: string[];
+  conclusionParagraphs?: (string | React.ReactNode)[];
   ctaTitle: string;
   ctaDescription: string;
   ctaButtonText: string;

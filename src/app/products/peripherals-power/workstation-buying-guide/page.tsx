@@ -42,7 +42,7 @@ export default function GuidePage() {
             <article className="prose prose-lg prose-headings:text-text-dark prose-headings:font-heading prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-primary prose-p:text-text-dark/80 prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-text-dark prose-ul:list-disc prose-ul:pl-6 max-w-none">
               
               <h2>Introduction</h2>
-              <p>Welcome to our comprehensive guide on this topic. Implementing the right technology infrastructure is critical for business success in today's fast-paced environment. This guide will walk you through the essential considerations and best practices.</p>
+              <p>Welcome to our comprehensive guide on this topic. Implementing the right technology infrastructure is critical for business success in today&apos;s fast-paced environment. This guide will walk you through the essential considerations and best practices.</p>
 
               <h2>Key Considerations</h2>
               <ul>
@@ -55,11 +55,11 @@ export default function GuidePage() {
               <h2>Implementation Steps</h2>
               <p><strong>1. Assessment:</strong> Begin by auditing your current infrastructure and identifying bottlenecks.</p>
               <p><strong>2. Planning:</strong> Develop a detailed Bill of Materials (BOM) tailored to your budget and technical requirements.</p>
-              <p><strong>3. Deployment:</strong> Work with certified professionals to ensure seamless installation and minimal disruption to your daily operations.</p>
-              <p><strong>4. Maintenance:</strong> Establish a proactive maintenance schedule to extend the lifespan of your equipment.</p>
+              <p><strong>3. Deployment:</strong> Work with experienced IT professionals to ensure seamless installation and minimal disruption to your daily operations.</p>
+              <p><strong>4. Maintenance &amp; Upgrades:</strong> Establish a proactive maintenance schedule to extend the lifespan of your equipment. When components face wear-and-tear, leverage our <Link href="/repair" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">hardware repair and upgrade services</Link> across Mumbai.</p>
 
               <h2>Conclusion</h2>
-              <p>By following these guidelines, you can ensure a reliable, secure, and high-performance IT environment. For personalized advice, our team of experts is always ready to assist.</p>
+              <p>By following these guidelines, you can ensure a reliable, secure, and high-performance IT environment. When upgrading full desk setups across corporate floors, trade in aging legacy hardware through our <Link href="/buyback" className="text-primary font-semibold underline underline-offset-2 hover:opacity-80">corporate IT asset buyback program</Link> for instant liquidity and secure e-waste compliance.</p>
             </article>
           </FadeIn>
 

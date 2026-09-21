@@ -2,7 +2,7 @@ import React from "react";
 import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { CheckCircle2, ArrowDown } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
@@ -70,7 +70,7 @@ export default function SolutionsPage() {
       title: "Storage Server Supplier & Colocation",
       useCase: "Data intensive enterprises and growing startups.",
       process: "Storage Needs Analysis → Hardware Supply → Space Assignment → Setup",
-      deliverables: ["New and Refurbished SAN/NAS", "All-Flash Arrays", "Certified Used Storage Servers", "Colocation Space"],
+      deliverables: ["New and Refurbished SAN/NAS", "All-Flash Arrays", "Tested Pre-Owned Storage Servers", "Colocation Space"],
       href: "/solutions/storage-server-supplier-mumbai"
     },
     {
@@ -92,7 +92,7 @@ export default function SolutionsPage() {
       useCase: "Individuals & Corporates.",
       process: "Diagnostics → Cost Estimate → Sourcing → Repair → Testing",
       deliverables: ["Chip-Level Motherboard Repair", "Speed & Storage Upgrades", "Screen & Battery Replacements", "Server Troubleshooting"],
-      href: "/solutions/repairs"
+      href: "/repair"
     },
   ];
 
@@ -100,7 +100,7 @@ export default function SolutionsPage() {
     { step: 1, title: "Discovery & Assessment", desc: "We understand your physical space, workforce size, and specific software/hardware requirements." },
     { step: 2, title: "Tailored Proposal", desc: "Our engineers craft a detailed Bill of Materials (BOM) with options for multiple budgets and brands." },
     { step: 3, title: "Rapid Procurement", desc: "Leveraging our massive Mumbai inventory, we source all components immediately." },
-    { step: 4, title: "Expert Deployment", desc: "Our certified technicians handle cabling, racking, stacking, and configuration on-site." },
+    { step: 4, title: "Expert Deployment", desc: "Our experienced technicians handle cabling, racking, stacking, and configuration on-site." },
     { step: 5, title: "Ongoing Support (AMC)", desc: "We provide dedicated post-installation support to ensure zero downtime." },
   ];
 

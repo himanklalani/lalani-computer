@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { loaderState } from "@/lib/loaderState";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 // ─── Word Reveal Animation ─────────────────────────────────────────────────────
 const HEADLINE = "Lalani Computers";
@@ -73,7 +74,7 @@ export function HeroSection() {
           className="hidden sm:inline-flex items-center gap-2 bg-[#1925AA]/80 border border-[#1925AA]/50 text-[#E8E6E0] text-xs font-heading font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 sm:mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(25,37,170,0.4)]"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#E8E6E0] animate-pulse" />
-          Mumbai's Premier IT Hardware Supplier
+          Mumbai&apos;s Premier IT Hardware Supplier
         </motion.div>
 
         {/* Headline */}
@@ -98,11 +99,11 @@ export function HeroSection() {
           transition={{ delay: 1.1, duration: 0.8 }}
           className="mt-8 hidden sm:flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
         >
-          <a href="/solutions/office-network-setup-india" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Office Network Setup Company India</a>
+          <Link href="/solutions/office-network-setup-india" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Office Network Setup Company India</Link>
           <span className="opacity-30">•</span>
-          <a href="/solutions/enterprise-servers-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Enterprise Servers in Mumbai</a>
+          <Link href="/solutions/enterprise-servers-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Enterprise Servers in Mumbai</Link>
           <span className="opacity-30">•</span>
-          <a href="/solutions/storage-server-supplier-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Colocation &amp; Storage Server Supplier</a>
+          <Link href="/solutions/storage-server-supplier-mumbai" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Colocation &amp; Storage Server Supplier</Link>
         </motion.div>
 
         <motion.div 
@@ -111,11 +112,13 @@ export function HeroSection() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-3 hidden sm:flex flex-wrap justify-center gap-3 sm:gap-5 text-sm md:text-base font-medium text-[#E8E6E0]/80"
         >
-          <a href="/products/computing" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Laptops &amp; Desktops</a>
+          <Link href="/products/computing" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Laptops &amp; Desktops</Link>
           <span className="opacity-30">•</span>
-          <a href="/solutions/custom-pc-builds" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Custom PC Builds</a>
+          <Link href="/solutions/custom-pc-builds" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Custom PC Builds</Link>
           <span className="opacity-30">•</span>
-          <a href="/solutions/repairs" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Hardware Repairs</a>
+          <Link href="/repair" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Hardware Repairs</Link>
+          <span className="opacity-30">•</span>
+          <Link href="/buyback" className="hover:text-white hover:underline underline-offset-4 decoration-primary/50 transition-all">Corporate IT Buyback</Link>
         </motion.div>
 
         {/* SEO Contextual Links — Mobile: Clean Pills */}
@@ -125,12 +128,11 @@ export function HeroSection() {
           transition={{ delay: 1.1, duration: 0.8 }}
           className="mt-8 flex sm:hidden flex-wrap justify-center gap-2 max-w-3xl"
         >
-          <a href="/solutions/office-network-setup-india" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Office Network Setup</a>
-          <a href="/solutions/enterprise-servers-mumbai" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Enterprise Servers</a>
-          <a href="/solutions/storage-server-supplier-mumbai" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Colocation</a>
-          <a href="/products/computing" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Laptops &amp; Desktops</a>
-          <a href="/solutions/custom-pc-builds" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Custom PCs</a>
-          <a href="/solutions/repairs" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Hardware Repairs</a>
+          <Link href="/solutions/office-network-setup-india" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Office Network</Link>
+          <Link href="/solutions/enterprise-servers-mumbai" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Enterprise Servers</Link>
+          <Link href="/products/computing" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Laptops &amp; PCs</Link>
+          <Link href="/repair" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">Hardware Repairs</Link>
+          <Link href="/buyback" className="px-3 py-1.5 border border-white/20 bg-black/20 backdrop-blur-sm rounded-full text-[11px] font-medium text-[#E8E6E0] hover:bg-white/10 hover:border-white/40 transition-colors">IT Buyback</Link>
         </motion.div>
 
       </div>

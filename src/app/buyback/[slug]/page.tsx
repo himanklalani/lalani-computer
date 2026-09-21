@@ -391,7 +391,7 @@ export default async function BuybackCategoryPage({ params }: PageProps) {
               </Link>
               <Link href="/repair" className="flex-1 sm:flex-none">
                 <Button 
-                  variant="outline" 
+                  variant="secondary" 
                   size="md" 
                   className="w-full sm:w-auto whitespace-nowrap bg-white hover:bg-warm-bg1 text-text-dark border-primary/20 font-semibold py-3 px-6 text-sm rounded-xl transition-all"
                 >

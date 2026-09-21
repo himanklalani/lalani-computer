@@ -654,7 +654,7 @@ export default function BuybackPortalPage() {
                 className="w-full sm:w-auto"
               >
                 <Button 
-                  variant="outline" 
+                  variant="secondary" 
                   size="md" 
                   className="w-full sm:w-auto whitespace-nowrap bg-white hover:bg-warm-bg1 text-text-dark border-primary/25 font-semibold py-3 px-6 text-sm rounded-xl transition-all"
                 >

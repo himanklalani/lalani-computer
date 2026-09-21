@@ -18,7 +18,7 @@ const usps: USPItem[] = [
   {
     id: 2,
     title: "On-Site Service",
-    subtitle: "Rapid turnaround with certified technicians",
+    subtitle: "Rapid turnaround with experienced technicians",
     Icon: Wrench,
   },
   {
