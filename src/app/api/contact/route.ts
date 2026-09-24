@@ -15,7 +15,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[\d\s\-\+\(\)]+$/;
 
 // ─── Lead Logger (local JSON file backup) ──────────────────────────────────────
-function saveLead(data: Record<string, string>) {
+function saveLead(data: Record<string, unknown>) {
   try {
     const logDir = path.join(process.cwd(), "leads");
     if (!fs.existsSync(logDir)) fs.mkdirSync(logDir, { recursive: true });
@@ -30,6 +30,49 @@ function saveLead(data: Record<string, string>) {
   }
 }
 
+// ─── Cloudinary Raw Upload Helper ─────────────────────────────────────────────
+async function uploadToCloudinary(base64Data: string, originalName: string): Promise<string | null> {
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const apiKey = process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY;
+  const apiSecret = process.env.CLOUDINARY_API_SECRET;
+
+  if (!cloudName || !apiKey || !apiSecret) return null;
+
+  try {
+    const timestamp = Math.round(new Date().getTime() / 1000);
+    const crypto = await import("crypto");
+    const ext = originalName.split(".").pop() || "csv";
+    const baseClean = originalName.replace(/\.[^/.]+$/, "").replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 30);
+    const publicId = `manifests/${Date.now()}_${baseClean}.${ext}`;
+
+    const stringToSign = `public_id=${publicId}&timestamp=${timestamp}${apiSecret}`;
+    const signature = crypto.createHash("sha1").update(stringToSign).digest("hex");
+
+    const formData = new FormData();
+    formData.append("file", base64Data);
+    formData.append("api_key", apiKey);
+    formData.append("timestamp", timestamp.toString());
+    formData.append("public_id", publicId);
+    formData.append("signature", signature);
+
+    const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/raw/upload`, {
+      method: "POST",
+      body: formData,
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      return data.secure_url || null;
+    } else {
+      console.warn("Cloudinary upload responded with status:", res.status);
+      return null;
+    }
+  } catch (err) {
+    console.warn("Cloudinary upload failed (storing in MongoDB):", err);
+    return null;
+  }
+}
+
 // ─── HTML Email Template ───────────────────────────────────────────────────────
 function buildEmailHTML(data: {
   name: string;
@@ -40,6 +83,9 @@ function buildEmailHTML(data: {
   requirementType?: string;
   timeline?: string;
   message?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileUrl?: string;
 }) {
   const field = (label: string, value: string) =>
     value
@@ -78,6 +124,7 @@ function buildEmailHTML(data: {
               ${field("City", data.city)}
               ${field("Requirement", data.requirementType || "N/A")}
               ${field("Timeline", data.timeline || "N/A")}
+              ${data.fileName ? field("Attached File", `${data.fileName} (${data.fileSize || ""})${data.fileUrl ? ` - <a href="${data.fileUrl}" style="color:#1925AA;font-weight:bold;">Download File</a>` : " (Attached to email)"}`) : ""}
             </table>
           </td>
         </tr>
@@ -144,7 +191,7 @@ export async function POST(req: Request) {
 
     // 2. Parse & Validate
     const body = await req.json();
-    const { name, company, email, phone, city, requirementType, message, timeline } = body;
+    const { name, company, email, phone, city, requirementType, message, timeline, file } = body;
 
     if (!name || typeof name !== "string" || name.trim().length < 2)
       return NextResponse.json({ success: false, error: "Please enter a valid name." }, { status: 400 });
@@ -155,10 +202,52 @@ export async function POST(req: Request) {
     if (!city || typeof city !== "string" || city.trim().length < 2)
       return NextResponse.json({ success: false, error: "Please enter a valid city." }, { status: 400 });
 
-    const leadData = { name, company, email, phone, city, requirementType, timeline, message };
+    interface LeadPayload {
+      name: string;
+      company?: string;
+      email: string;
+      phone: string;
+      city: string;
+      requirementType?: string;
+      timeline?: string;
+      message?: string;
+      fileName?: string;
+      fileSize?: string;
+      fileType?: string;
+      fileData?: string;
+      fileUrl?: string;
+    }
+
+    const leadData: LeadPayload = { 
+      name, 
+      company, 
+      email, 
+      phone, 
+      city, 
+      requirementType, 
+      timeline, 
+      message 
+    };
+
+    if (file && typeof file === "object" && file.data) {
+      leadData.fileName = file.name || "inventory_manifest.csv";
+      leadData.fileSize = file.size || "";
+      leadData.fileType = file.type || "CSV";
+      leadData.fileData = file.data; // Store full base64 data
+
+      // Try uploading to Cloudinary if credentials are configured
+      const uploadedUrl = await uploadToCloudinary(file.data, leadData.fileName || "manifest.csv");
+      if (uploadedUrl) {
+        leadData.fileUrl = uploadedUrl;
+      }
+    }
 
     // 3. Save lead locally (never lose a lead even if email fails)
-    saveLead(leadData);
+    const localBackup: Record<string, unknown> = { ...leadData };
+    if (localBackup.fileData) {
+      localBackup.fileData = "[Base64 Data Stored]";
+    }
+    saveLead(localBackup);
 
     // 3.5 Save to MongoDB
     try {
@@ -179,22 +268,40 @@ export async function POST(req: Request) {
       const resend = new Resend(resendApiKey);
       const fromAddress = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
-      const { error: sendError } = await resend.emails.send({
+      const emailPayload: Parameters<typeof resend.emails.send>[0] = {
         from: `Lalani Computers Website <${fromAddress}>`,
         to: [toEmail],
         replyTo: email,
         subject: `New Enquiry: ${requirementType || "General"} — ${name}`,
         html: buildEmailHTML(leadData),
-      });
+      };
+
+      if (leadData.fileData && leadData.fileName) {
+        try {
+          const rawBase64 = leadData.fileData.includes("base64,")
+            ? leadData.fileData.split("base64,")[1]
+            : leadData.fileData;
+          emailPayload.attachments = [
+            {
+              filename: leadData.fileName,
+              content: rawBase64,
+            },
+          ];
+        } catch (attErr) {
+          console.error("Resend attachment error:", attErr);
+        }
+      }
+
+      const { error: sendError } = await resend.emails.send(emailPayload);
 
       if (sendError) {
         console.error("Resend delivery error:", sendError);
-        // Lead is still saved locally, so we return success
+        // Lead is still saved locally and in MongoDB, so we return success
       }
     } else {
       // Dev mode — just log it
       console.log("\n📬 [DEV] Contact form submission (set RESEND_API_KEY to send real emails):");
-      console.log(JSON.stringify(leadData, null, 2));
+      console.log(JSON.stringify({ ...leadData, fileData: leadData.fileData ? "[Base64 Data Stored]" : undefined }, null, 2));
     }
 
     return NextResponse.json({ success: true, message: "Enquiry received! We'll be in touch shortly." });

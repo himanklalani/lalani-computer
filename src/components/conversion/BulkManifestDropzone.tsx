@@ -93,8 +93,8 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
       return;
     }
 
-    if (file.size > 15 * 1024 * 1024) {
-      setErrorMessage("File exceeds the 15MB limit. Please compress or split the file.");
+    if (file.size > 8 * 1024 * 1024) {
+      setErrorMessage("File exceeds the 8MB limit. For massive asset sheets, please share directly on WhatsApp or email.");
       return;
     }
 
@@ -145,6 +145,15 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
+  const readFileAsBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = (err) => reject(err);
+      reader.readAsDataURL(file);
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone) {
@@ -159,6 +168,21 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
       ? `Corporate Asset Manifest Uploaded: ${parsedData.fileName} (${parsedData.fileSize}, ${parsedData.fileType}${parsedData.rowCount > 0 ? `, ~${parsedData.rowCount} items` : ""})`
       : "Corporate IT Asset Manifest submitted without file attachment.";
 
+    let filePayload: { name: string; size: string; type: string; data: string } | null = null;
+    if (selectedFile) {
+      try {
+        const base64Data = await readFileAsBase64(selectedFile);
+        filePayload = {
+          name: selectedFile.name,
+          size: (selectedFile.size / 1024).toFixed(1) + " KB",
+          type: selectedFile.name.split(".").pop()?.toUpperCase() || "DOCUMENT",
+          data: base64Data,
+        };
+      } catch (readErr) {
+        console.error("Failed to read file for upload:", readErr);
+      }
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -171,7 +195,8 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
           city: city || "Mumbai",
           requirementType: "Bulk Corporate Asset Manifest (ITAD)",
           timeline: "Within 24 Hours",
-          message: `${summaryText}\nClient requested direct corporate evaluation and reverse logistics pickup.`
+          message: `${summaryText}\nClient requested direct corporate evaluation and reverse logistics pickup.`,
+          file: filePayload,
         })
       });
 
@@ -203,7 +228,7 @@ export function BulkManifestDropzone({ className = "" }: { className?: string })
             Upload Your Equipment List
           </h3>
           <p className="text-xs sm:text-sm text-text-dark/70 mt-0.5">
-            Supported formats: <strong className="text-text-dark">.xlsx, .xls, .csv, .pdf</strong> (Up to 15MB)
+            Supported formats: <strong className="text-text-dark">.xlsx, .xls, .csv, .pdf</strong> (Up to 8MB)
           </p>
         </div>
         <div className="hidden sm:inline-flex items-center gap-2 text-xs text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full font-medium border border-emerald-200 self-start sm:self-auto">

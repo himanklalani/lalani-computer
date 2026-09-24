@@ -6,6 +6,7 @@ import { LeadStatusSelect } from "@/components/admin/LeadStatusSelect";
 import { RefreshButton } from "@/components/admin/RefreshButton";
 import { LeadActions } from "@/components/admin/LeadActions";
 import { LeadRowActions } from "@/components/admin/LeadRowActions";
+import { LeadManifestViewer } from "@/components/admin/LeadManifestViewer";
 import type { LeadStatus } from "@/models/Lead";
 
 // Prevent static generation so this page always fetches fresh data
@@ -35,6 +36,25 @@ const STATUS_DOT: Record<LeadStatus, string> = {
   not_interested: "bg-gray-400",
 };
 
+interface LeadItem {
+  _id: { toString(): string } | string;
+  name: string;
+  email: string;
+  phone: string;
+  city: string;
+  company?: string;
+  requirementType?: string;
+  timeline?: string;
+  message?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileType?: string;
+  fileData?: string;
+  fileUrl?: string;
+  status?: LeadStatus;
+  createdAt: string | Date;
+}
+
 export default async function LeadsDashboardPage({ params }: PageProps) {
   const adminSecret = process.env.ADMIN_SECRET_KEY || "default_secret";
   const resolvedParams = await params;
@@ -43,11 +63,11 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
   }
 
   // Fetch leads from MongoDB
-  let leads: any[] = [];
+  let leads: LeadItem[] = [];
   try {
     if (process.env.MONGODB_URI) {
       await dbConnect();
-      leads = await Lead.find({}).sort({ createdAt: -1 }).lean();
+      leads = (await Lead.find({}).sort({ createdAt: -1 }).lean()) as unknown as LeadItem[];
     }
   } catch (error) {
     console.error("Failed to fetch leads:", error);
@@ -115,7 +135,7 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
                   </tr>
                 </thead>
                 <tbody className="text-text-dark text-sm divide-y divide-primary/5">
-                  {leads.map((lead: any) => (
+                  {leads.map((lead: LeadItem) => (
                     <tr key={lead._id.toString()} className="hover:bg-primary/[0.03] transition-colors">
 
                       {/* Status Column */}
@@ -186,6 +206,17 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
                         ) : (
                           <span className="text-xs text-text-dark/30 italic">No message.</span>
                         )}
+
+                        {/* Manifest File Attachment (Download & Preview) */}
+                        <LeadManifestViewer
+                          leadId={lead._id.toString()}
+                          fileName={lead.fileName}
+                          fileSize={lead.fileSize}
+                          fileType={lead.fileType}
+                          fileData={lead.fileData}
+                          fileUrl={lead.fileUrl}
+                          adminSecret={adminSecret}
+                        />
                       </td>
 
                       {/* Actions */}
@@ -202,7 +233,7 @@ export default async function LeadsDashboardPage({ params }: PageProps) {
                               requirementType: lead.requirementType,
                               timeline: lead.timeline,
                               message: lead.message,
-                              status: lead.status
+                              status: lead.status ?? "new"
                             }} 
                             adminSecret={adminSecret} 
                           />
