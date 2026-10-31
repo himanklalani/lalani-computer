@@ -1,11 +1,11 @@
-# LALANI COMPUTERS — CHANGES LOG
+ï»¿# LALANI COMPUTERS ï¿½ CHANGES LOG
 # Unpushed changes as of Aug 31, 2026 (NOT yet live on lalanicomputers.com)
 
 ================================================================================
-SESSION 1 — AUG 25, 2026
+SESSION 1 ï¿½ AUG 25, 2026
 ================================================================================
 
-CHANGE 1: /solutions/repairs/page.tsx — REBUILT
+CHANGE 1: /solutions/repairs/page.tsx ï¿½ REBUILT
 ----------------------------------------------
 What changed: Full page rebuild to Split-View architecture.
 Left side (checklist):
@@ -36,7 +36,7 @@ CONTENT REVIEW NOTE:
 
 ---
 
-CHANGE 2: /solutions/repairs/repair-vs-replace-guide/page.tsx — NEW FILE
+CHANGE 2: /solutions/repairs/repair-vs-replace-guide/page.tsx ï¿½ NEW FILE
 -------------------------------------------------------------------------
 Guide title: "IT Hardware: Repair vs. Replace Guide 2026"
 Sections:
@@ -50,14 +50,14 @@ CTA: "Book a Diagnostic Check" (WhatsApp)
 
 CONTENT REVIEW NOTE:
 [OK]  Content is accurate and dual-intent throughout.
-[OK]  Conclusion is honest — mentions ?3,000 SSD upgrade vs buying new. Builds trust.
+[OK]  Conclusion is honest ï¿½ mentions ?3,000 SSD upgrade vs buying new. Builds trust.
 [OK]  Liquid spillage and physical damage are mentioned in Section 3.
 [WATCH] Guide does not link back to the main repairs page from within the body text.
         Recommendation: Add an internal link inside Section 3 pointing back to /solutions/repairs.
 
 ---
 
-CHANGE 3: /products/accessories/page.tsx — UPGRADED
+CHANGE 3: /products/accessories/page.tsx ï¿½ UPGRADED
 ----------------------------------------------------
 What changed: "Why Buy From Lalani" section upgraded from plain text to 4-card grid.
 Cards:
@@ -76,50 +76,50 @@ CONTENT REVIEW NOTE:
 
 ---
 
-CHANGE 4: /products/accessories/workstation-buying-guide/page.tsx — NEW FILE
+CHANGE 4: /products/accessories/workstation-buying-guide/page.tsx ï¿½ NEW FILE
 -----------------------------------------------------------------------------
 Guide title: "The Complete Corporate Workstation & Accessories Guide 2026"
 Sections:
   1. OEM Docking Stations (Dell WD19, Lenovo Smart Docks, Targus DisplayLink)
   2. Dual Monitors vs. Ultrawides (24-inch 1080p vs 34-inch ultrawide)
   3. Ergonomics & Input Devices (Logitech MX Master 3S, MX Keys)
-  4. Audio & Communication — BPO Standard (Jabra Evolve2, Poly Blackwire)
+  4. Audio & Communication ï¿½ BPO Standard (Jabra Evolve2, Poly Blackwire)
 
 Conclusion: "Bulk Procurement vs. Single Buys"
 CTA: "Whether you need a single monitor for your home office or a BOM for 200 workstations..."
 
 CONTENT REVIEW NOTE:
-[OK]  Highly specific brand names and model numbers — excellent for SEO.
+[OK]  Highly specific brand names and model numbers ï¿½ excellent for SEO.
 [OK]  CTA is perfectly dual-intent.
 [WATCH] "Corporate" in the guide title may deter individual buyers on the homepage section.
         Recommendation: Monitor CTR. Consider renaming to "Ultimate Workstation Setup Guide"
         if individual traffic underperforms after going live.
 
 ================================================================================
-SESSION 2 — AUG 31, 2026
+SESSION 2 ï¿½ AUG 31, 2026
 ================================================================================
 
-CHANGE 5: src/components/sections/home/HeroSection.tsx — UPDATED
+CHANGE 5: src/components/sections/home/HeroSection.tsx ï¿½ UPDATED
 -----------------------------------------------------------------
 Element         | Before                                    | After
 ----------------|-------------------------------------------|----------------------------------
 Eyebrow         | "Enterprise IT Partner"                   | "Mumbai's Premier IT Hardware Supplier"
 Subheadline     | Generic B2B-only delivery copy            | Dual-intent: home offices + data centers
-SEO Links Row 1 | Office Network, Enterprise Servers, Colocation | SAME — preserved exactly
+SEO Links Row 1 | Office Network, Enterprise Servers, Colocation | SAME ï¿½ preserved exactly
 SEO Links Row 2 | DID NOT EXIST                             | Laptops & Desktops, Custom PC Builds, Hardware Repairs
-CTA Buttons     | NONE                                      | NONE — text links only (no buttons)
+CTA Buttons     | NONE                                      | NONE ï¿½ text links only (no buttons)
 
 CONTENT REVIEW NOTE:
-[OK]  Eyebrow is now inclusive — does not scare individual buyers.
+[OK]  Eyebrow is now inclusive ï¿½ does not scare individual buyers.
 [OK]  Subheadline is dual-intent.
-[OK]  Row 1 enterprise links preserved — no B2B regression.
-[OK]  Row 2 individual links added — repairs, laptops, custom PCs discoverable from hero.
+[OK]  Row 1 enterprise links preserved ï¿½ no B2B regression.
+[OK]  Row 2 individual links added ï¿½ repairs, laptops, custom PCs discoverable from hero.
 [WATCH] "faster than e-commerce" claim in subheadline is bold. Must ensure delivery SLA
         consistently meets this expectation or soften the wording.
 
 ---
 
-CHANGE 6: src/components/sections/home/GuidesOverviewSection.tsx — NEW FILE
+CHANGE 6: src/components/sections/home/GuidesOverviewSection.tsx ï¿½ NEW FILE
 ----------------------------------------------------------------------------
 New section placed between ClientsStrip and Testimonials in homepage.
 Section eyebrow: "Expert IT Guides & Resources"
@@ -140,8 +140,8 @@ Section title: "Read Before You Buy"
           URL=/solutions/custom-pc-builds/hardware-buying-guide
 
 CONTENT REVIEW NOTE:
-[OK]  3 out of 4 cards tagged "Individual & Corporate" — dual-intent respected.
-[OK]  1 card (Servers) tagged "Corporate" only — honest, does not mislead individuals.
+[OK]  3 out of 4 cards tagged "Individual & Corporate" ï¿½ dual-intent respected.
+[OK]  1 card (Servers) tagged "Corporate" only ï¿½ honest, does not mislead individuals.
 [OK]  Card descriptions are benefit-driven, not keyword-stuffed.
 [OK]  Follows same Section + FadeIn + Link pattern as all other homepage sections.
 [WATCH] Section placement (after ClientsStrip, before Testimonials) may be too deep in page.
@@ -150,10 +150,10 @@ CONTENT REVIEW NOTE:
         Same issue as CHANGE 4 above. Watch and adjust if needed.
 
 ================================================================================
-PENDING — PHASE 3 (NOT YET DONE)
+PENDING ï¿½ PHASE 3 (NOT YET DONE)
 ================================================================================
 
-PENDING: /products/computing/page.tsx — NEEDS UPGRADE
+PENDING: /products/computing/page.tsx ï¿½ NEEDS UPGRADE
 The computing/laptops hub still uses a plain-text advantages list.
 GSC shows this page lost 100% of its click traffic.
 The "Dual-Intent Trust Boxes" (Individual / Corporate / Genuine Parts) were
@@ -166,7 +166,7 @@ OVERALL CONTENT HEALTH SUMMARY
 
 WATCHPOINT 1 (Low risk): Guide title "Corporate Workstation & Accessories Guide"
              may deter individual visitors. Monitor after going live.
-WATCHPOINT 2 (Medium risk): Repairs page has only 1 CTA — no explicit corporate fleet path.
+WATCHPOINT 2 (Medium risk): Repairs page has only 1 CTA ï¿½ no explicit corporate fleet path.
              Should add a second CTA for B2B fleet inquiries.
 WATCHPOINT 3 (Medium risk): "faster than e-commerce" claim in Hero needs consistent
              delivery performance to back it up.
@@ -190,11 +190,11 @@ CHANGE 7: src/models/Lead.ts - UPDATED
 Date/Time: Sep 24, 2026
 What changed: Added file storage fields to Lead MongoDB schema.
 New fields added:
-  - fileName  { type: String } — original uploaded file name
-  - fileSize  { type: String } — e.g. "2.3 KB"
-  - fileType  { type: String } — e.g. "CSV", "PDF"
-  - fileData  { type: String } — full base64-encoded file content
-  - fileUrl   { type: String } — Cloudinary URL if uploaded (optional)
+  - fileName  { type: String } ï¿½ original uploaded file name
+  - fileSize  { type: String } ï¿½ e.g. "2.3 KB"
+  - fileType  { type: String } ï¿½ e.g. "CSV", "PDF"
+  - fileData  { type: String } ï¿½ full base64-encoded file content
+  - fileUrl   { type: String } ï¿½ Cloudinary URL if uploaded (optional)
 Also added runtime schema-patch block for Next.js dev caching edge case.
 
 Reason: Admin needed ability to receive and download files submitted by
@@ -210,7 +210,7 @@ What changed:
   - Reads file.name, file.size, file.type, file.data from request body
   - Saves fileName/fileSize/fileType always if file object is received
   - Saves fileData (base64) only if file.data is present
-  - Calls uploadToCloudinary() as optional step — saves fileUrl if configured
+  - Calls uploadToCloudinary() as optional step ï¿½ saves fileUrl if configured
   - Added console.warn if file object received but file.data is empty
     (diagnostic to distinguish client-side send failure vs server-side issue)
 
@@ -221,22 +221,22 @@ CHANGE 9: src/components/conversion/BulkManifestDropzone.tsx - UPDATED (3 rounds
 Date/Time: Sep 24, 2026
 
 Round 1: Added readFileAsBase64() helper, called at submit time
-  - Problem: Failed silently inside try/catch — fileData never reached MongoDB
+  - Problem: Failed silently inside try/catch ï¿½ fileData never reached MongoDB
 
 Round 2: Moved base64 read to file-pick time, stored in useState(fileBase64)
-  - Problem: React state stale closure — handleSubmit saw old null value
+  - Problem: React state stale closure ï¿½ handleSubmit saw old null value
     if user submitted before React re-rendered with new state
 
 Round 3 (FINAL FIX):
-  - Replaced useState with useRef (fileBase64Ref) — ref is always current,
+  - Replaced useState with useRef (fileBase64Ref) ï¿½ ref is always current,
     not tied to React render cycle, no stale closure possible
   - Added guaranteed fallback: if ref is null at submit, re-reads file using
-    new Promise<FileReader> inline — belt AND braces approach
+    new Promise<FileReader> inline ï¿½ belt AND braces approach
   - clearFile() now resets fileBase64Ref.current = null
 
 Root cause summary: FileReader is async. React state updates are batched.
 A user submitting before React re-renders would see fileBase64 = null in
-the handleSubmit closure. useRef solves this — ref.current is always live.
+the handleSubmit closure. useRef solves this ï¿½ ref.current is always live.
 
 ---
 
@@ -270,11 +270,11 @@ CHANGE 12: src/app/api/leads/[id]/route.ts - NEW FILE
 ------------------------------------------------------
 Date/Time: Sep 24, 2026
 What it does:
-  - GET /api/leads/[id]?secret=my_secret_key_123 — debug endpoint
+  - GET /api/leads/[id]?secret=my_secret_key_123 ï¿½ debug endpoint
     Returns: { id, hasFileData, hasFileUrl, hasFileName, fileName, fileSize, fileType }
     Used to diagnose whether fileData was actually saved to MongoDB
-  - PATCH /api/leads/[id] — update lead status or fields (used by admin UI)
-  - DELETE /api/leads/[id] — delete a lead (used by admin trash button)
+  - PATCH /api/leads/[id] ï¿½ update lead status or fields (used by admin UI)
+  - DELETE /api/leads/[id] ï¿½ delete a lead (used by admin trash button)
 
 ---
 
@@ -308,7 +308,7 @@ What changed:
      Reason: Page titles already included "| Lalani Computers" suffix.
      Old template was appending it again:
        "...| Lalani Computers | Lalani Computers" (90+ chars)
-     New template passes title through as-is — no double-branding.
+     New template passes title through as-is ï¿½ no double-branding.
      Impact: Fixed "Title too long" for ~47 pages.
 
   3. Added twitter.images to root layout (same logo.png URL)
@@ -344,6 +344,41 @@ What changed:
   invisible in search results without this fix.
 
 ================================================================================
+SESSION 5 - OCT 31, 2026 (Sticky Conversion Bar - Quotation Category Selector)
+================================================================================
+
+CHANGE 17: src/components/conversion/StickyConversionBar.tsx - UPDATED
+-----------------------------------------------------------------------
+Date/Time: Oct 31, 2026
+What changed:
+  1. Replaced the single direct redirect to Buyback with an interactive
+     Quotation Category Selector when user clicks "Request Quotation".
+  2. Each option directs straight to WhatsApp with tailored pre-filled quotation messages:
+     - Laptop / Desktop:
+       "Hi Lalani Computers, I would like to request a quotation for Laptop / Desktop procurement (buy /  lease). Please share available models and corporate pricing."
+     - Repair Service:
+       "Hi Lalani Computers, I need a quotation for Laptop / Desktop / Server Repair. This is my issue, [INSERT YOUR ISSUE]. What are next steps and turnaround time?"
+     - IT Asset Buyback:
+       "Hi Lalani Computers, I would like to request a quotation for Corporate IT Asset Buyback / Decommissioning. We have hardware for valuation."
+  2. Presents 3 targeted conversion options:
+     - Laptop / Desktop: Links to /products/computing (browse computing hardware)
+     - Repair Service: Links to /repair#service-booking (direct to booking form)
+     - IT Asset Buyback: Links to /buyback#manifest-dropzone (direct to manifest dropzone)
+  3. Responsive UI architecture:
+     - Desktop: Elegant popover card anchored directly above the button with
+       subtle border, drop-shadow, and chevron navigation indicators.
+     - Mobile: Full touch-friendly bottom-sheet with darkened backdrop overlay,
+       header with dismiss button, and safe margin above the action dock.
+  4. Preserved dedicated routes:
+     - /repair routes continue to display contextual "Book Repair Service"
+     - /buyback routes continue to display contextual "Upload Asset Manifest"
+     - All general / product / marketing pages trigger the Quotation Selector.
+
+Reason: Users clicking "Request Quotation" on general pages were previously
+being forced to /buyback#manifest-dropzone. Users need immediate routing choice
+between commercial hardware purchase, doorstep repair, or corporate buyback.
+
+================================================================================
 OVERALL STATUS - OCT 31, 2026
 ================================================================================
 
@@ -351,7 +386,7 @@ LIVE ON: https://www.lalanicomputers.com
 ADMIN:   https://www.lalanicomputers.com/admin/leads/my_secret_key_123
 
 PENDING (not yet done):
-  [ ] /products/computing/page.tsx — dual-intent trust boxes upgrade (noted since Aug 31)
-  [ ] /solutions/repairs page — add second B2B fleet CTA button
-  [ ] Orphan pages fix — 6 pages with no incoming internal links
+  [ ] /products/computing/page.tsx ï¿½ dual-intent trust boxes upgrade (noted since Aug 31)
+  [ ] /solutions/repairs page ï¿½ add second B2B fleet CTA button
+  [ ] Orphan pages fix ï¿½ 6 pages with no incoming internal links
   [ ] ~28 pages still have title > 60 chars (cosmetic only, no ranking penalty)

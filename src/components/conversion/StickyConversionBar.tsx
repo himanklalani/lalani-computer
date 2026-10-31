@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { Phone, ArrowRight, X, Wrench, MessageCircle, Building } from "lucide-react";
+import { Phone, ArrowRight, X, Wrench, MessageCircle, Building, Laptop, Recycle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -13,85 +13,170 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
+const QUOTATION_OPTIONS = [
+  {
+    icon: Laptop,
+    label: "Laptop / Desktop",
+    sub: "Procurement, purchase & corporate lease",
+    message: "Hi Lalani Computers, I would like to request a quotation for Laptop / Desktop procurement (buy /  lease). Please share available models and corporate pricing.",
+  },
+  {
+    icon: Wrench,
+    label: "Repair Service",
+    sub: "Doorstep pickup & on-site repair",
+    message: "Hi Lalani Computers, I need a quotation for Laptop / Desktop / Server Repair. This is my issue, [INSERT YOUR ISSUE]. What are next steps and turnaround time?",
+  },
+  {
+    icon: Recycle,
+    label: "IT Asset Buyback",
+    sub: "Corporate hardware valuation & buyback",
+    message: "Hi Lalani Computers, I would like to request a quotation for Corporate IT Asset Buyback / Decommissioning. We have hardware for valuation.",
+  },
+];
+
 export function StickyConversionBar() {
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
+  const [isVisible,      setIsVisible]      = useState(false);
+  const [isDismissed,    setIsDismissed]    = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined" && sessionStorage.getItem("sticky-bar-dismissed")) {
       setIsDismissed(true);
     }
-
     const handleScroll = () => {
-      // Show bar when user scrolls past 300px
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      if (window.scrollY > 300) { setIsVisible(true); }
+      else { setIsVisible(false); setIsDropdownOpen(false); }
     };
-
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Broadcast visibility to floating buttons so they don't collide on desktop
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   useEffect(() => {
     const active = isVisible && !isDismissed;
     window.dispatchEvent(new CustomEvent("sticky-bar-visibility", { detail: active }));
   }, [isVisible, isDismissed]);
 
-  // Determine route context and messaging according to ai_instructions.md §13
-  const isRepairRoute = pathname?.startsWith("/repair") || pathname?.startsWith("/solutions/repairs");
-  const isBuybackRoute = pathname?.startsWith("/buyback") || pathname?.startsWith("/solutions/it-asset-buyback");
-  const isServerRoute = pathname?.includes("servers") || pathname?.includes("data-center");
+  const isRepairRoute    = pathname?.startsWith("/repair") || pathname?.startsWith("/solutions/repairs");
+  const isBuybackRoute   = pathname?.startsWith("/buyback") || pathname?.startsWith("/solutions/it-asset-buyback");
+  const isServerRoute    = pathname?.includes("servers") || pathname?.includes("data-center");
   const isNetworkingRoute = pathname?.includes("networking") || pathname?.includes("wifi");
+  const isGenericRoute   = !isRepairRoute && !isBuybackRoute && !isServerRoute && !isNetworkingRoute;
 
-  let ctaTitle = "Mumbai's Trusted IT Hardware Partner (30+ Years)";
-  let ctaSubtitle = "Talk to our senior hardware engineers in Mumbai";
+  let ctaTitle        = "Mumbai's Trusted IT Hardware Partner (30+ Years)";
+  let ctaSubtitle     = "Talk to our senior hardware engineers in Mumbai";
   let whatsAppMessage = "Hi, I found Lalani Computers online. I need help with IT hardware.";
   let actionButtonText = "Request Quotation";
-  let actionTargetId = "service-booking";
-  let Icon = MessageCircle;
+  let actionTargetId  = "service-booking";
+  let Icon            = MessageCircle;
 
   if (isRepairRoute) {
-    ctaTitle = "Need Laptop, Desktop or Enterprise Hardware Repair?";
-    ctaSubtitle = "Doorstep pickup in Mumbai MMR • On-site corporate service • 30-Day Warranty";
-    whatsAppMessage = "Hi, I need help with an IT hardware repair. Can we discuss a quote?";
+    ctaTitle         = "Need Laptop, Desktop or Enterprise Hardware Repair?";
+    ctaSubtitle      = "Doorstep pickup in Mumbai MMR \u2022 On-site corporate service \u2022 30-Day Warranty";
+    whatsAppMessage  = "Hi, I need help with an IT hardware repair. Can we discuss a quote?";
     actionButtonText = "Book Repair Service";
-    actionTargetId = "service-booking";
+    actionTargetId   = "service-booking";
     Icon = Wrench;
   } else if (isBuybackRoute) {
-    ctaTitle = "Decommissioning Corporate IT Fleets, Servers or UPS?";
-    ctaSubtitle = "NIST 800-88 Data Sanitization • On-site logistics • Immediate RTGS Settlement";
-    whatsAppMessage = "Hi, we have corporate IT hardware (laptops/servers/UPS) for corporate buyback. Can we discuss a quote?";
+    ctaTitle         = "Decommissioning Corporate IT Fleets, Servers or UPS?";
+    ctaSubtitle      = "NIST 800-88 Data Sanitization \u2022 On-site logistics \u2022 Immediate RTGS Settlement";
+    whatsAppMessage  = "Hi, we have corporate IT hardware (laptops/servers/UPS) for corporate buyback. Can we discuss a quote?";
     actionButtonText = "Upload Asset Manifest";
-    actionTargetId = "manifest-dropzone";
+    actionTargetId   = "manifest-dropzone";
     Icon = Building;
   } else if (isServerRoute) {
-    ctaTitle = "Looking for Enterprise Servers & Storage in Mumbai?";
-    ctaSubtitle = "Dell PowerEdge & HPE ProLiant in stock • Same-day dispatch";
-    whatsAppMessage = "Hi, I am looking for enterprise servers and IT infrastructure support in Mumbai. Can we discuss a quote?";
+    ctaTitle         = "Looking for Enterprise Servers & Storage in Mumbai?";
+    ctaSubtitle      = "Dell PowerEdge & HPE ProLiant in stock \u2022 Same-day dispatch";
+    whatsAppMessage  = "Hi, I am looking for enterprise servers and IT infrastructure support in Mumbai. Can we discuss a quote?";
     actionButtonText = "Request Server RFQ";
   } else if (isNetworkingRoute) {
-    ctaTitle = "Planning an Enterprise Network or Wi-Fi 6 Upgrade?";
-    ctaSubtitle = "Cisco, Aruba & Fortinet authorized solutions in Mumbai";
-    whatsAppMessage = "Hi, I am looking for an enterprise network and Wi-Fi setup. Can we discuss a quote?";
+    ctaTitle         = "Planning an Enterprise Network or Wi-Fi 6 Upgrade?";
+    ctaSubtitle      = "Cisco, Aruba & Fortinet authorized solutions in Mumbai";
+    whatsAppMessage  = "Hi, I am looking for an enterprise network and Wi-Fi setup. Can we discuss a quote?";
     actionButtonText = "Consult Network Lead";
   }
 
+  const isQuotationAction = actionButtonText === "Request Quotation";
+
   const scrollToTarget = () => {
-    const el = document.getElementById(actionTargetId) || document.getElementById("manifest-dropzone") || document.getElementById("service-booking") || document.getElementById("asset-inquiry");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    } else {
-      window.location.href = isRepairRoute ? "/repair#service-booking" : "/buyback#manifest-dropzone";
-    }
+    const el = document.getElementById(actionTargetId)
+      || document.getElementById("manifest-dropzone")
+      || document.getElementById("service-booking")
+      || document.getElementById("asset-inquiry");
+    if (el) { el.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    else if (isRepairRoute)  { window.location.href = "/repair#service-booking"; }
+    else if (isBuybackRoute) { window.location.href = "/buyback#manifest-dropzone"; }
+  };
+
+  const handleActionClick = () => {
+    if (isQuotationAction) { setIsDropdownOpen(prev => !prev); }
+    else { scrollToTarget(); }
+  };
+
+  const dismiss = () => {
+    setIsDismissed(true);
+    sessionStorage.setItem("sticky-bar-dismissed", "true");
+    window.dispatchEvent(new CustomEvent("sticky-bar-visibility", { detail: false }));
   };
 
   if (!isVisible || isDismissed) return null;
+
+  const DropdownMenu = () => (
+    <>
+      {/* Mobile backdrop */}
+      <div
+        className="fixed inset-0 bg-black/50 backdrop-blur-xs z-40 md:hidden"
+        onClick={() => setIsDropdownOpen(false)}
+      />
+      {/* Options Popup / Dropdown */}
+      <div className="fixed inset-x-3 bottom-[64px] md:inset-auto md:absolute md:bottom-full md:right-0 md:mb-3 md:w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="flex items-center justify-between px-4 pt-3.5 pb-2 border-b border-gray-100">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Select Quotation Category</p>
+          <button
+            type="button"
+            onClick={() => setIsDropdownOpen(false)}
+            aria-label="Close options"
+            className="md:hidden text-gray-400 hover:text-gray-600 p-1 rounded-md"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </div>
+        {QUOTATION_OPTIONS.map(({ icon: OptionIcon, label, sub, message }) => (
+          <a
+            key={label}
+            href={`https://wa.me/919323332850?text=${encodeURIComponent(message)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsDropdownOpen(false)}
+            className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50/80 active:bg-emerald-100/60 transition-colors group border-b border-gray-50 last:border-0"
+          >
+            <span className="w-9 h-9 rounded-xl bg-[#25D366]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/25 transition-colors">
+              <OptionIcon className="w-4 h-4 text-[#1EBE5D]" />
+            </span>
+            <span className="flex-1 min-w-0">
+              <span className="block text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors">{label}</span>
+              <span className="block text-xs text-gray-500 mt-0.5">{sub}</span>
+            </span>
+            <span className="w-7 h-7 rounded-lg bg-[#25D366]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366] transition-colors">
+              <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366] group-hover:text-white transition-colors" />
+            </span>
+          </a>
+        ))}
+      </div>
+    </>
+  );
 
   return (
     <aside
@@ -99,116 +184,67 @@ export function StickyConversionBar() {
       className="fixed bottom-0 left-0 right-0 z-40 bg-primary-dark/95 backdrop-blur-md text-white border-t border-primary-light/30 shadow-[0_-8px_30px_rgba(0,0,0,0.3)] px-3 py-2.5 sm:px-4 sm:py-3.5 transition-transform duration-300 transform translate-y-0"
     >
       <div className="max-w-7xl mx-auto w-full">
-        {/* Mobile View: Integrated Single-Row Action Dock (< md) */}
+
+        {/* Mobile */}
         <div className="flex md:hidden items-center gap-2 w-full">
-          {/* WhatsApp Direct */}
-          <a
-            href={`https://wa.me/919323332850?text=${encodeURIComponent(whatsAppMessage)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-            className="w-10 h-10 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center flex-shrink-0 shadow-md active:scale-95 transition-transform"
-          >
+          <a href={`https://wa.me/919323332850?text=${encodeURIComponent(whatsAppMessage)}`} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
+            className="w-10 h-10 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center flex-shrink-0 shadow-md active:scale-95 transition-transform">
             <WhatsAppIcon className="w-5 h-5 fill-current" />
           </a>
-
-          {/* Quick Call */}
-          <a
-            href="tel:+919323332850"
-            aria-label="Call Lalani Computers"
-            className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center flex-shrink-0 active:scale-95 transition-all"
-          >
+          <a href="tel:+919323332850" aria-label="Call Lalani Computers"
+            className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center flex-shrink-0 active:scale-95 transition-all">
             <Phone className="w-4 h-4 text-primary-light" />
           </a>
-
-          {/* Primary Action Button (fills remaining space) */}
-          <button
-            type="button"
-            onClick={scrollToTarget}
-            className="flex-1 min-w-0 h-10 px-3 rounded-xl bg-primary hover:bg-primary-dark text-white border border-primary-light/40 font-heading font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all"
-          >
-            <span className="truncate">{actionButtonText}</span>
-            <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
-          </button>
-
-          {/* Dismiss Button */}
-          <button
-            type="button"
-            onClick={() => {
-              setIsDismissed(true);
-              sessionStorage.setItem("sticky-bar-dismissed", "true");
-              window.dispatchEvent(new CustomEvent("sticky-bar-visibility", { detail: false }));
-            }}
-            aria-label="Dismiss banner"
-            className="w-8 h-10 flex items-center justify-center text-white/50 hover:text-white rounded-lg hover:bg-white/10 transition-colors flex-shrink-0"
-          >
+          <div ref={isQuotationAction ? dropdownRef : undefined} className="flex-1 min-w-0 relative">
+            <button type="button" id="sticky-request-quotation-mobile" onClick={handleActionClick}
+              className="w-full h-10 px-3 rounded-xl bg-primary hover:bg-primary-dark text-white border border-primary-light/40 font-heading font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all">
+              <span className="truncate">{actionButtonText}</span>
+              <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
+            </button>
+            {isQuotationAction && isDropdownOpen && <DropdownMenu />}
+          </div>
+          <button type="button" onClick={dismiss} aria-label="Dismiss banner"
+            className="w-8 h-10 flex items-center justify-center text-white/50 hover:text-white rounded-lg hover:bg-white/10 transition-colors flex-shrink-0">
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Desktop View: Full Contextual Row (>= md) */}
+        {/* Desktop */}
         <div className="hidden md:flex items-center justify-between gap-3 w-full">
-          {/* Left Side: Contextual Hook */}
           <div className="flex items-center gap-3 text-left">
             <div className="w-10 h-10 rounded-xl bg-primary-light/20 border border-white/20 items-center justify-center flex-shrink-0 flex">
               <Icon className="w-5 h-5 text-primary-light" />
             </div>
             <div>
-              <h4 className="text-sm font-heading font-bold text-white leading-tight">
-                {ctaTitle}
-              </h4>
-              <p className="text-xs text-beige/80 mt-0.5 line-clamp-1">
-                {ctaSubtitle}
-              </p>
+              <h4 className="text-sm font-heading font-bold text-white leading-tight">{ctaTitle}</h4>
+              <p className="text-xs text-beige/80 mt-0.5 line-clamp-1">{ctaSubtitle}</p>
             </div>
           </div>
-
-          {/* Right Side: Quick Conversion CTAs */}
           <div className="flex items-center justify-end gap-2.5">
-            <button
-              type="button"
-              onClick={scrollToTarget}
-              className="text-xs font-semibold px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all flex items-center gap-1.5"
-            >
-              <span>{actionButtonText}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-
-            <a
-              href={`https://wa.me/919323332850?text=${encodeURIComponent(whatsAppMessage)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="sm"
-                className="bg-[#25D366] hover:bg-[#1EBE5D] text-white border-0 text-xs px-3.5 py-2 flex items-center justify-center gap-1.5 shadow-sm"
-              >
+            <div ref={isQuotationAction ? dropdownRef : undefined} className="relative">
+              <button type="button" id="sticky-request-quotation-desktop" onClick={handleActionClick}
+                className="text-xs font-semibold px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all flex items-center gap-1.5">
+                <span>{actionButtonText}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+              {isQuotationAction && isDropdownOpen && <DropdownMenu />}
+            </div>
+            <a href={`https://wa.me/919323332850?text=${encodeURIComponent(whatsAppMessage)}`} target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="bg-[#25D366] hover:bg-[#1EBE5D] text-white border-0 text-xs px-3.5 py-2 flex items-center justify-center gap-1.5 shadow-sm">
                 <span>WhatsApp Us</span>
               </Button>
             </a>
-
-            <a
-              href="tel:+919323332850"
-              className="hidden lg:flex items-center gap-1 text-xs text-beige hover:text-white px-2 py-1.5 font-medium"
-            >
+            <a href="tel:+919323332850" className="hidden lg:flex items-center gap-1 text-xs text-beige hover:text-white px-2 py-1.5 font-medium">
               <Phone className="w-3.5 h-3.5 text-primary-light" />
               <span>+91 93233 32850</span>
             </a>
-
-            <button
-              type="button"
-              onClick={() => {
-                setIsDismissed(true);
-                sessionStorage.setItem("sticky-bar-dismissed", "true");
-                window.dispatchEvent(new CustomEvent("sticky-bar-visibility", { detail: false }));
-              }}
-              aria-label="Dismiss banner"
-              className="p-1.5 text-white/50 hover:text-white rounded-md hover:bg-white/10 transition-colors ml-1"
-            >
+            <button type="button" onClick={dismiss} aria-label="Dismiss banner"
+              className="p-1.5 text-white/50 hover:text-white rounded-md hover:bg-white/10 transition-colors ml-1">
               <X className="w-4 h-4" />
             </button>
           </div>
         </div>
+
       </div>
     </aside>
   );
