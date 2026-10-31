@@ -179,3 +179,179 @@ Total files changed in this batch (not yet pushed):
   5. src/components/sections/home/HeroSection.tsx
   6. src/components/sections/home/GuidesOverviewSection.tsx (NEW)
   7. src/app/page.tsx (GuidesOverviewSection imported and injected)
+
+
+================================================================================
+SESSION 3 - SEPT 24, 2026 (Admin Dashboard - File Upload & Download)
+================================================================================
+
+CHANGE 7: src/models/Lead.ts - UPDATED
+---------------------------------------
+Date/Time: Sep 24, 2026
+What changed: Added file storage fields to Lead MongoDB schema.
+New fields added:
+  - fileName  { type: String } — original uploaded file name
+  - fileSize  { type: String } — e.g. "2.3 KB"
+  - fileType  { type: String } — e.g. "CSV", "PDF"
+  - fileData  { type: String } — full base64-encoded file content
+  - fileUrl   { type: String } — Cloudinary URL if uploaded (optional)
+Also added runtime schema-patch block for Next.js dev caching edge case.
+
+Reason: Admin needed ability to receive and download files submitted by
+corporate clients via the Bulk Manifest Dropzone form.
+
+---
+
+CHANGE 8: src/app/api/contact/route.ts - UPDATED
+--------------------------------------------------
+Date/Time: Sep 24, 2026
+What changed:
+  - Added file object handling in POST handler
+  - Reads file.name, file.size, file.type, file.data from request body
+  - Saves fileName/fileSize/fileType always if file object is received
+  - Saves fileData (base64) only if file.data is present
+  - Calls uploadToCloudinary() as optional step — saves fileUrl if configured
+  - Added console.warn if file object received but file.data is empty
+    (diagnostic to distinguish client-side send failure vs server-side issue)
+
+---
+
+CHANGE 9: src/components/conversion/BulkManifestDropzone.tsx - UPDATED (3 rounds)
+-----------------------------------------------------------------------------------
+Date/Time: Sep 24, 2026
+
+Round 1: Added readFileAsBase64() helper, called at submit time
+  - Problem: Failed silently inside try/catch — fileData never reached MongoDB
+
+Round 2: Moved base64 read to file-pick time, stored in useState(fileBase64)
+  - Problem: React state stale closure — handleSubmit saw old null value
+    if user submitted before React re-rendered with new state
+
+Round 3 (FINAL FIX):
+  - Replaced useState with useRef (fileBase64Ref) — ref is always current,
+    not tied to React render cycle, no stale closure possible
+  - Added guaranteed fallback: if ref is null at submit, re-reads file using
+    new Promise<FileReader> inline — belt AND braces approach
+  - clearFile() now resets fileBase64Ref.current = null
+
+Root cause summary: FileReader is async. React state updates are batched.
+A user submitting before React re-renders would see fileBase64 = null in
+the handleSubmit closure. useRef solves this — ref.current is always live.
+
+---
+
+CHANGE 10: src/components/admin/LeadManifestViewer.tsx - NEW FILE
+------------------------------------------------------------------
+Date/Time: Sep 24, 2026
+What it does:
+  - Renders a file card in the admin lead row when a file was uploaded
+  - Shows: file icon, file name (truncated), file type badge, file size
+  - Shows green "Download File" button that hits /api/leads/[id]/download
+  - Falls back to parsing file metadata from the lead's message field
+    (for older leads created before explicit fileName fields were added)
+  - Props: id, fileName, fileSize, fileType, messageFallback
+
+---
+
+CHANGE 11: src/app/api/leads/[id]/download/route.ts - NEW FILE
+---------------------------------------------------------------
+Date/Time: Sep 24, 2026
+What it does:
+  - GET /api/leads/[id]/download?secret=my_secret_key_123
+  - Validates secret key, fetches lead from MongoDB
+  - If fileData exists: decodes base64, returns file as binary download
+    with Content-Disposition: attachment header
+  - If fileUrl exists: redirects to Cloudinary URL
+  - If neither: returns 404 with debug info
+
+---
+
+CHANGE 12: src/app/api/leads/[id]/route.ts - NEW FILE
+------------------------------------------------------
+Date/Time: Sep 24, 2026
+What it does:
+  - GET /api/leads/[id]?secret=my_secret_key_123 — debug endpoint
+    Returns: { id, hasFileData, hasFileUrl, hasFileName, fileName, fileSize, fileType }
+    Used to diagnose whether fileData was actually saved to MongoDB
+  - PATCH /api/leads/[id] — update lead status or fields (used by admin UI)
+  - DELETE /api/leads/[id] — delete a lead (used by admin trash button)
+
+---
+
+CHANGE 13: src/app/admin/leads/[secret]/page.tsx - UPDATED
+-----------------------------------------------------------
+Date/Time: Sep 24, 2026 (IST timezone fix)
+What changed:
+  - Added timeZone: "Asia/Kolkata" to both Intl.DateTimeFormat() calls
+    (one for date display, one for time display in lead table)
+  - Before: Showed UTC time (e.g. 10:53 am when actual time was 4:23 pm IST)
+  - After: Shows correct IST time
+  - Root cause: Vercel servers run on UTC. Without explicit timeZone,
+    Node.js formats dates in server timezone (UTC), not user's timezone.
+
+================================================================================
+SESSION 4 - SEPT 30, 2026 (SEO Fixes - OG Tags, Title, Sitemap)
+================================================================================
+
+CHANGE 14: src/app/layout.tsx - UPDATED
+----------------------------------------
+Date/Time: Sep 30, 2026
+What changed:
+  1. Added openGraph.images to root layout:
+       url: https://www.lalanicomputers.com/logo.png
+       width: 1200, height: 630
+     Impact: Fixed "Open Graph tags incomplete" for ~58 pages.
+     Next.js shallow-merges layout's openGraph into child page metadata,
+     so all pages that had openGraph without images now inherit the image.
+
+  2. Changed title template from "%s | Lalani Computers" to "%s"
+     Reason: Page titles already included "| Lalani Computers" suffix.
+     Old template was appending it again:
+       "...| Lalani Computers | Lalani Computers" (90+ chars)
+     New template passes title through as-is — no double-branding.
+     Impact: Fixed "Title too long" for ~47 pages.
+
+  3. Added twitter.images to root layout (same logo.png URL)
+     Impact: Twitter/X cards now show image when pages are shared.
+
+---
+
+CHANGE 15: src/app/sitemap.ts - UPDATED
+-----------------------------------------
+Date/Time: Sep 30, 2026
+What changed: Added 8 pages that existed and were indexable but missing:
+  1. /solutions/enterprise-servers-mumbai
+  2. /solutions/office-network-setup-india
+  3. /solutions/storage-server-supplier-mumbai
+  4. /solutions/server-colocation-mumbai
+  5. /solutions/it-asset-buyback
+  6. /solutions/repairs/repair-vs-replace-guide
+  7. /products/peripherals-power/workstation-buying-guide
+  8. /products/computing/leasing-vs-buying-corporate-laptops
+Impact: Fixed "Indexable page not in sitemap" audit warning (was 8 pages).
+
+---
+
+CHANGE 16: src/app/solutions/server-colocation-mumbai/page.tsx - UPDATED
+-------------------------------------------------------------------------
+Date/Time: Sep 30, 2026
+What changed:
+  - Title updated from "Server Colocation in Mumbai | Tier III Rack Leasing"
+    to "Server Colocation Mumbai | Tier III Rack Leasing | Lalani Computers"
+  - Added openGraph block with title, description, url, type
+  Reason: This was the only page whose title did not include "Lalani Computers".
+  With the new template "%s" (no auto-suffix), the brand would have been
+  invisible in search results without this fix.
+
+================================================================================
+OVERALL STATUS - OCT 31, 2026
+================================================================================
+
+LIVE ON: https://www.lalanicomputers.com
+ADMIN:   https://www.lalanicomputers.com/admin/leads/my_secret_key_123
+
+PENDING (not yet done):
+  [ ] /products/computing/page.tsx — dual-intent trust boxes upgrade (noted since Aug 31)
+  [ ] /solutions/repairs page — add second B2B fleet CTA button
+  [ ] Orphan pages fix — 6 pages with no incoming internal links
+  [ ] ~28 pages still have title > 60 chars (cosmetic only, no ranking penalty)
