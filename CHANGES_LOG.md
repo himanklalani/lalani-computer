@@ -344,7 +344,7 @@ What changed:
   invisible in search results without this fix.
 
 ================================================================================
-SESSION 5 - OCT 31, 2026 (Sticky Conversion Bar - Quotation Category Selector)
+SESSION 5 - OCT 31, 2026 (Quotation Selector & Brevo SMTP Lead Notification System)
 ================================================================================
 
 CHANGE 17: src/components/conversion/StickyConversionBar.tsx - UPDATED
@@ -353,7 +353,8 @@ Date/Time: Oct 31, 2026
 What changed:
   1. Replaced the single direct redirect to Buyback with an interactive
      Quotation Category Selector when user clicks "Request Quotation".
-  2. Each option directs straight to WhatsApp with tailored pre-filled quotation messages:
+  2. All 4 categories now direct straight to WhatsApp (1-tap conversion) with
+     exact pre-filled, intent-specific quotation prompts:
      - Laptop / Desktop:
        "Hi Lalani Computers, I would like to request a quotation for Laptop / Desktop procurement (buy /  lease). Please share available models and corporate pricing."
      - Repair Service:
@@ -362,23 +363,18 @@ What changed:
        "Hi Lalani Computers, I would like to request a quotation for Corporate IT Asset Buyback / Decommissioning. We have hardware for valuation."
      - Other Hardware / Peripherals:
        "Hi Lalani Computers, I would like to request a quotation for other IT hardware / peripherals. Please share availability and pricing for: [INSERT YOUR REQUIREMENTS]."
-  2. Presents 3 targeted conversion options:
-     - Laptop / Desktop: Links to /products/computing (browse computing hardware)
-     - Repair Service: Links to /repair#service-booking (direct to booking form)
-     - IT Asset Buyback: Links to /buyback#manifest-dropzone (direct to manifest dropzone)
-  3. Responsive UI architecture:
-     - Desktop: Elegant popover card anchored directly above the button with
-       subtle border, drop-shadow, and chevron navigation indicators.
+  3. UI Architecture:
+     - Desktop: Elegant popover card (w-80) anchored directly above the button with
+       category icon, subtitle, and green WhatsApp indicator badge.
      - Mobile: Full touch-friendly bottom-sheet with darkened backdrop overlay,
-       header with dismiss button, and safe margin above the action dock.
-  4. Preserved dedicated routes:
+       header dismiss button, and safe margin above the mobile conversion dock.
+  4. Preserved Contextual Routes:
      - /repair routes continue to display contextual "Book Repair Service"
      - /buyback routes continue to display contextual "Upload Asset Manifest"
-     - All general / product / marketing pages trigger the Quotation Selector.
+     - All general / marketing / product pages trigger the Quotation Selector.
 
-Reason: Users clicking "Request Quotation" on general pages were previously
-being forced to /buyback#manifest-dropzone. Users need immediate routing choice
-between commercial hardware purchase, doorstep repair, or corporate buyback.
+Reason: Indian B2B buyers have high drop-off on web forms. Routing each category
+directly to WhatsApp with pre-filled intent generates instant qualified leads.
 
 ---
 
@@ -408,9 +404,33 @@ What changed:
      - Instant Action Bar: [Open in Leads Dashboard], [WhatsApp Client], [Call Client]
      - Structured Lead Card: Name, Company, Phone, Email, Location, Requirement, Timeline
      - Full Message Notes + Manifest File Attachments (Base64 decoded binary attachment).
-  5. Vercel Production Environment:
-     - Documented and prepared environment variables (SMTP_HOST, SMTP_PORT, SMTP_USER,
-       SMTP_PASS, SMTP_FROM, CONTACT_TO_EMAIL, NOTIFICATION_CC_EMAIL) for live deployment.
+
+--------------------------------------------------------------------------------
+MISTAKES IDENTIFIED & LESSONS LEARNED (OCT 31, 2026)
+--------------------------------------------------------------------------------
+
+MISTAKE 1: Changelog Stale Duplicate Bullets in Change 17
+- The Mistake: After switching quotation options from page URLs (/repair, /buyback)
+  to direct WhatsApp routing, the changelog was updated with WhatsApp text but
+  accidentally kept obsolete duplicate bullets claiming 3 options linking to website pages.
+- The Fix: Cleaned up Change 17 to accurately document all 4 options routing
+  directly to WhatsApp, removing contradictory legacy copy.
+
+MISTAKE 2: Dashboard "+ Add Lead" Did Not Trigger Notifications ("muna laal" bug)
+- The Mistake: Brevo SMTP notification code was initially placed only inside
+  POST /api/contact (website forms). When testing via the Admin Dashboard's
+  "+ Add Lead" modal, the lead ("muna laal") saved to MongoDB but sent no email
+  because POST /api/leads had no email sending logic.
+- The Fix: Extracted email notification into a reusable module (src/lib/emailNotification.ts)
+  and called it in both POST /api/contact and POST /api/leads.
+
+MISTAKE 3: Production Vercel Missing SMTP Environment Variables ("gfdsa" bug)
+- The Mistake: Tested successfully on localhost:3001 (where .env.local had SMTP_PASS),
+  but when testing on the live site (www.lalanicomputers.com), the lead ("gfdsa")
+  saved to MongoDB Atlas but sent no email because .env.local is gitignored and
+  environment variables were not yet configured in Vercel Project Settings.
+- The Lesson: Whenever introducing new environment variables for serverless APIs,
+  they must be added to Vercel/production environment settings simultaneously.
 
 ================================================================================
 OVERALL STATUS - OCT 31, 2026
