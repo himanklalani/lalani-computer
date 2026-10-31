@@ -382,24 +382,35 @@ between commercial hardware purchase, doorstep repair, or corporate buyback.
 
 ---
 
-CHANGE 18: src/app/api/contact/route.ts - BREVO SMTP NOTIFICATIONS ACTIVATED
------------------------------------------------------------------------------
+CHANGE 18: EMAIL NOTIFICATION SYSTEM (BREVO SMTP RELAY)
+---------------------------------------------------------
 Date/Time: Oct 31, 2026
+Files Affected:
+  - src/lib/emailNotification.ts (NEW)
+  - src/app/api/contact/route.ts (UPDATED)
+  - src/app/api/leads/route.ts (UPDATED)
+  - .env.local / .env.local.example (UPDATED)
+
 What changed:
-  1. Integrated Nodemailer with Brevo (Sendinblue) Free SMTP relay (300 emails/day).
-  2. Verified credentials:
-     - Server: smtp-relay.brevo.com (Port 587)
-     - Login: c0d7d8001@smtp-brevo.com
+  1. Built centralized email notification engine (src/lib/emailNotification.ts) using
+     Nodemailer + Brevo (Sendinblue) Free SMTP (300 emails/day free tier).
+  2. Configured and verified production credentials:
+     - Host: smtp-relay.brevo.com (Port 587)
+     - User: c0d7d8001@smtp-brevo.com
      - Sender: Lalani Computers <vikrantlalani@gmail.com> (Verified)
-  3. Every website lead submission (Contact, Quotation, Repair Booking, Buyback Manifest)
-     now automatically triggers an email notification to:
-     - Primary: lalanics@yahoo.co.in
-     - Notification CC: vikrantlalani@gmail.com
-  4. Redesigned email template with instant actionable buttons:
-     - [Open in Leads Dashboard] (/admin/leads/my_secret_key_123)
-     - [WhatsApp Client] (pre-filled wa.me link)
-     - [Call Client] (tel: link)
-     - Full client requirements, timeline, and attached manifest files.
+     - Recipients: Primary (lalanics@yahoo.co.in) + CC (vikrantlalani@gmail.com)
+  3. Connected notifications to BOTH entry points:
+     - Website Forms (POST /api/contact): Contact page, Repair Service Booking,
+       Corporate Asset Inquiry, and Bulk Manifest uploads.
+     - Dashboard Actions (POST /api/leads): Manual "+ Add Lead" modal submissions
+       and CSV lead imports.
+  4. Redesigned responsive email notification template:
+     - Instant Action Bar: [Open in Leads Dashboard], [WhatsApp Client], [Call Client]
+     - Structured Lead Card: Name, Company, Phone, Email, Location, Requirement, Timeline
+     - Full Message Notes + Manifest File Attachments (Base64 decoded binary attachment).
+  5. Vercel Production Environment:
+     - Documented and prepared environment variables (SMTP_HOST, SMTP_PORT, SMTP_USER,
+       SMTP_PASS, SMTP_FROM, CONTACT_TO_EMAIL, NOTIFICATION_CC_EMAIL) for live deployment.
 
 ================================================================================
 OVERALL STATUS - OCT 31, 2026
