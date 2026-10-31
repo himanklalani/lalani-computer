@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { Phone, ArrowRight, X, Wrench, MessageCircle, Building, Laptop, Recycle } from "lucide-react";
+import { Phone, ArrowRight, X, Wrench, MessageCircle, Building, Laptop, Recycle, HardDrive } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -31,6 +31,12 @@ const QUOTATION_OPTIONS = [
     label: "IT Asset Buyback",
     sub: "Corporate hardware valuation & buyback",
     message: "Hi Lalani Computers, I would like to request a quotation for Corporate IT Asset Buyback / Decommissioning. We have hardware for valuation.",
+  },
+  {
+    icon: HardDrive,
+    label: "Other Hardware / Peripherals",
+    sub: "Printers, UPS, monitors, parts & accessories",
+    message: "Hi Lalani Computers, I would like to request a quotation for other IT hardware / peripherals. Please share availability and pricing for: [INSERT YOUR REQUIREMENTS].",
   },
 ];
 
@@ -141,7 +147,7 @@ export function StickyConversionBar() {
         onClick={() => setIsDropdownOpen(false)}
       />
       {/* Options Popup / Dropdown */}
-      <div className="fixed inset-x-3 bottom-[64px] md:inset-auto md:absolute md:bottom-full md:right-0 md:mb-3 md:w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
+      <div className="fixed inset-x-3 bottom-[64px] md:inset-auto md:absolute md:bottom-full md:right-0 md:mb-3 md:w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
         <div className="flex items-center justify-between px-4 pt-3.5 pb-2 border-b border-gray-100">
           <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Select Quotation Category</p>
           <button

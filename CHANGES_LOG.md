@@ -360,6 +360,8 @@ What changed:
        "Hi Lalani Computers, I need a quotation for Laptop / Desktop / Server Repair. This is my issue, [INSERT YOUR ISSUE]. What are next steps and turnaround time?"
      - IT Asset Buyback:
        "Hi Lalani Computers, I would like to request a quotation for Corporate IT Asset Buyback / Decommissioning. We have hardware for valuation."
+     - Other Hardware / Peripherals:
+       "Hi Lalani Computers, I would like to request a quotation for other IT hardware / peripherals. Please share availability and pricing for: [INSERT YOUR REQUIREMENTS]."
   2. Presents 3 targeted conversion options:
      - Laptop / Desktop: Links to /products/computing (browse computing hardware)
      - Repair Service: Links to /repair#service-booking (direct to booking form)
