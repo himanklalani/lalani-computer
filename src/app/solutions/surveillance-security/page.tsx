@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/surveillance-security' },
-  title: "Corporate Surveillance & Security Infrastructure | Lalani Computers",
-  description: "End-to-end CCTV, NVR, and biometric access control installations for offices, schools, and hospitals in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/surveillance-security' },
+  title: 'Corporate Surveillance & Security | Lalani Computers',
+  description: 'End-to-end CCTV, NVR, and biometric access control installations for offices, schools, and hospitals in Mumbai.',
+  openGraph: {
+    title: 'Corporate Surveillance & Security | Lalani Computers',
+    description: 'End-to-end CCTV, NVR, and biometric access control installations for offices, schools, and hospitals in Mumbai.',
+    url: 'https://www.lalanicomputers.com/solutions/surveillance-security',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Corporate Surveillance & Security | Lalani Computers',
+    description: 'End-to-end CCTV, NVR, and biometric access control installations for offices, schools, and hospitals in Mumbai.',
+  },
 };
 
 const deliverables = [

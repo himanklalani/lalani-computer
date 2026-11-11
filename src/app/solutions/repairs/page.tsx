@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/repairs' },
-  title: "Expert IT Hardware & Laptop Repair in Mumbai | Lalani Computers",
-  description: "Professional chip-level repairs, motherboard fixes, and SSD/RAM upgrades for corporate laptops, desktops, and servers in Mumbai. Trust the hardware experts.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/repairs' },
+  title: 'Expert Laptop & IT Hardware Repair | Lalani Computers',
+  description: 'Professional chip-level repairs, motherboard fixes, and SSD/RAM upgrades for corporate laptops, desktops, and servers in Mumbai. Trust the hardware experts.',
+  openGraph: {
+    title: 'Expert Laptop & IT Hardware Repair | Lalani Computers',
+    description: 'Professional chip-level repairs, motherboard fixes, and SSD/RAM upgrades for corporate laptops, desktops, and servers in Mumbai. Trust the hardware experts.',
+    url: 'https://www.lalanicomputers.com/solutions/repairs',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Expert Laptop & IT Hardware Repair | Lalani Computers',
+    description: 'Professional chip-level repairs, motherboard fixes, and SSD/RAM upgrades for corporate laptops, desktops, and servers in Mumbai. Trust the hardware experts.',
+  },
 };
 
 const deliverables = [

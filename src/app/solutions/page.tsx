@@ -9,23 +9,21 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions' },
-  title: "Enterprise IT Solutions & Infrastructure | Lalani Computers",
-  description: "End-to-end B2B IT solutions including data center refreshes, turnkey office setups, and structural cabling for Mumbai enterprises.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions' },
+  title: 'Enterprise IT Solutions & Infrastructure | Lalani Computers',
+  description: 'End-to-end B2B IT solutions including data center refreshes, turnkey office setups, and structural cabling for Mumbai enterprises.',
   openGraph: {
-    title: "Enterprise IT Solutions & Infrastructure | Lalani Computers",
-    description: "End-to-end B2B IT solutions including data center refreshes, turnkey office setups, and structural cabling for Mumbai enterprises.",
-    url: "https://www.lalanicomputers.com/solutions",
-    siteName: "Lalani Computers",
-    images: [{ url: "https://www.lalanicomputers.com/icon.png", width: 1200, height: 630 }],
-    locale: "en_IN",
-    type: "website",
+    title: 'Enterprise IT Solutions & Infrastructure | Lalani Computers',
+    description: 'End-to-end B2B IT solutions including data center refreshes, turnkey office setups, and structural cabling for Mumbai enterprises.',
+    url: 'https://www.lalanicomputers.com/solutions',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Enterprise IT Solutions & Infrastructure | Lalani Computers",
-    description: "End-to-end B2B IT solutions including data center refreshes and turnkey office setups.",
-    images: ["https://www.lalanicomputers.com/icon.png"],
+    card: 'summary_large_image',
+    title: 'Enterprise IT Solutions & Infrastructure | Lalani Computers',
+    description: 'End-to-end B2B IT solutions including data center refreshes, turnkey office setups, and structural cabling for Mumbai enterprises.',
   },
 };
 

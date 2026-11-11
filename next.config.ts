@@ -23,6 +23,36 @@ const nextConfig: NextConfig = {
         destination: '/products/peripherals-power',
         permanent: true,
       },
+      {
+        source: '/solutions/repairs',
+        destination: '/repair',
+        permanent: true,
+      },
+      {
+        source: '/buyback/bulk-laptops',
+        destination: '/buyback/corporate-it-fleets',
+        permanent: true,
+      },
+      {
+        source: '/buyback/enterprise-servers',
+        destination: '/buyback/enterprise-servers-storage',
+        permanent: true,
+      },
+      {
+        source: '/buyback/networking-switches',
+        destination: '/buyback/networking-switches-infrastructure',
+        permanent: true,
+      },
+      {
+        source: '/repair/laptop-battery',
+        destination: '/repair/laptop-desktop-repairs',
+        permanent: true,
+      },
+      {
+        source: '/repair/motherboard-chip-level',
+        destination: '/repair/motherboard-component-repair',
+        permanent: true,
+      },
     ];
   },
 };

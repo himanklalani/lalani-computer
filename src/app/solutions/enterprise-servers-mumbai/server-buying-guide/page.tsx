@@ -4,9 +4,22 @@ import { GuideLayout } from "@/components/ui/GuideLayout";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Enterprise Server Buying Guide 2026 | Lalani Computers",
-  description: "A detailed guide on selecting the right tower, rack, and blade servers for your corporate data center.",
-  alternates: { canonical: '/solutions/enterprise-servers-mumbai/server-buying-guide' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/enterprise-servers-mumbai/server-buying-guide' },
+  title: 'Enterprise Server Buying Guide 2026 | Lalani Computers',
+  description: 'A detailed guide on selecting the right tower, rack, and blade servers for your corporate data center.',
+  openGraph: {
+    title: 'Enterprise Server Buying Guide 2026 | Lalani Computers',
+    description: 'A detailed guide on selecting the right tower, rack, and blade servers for your corporate data center.',
+    url: 'https://www.lalanicomputers.com/solutions/enterprise-servers-mumbai/server-buying-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Server Buying Guide 2026 | Lalani Computers',
+    description: 'A detailed guide on selecting the right tower, rack, and blade servers for your corporate data center.',
+  },
 };
 
 export default function GuidePage() {

@@ -13,6 +13,7 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',       // Server-side API routes
           '/admin/',     // Admin dashboard (secret key protected, but also block crawlers)
           '/demo/',      // Internal demo pages
+          '/_next/static/media/', // Raw font and media chunks (prevents Googlebot from indexing font files as pages)
         ],
       },
       {

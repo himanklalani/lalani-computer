@@ -4,9 +4,22 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/repairs/repair-vs-replace-guide' },
-  title: "IT Hardware: Repair vs Replace Guide 2026 | Lalani Computers",
-  description: "Learn when you should upgrade your aging corporate laptops and desktop fleets, and when it makes financial sense to procure new machines in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/repairs/repair-vs-replace-guide' },
+  title: 'IT Hardware: Repair vs Replace Guide 2026 | Lalani Computers',
+  description: 'Learn when you should upgrade your aging corporate laptops and desktop fleets, and when it makes financial sense to procure new machines in Mumbai.',
+  openGraph: {
+    title: 'IT Hardware: Repair vs Replace Guide 2026 | Lalani Computers',
+    description: 'Learn when you should upgrade your aging corporate laptops and desktop fleets, and when it makes financial sense to procure new machines in Mumbai.',
+    url: 'https://www.lalanicomputers.com/solutions/repairs/repair-vs-replace-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Hardware: Repair vs Replace Guide 2026 | Lalani Computers',
+    description: 'Learn when you should upgrade your aging corporate laptops and desktop fleets, and when it makes financial sense to procure new machines in Mumbai.',
+  },
 };
 
 export default function RepairVsReplaceGuide() {

@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/data-center' },
-  title: "Data Center & Server Room Refresh Mumbai | Lalani Computers",
-  description: "Legacy system upgrades, tower and rack server deployments, NAS/SAN storage, and server room optimization for corporate clients.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/data-center' },
+  title: 'Data Center & Server Room Refresh Mumbai | Lalani Computers',
+  description: 'Legacy system upgrades, tower and rack server deployments, NAS/SAN storage, and server room optimization for corporate clients.',
+  openGraph: {
+    title: 'Data Center & Server Room Refresh Mumbai | Lalani Computers',
+    description: 'Legacy system upgrades, tower and rack server deployments, NAS/SAN storage, and server room optimization for corporate clients.',
+    url: 'https://www.lalanicomputers.com/solutions/data-center',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Data Center & Server Room Refresh Mumbai | Lalani Computers',
+    description: 'Legacy system upgrades, tower and rack server deployments, NAS/SAN storage, and server room optimization for corporate clients.',
+  },
 };
 
 const deliverables = [

@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "Storage & NAS Setup Guide 2026 | Lalani Computers",
-  description: "A complete overview of NAS, SAN, and DAS storage arrays for enterprise data backup and disaster recovery.",
-  alternates: { canonical: '/solutions/storage-server-supplier-mumbai/storage-buying-guide' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/storage-server-supplier-mumbai/storage-buying-guide' },
+  title: 'Storage & NAS Setup Guide 2026 | Lalani Computers',
+  description: 'A complete overview of NAS, SAN, and DAS storage arrays for enterprise data backup and disaster recovery.',
+  openGraph: {
+    title: 'Storage & NAS Setup Guide 2026 | Lalani Computers',
+    description: 'A complete overview of NAS, SAN, and DAS storage arrays for enterprise data backup and disaster recovery.',
+    url: 'https://www.lalanicomputers.com/solutions/storage-server-supplier-mumbai/storage-buying-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Storage & NAS Setup Guide 2026 | Lalani Computers',
+    description: 'A complete overview of NAS, SAN, and DAS storage arrays for enterprise data backup and disaster recovery.',
+  },
 };
 
 export default function GuidePage() {

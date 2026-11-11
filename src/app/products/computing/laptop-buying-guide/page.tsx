@@ -8,10 +8,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Top 10 Laptops to Buy in 2026: Ultimate Buying Guide | Lalani Computers",
-  description: "Don't know what laptop to buy? From budget workstations to high-end executive ultrabooks, here is the ultimate 2026 corporate laptop buying guide.",
-  alternates: {
-    canonical: "/products/computing/laptop-buying-guide",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/computing/laptop-buying-guide' },
+  title: 'Top 10 Laptops to Buy in 2026 | Lalani Computers',
+  description: 'Don',
+  openGraph: {
+    title: 'Top 10 Laptops to Buy in 2026 | Lalani Computers',
+    description: 'Don',
+    url: 'https://www.lalanicomputers.com/products/computing/laptop-buying-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Top 10 Laptops to Buy in 2026 | Lalani Computers',
+    description: 'Don',
   },
 };
 

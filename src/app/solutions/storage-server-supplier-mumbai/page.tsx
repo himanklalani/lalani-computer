@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "Storage Server Supplier & Colocation in Mumbai | Lalani Computers",
-  description: "Top storage server supplier in Mumbai offering SAN, NAS, direct-attached storage, and secure server colocation services for corporate data needs.",
-  alternates: { canonical: '/solutions/storage-server-supplier-mumbai' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/storage-server-supplier-mumbai' },
+  title: 'Storage Server Supplier Mumbai | Lalani Computers',
+  description: 'Top storage server supplier in Mumbai offering SAN, NAS, direct-attached storage, and secure server colocation services for corporate data needs.',
+  openGraph: {
+    title: 'Storage Server Supplier Mumbai | Lalani Computers',
+    description: 'Top storage server supplier in Mumbai offering SAN, NAS, direct-attached storage, and secure server colocation services for corporate data needs.',
+    url: 'https://www.lalanicomputers.com/solutions/storage-server-supplier-mumbai',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Storage Server Supplier Mumbai | Lalani Computers',
+    description: 'Top storage server supplier in Mumbai offering SAN, NAS, direct-attached storage, and secure server colocation services for corporate data needs.',
+  },
 };
 
 const deliverables = [

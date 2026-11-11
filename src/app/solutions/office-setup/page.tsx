@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/office-setup' },
-  title: "Complete Office IT Setup & Procurement | Lalani Computers Mumbai",
-  description: "End-to-end IT hardware procurement and network infrastructure planning for new corporate offices, startups, and branches in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/office-setup' },
+  title: 'Complete Office IT Setup Mumbai | Lalani Computers',
+  description: 'End-to-end IT hardware procurement and network infrastructure planning for new corporate offices, startups, and branches in Mumbai.',
+  openGraph: {
+    title: 'Complete Office IT Setup Mumbai | Lalani Computers',
+    description: 'End-to-end IT hardware procurement and network infrastructure planning for new corporate offices, startups, and branches in Mumbai.',
+    url: 'https://www.lalanicomputers.com/solutions/office-setup',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Complete Office IT Setup Mumbai | Lalani Computers',
+    description: 'End-to-end IT hardware procurement and network infrastructure planning for new corporate offices, startups, and branches in Mumbai.',
+  },
 };
 
 const deliverables = [

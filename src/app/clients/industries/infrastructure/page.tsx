@@ -8,9 +8,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/clients/industries/infrastructure' },
-  title: "Site Office IT Setup & Networking for Real Estate | Lalani Computers",
-  description: "End-to-end P2P wireless networking, biometric access, and rugged IT hardware for infrastructure projects and construction site offices in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/clients/industries/infrastructure' },
+  title: 'Real Estate Site Office IT Setup | Lalani Computers',
+  description: 'End-to-end P2P wireless networking, biometric access, and rugged IT hardware for infrastructure projects and construction site offices in Mumbai.',
+  openGraph: {
+    title: 'Real Estate Site Office IT Setup | Lalani Computers',
+    description: 'End-to-end P2P wireless networking, biometric access, and rugged IT hardware for infrastructure projects and construction site offices in Mumbai.',
+    url: 'https://www.lalanicomputers.com/clients/industries/infrastructure',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Real Estate Site Office IT Setup | Lalani Computers',
+    description: 'End-to-end P2P wireless networking, biometric access, and rugged IT hardware for infrastructure projects and construction site offices in Mumbai.',
+  },
 };
 
 const siteKits = [

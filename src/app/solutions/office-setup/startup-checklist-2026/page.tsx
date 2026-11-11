@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "2026 Startup IT Checklist | Lalani Computers",
-  description: "A comprehensive IT checklist for new offices and startups in Mumbai, covering networking, laptops, and basic security.",
-  alternates: { canonical: '/solutions/office-setup/startup-checklist-2026' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/office-setup/startup-checklist-2026' },
+  title: '2026 Startup IT Checklist | Lalani Computers',
+  description: 'A comprehensive IT checklist for new offices and startups in Mumbai, covering networking, laptops, and basic security.',
+  openGraph: {
+    title: '2026 Startup IT Checklist | Lalani Computers',
+    description: 'A comprehensive IT checklist for new offices and startups in Mumbai, covering networking, laptops, and basic security.',
+    url: 'https://www.lalanicomputers.com/solutions/office-setup/startup-checklist-2026',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '2026 Startup IT Checklist | Lalani Computers',
+    description: 'A comprehensive IT checklist for new offices and startups in Mumbai, covering networking, laptops, and basic security.',
+  },
 };
 
 export default function GuidePage() {

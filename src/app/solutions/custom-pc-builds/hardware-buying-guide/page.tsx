@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "2026 IT Hardware Buying Guide | Lalani Computers",
-  description: "The ultimate hardware buying guide for workstations, gaming rigs, and high-performance desktops in 2026.",
-  alternates: { canonical: '/solutions/custom-pc-builds/hardware-buying-guide' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/custom-pc-builds/hardware-buying-guide' },
+  title: '2026 IT Hardware Buying Guide | Lalani Computers',
+  description: 'The ultimate hardware buying guide for workstations, gaming rigs, and high-performance desktops in 2026.',
+  openGraph: {
+    title: '2026 IT Hardware Buying Guide | Lalani Computers',
+    description: 'The ultimate hardware buying guide for workstations, gaming rigs, and high-performance desktops in 2026.',
+    url: 'https://www.lalanicomputers.com/solutions/custom-pc-builds/hardware-buying-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '2026 IT Hardware Buying Guide | Lalani Computers',
+    description: 'The ultimate hardware buying guide for workstations, gaming rigs, and high-performance desktops in 2026.',
+  },
 };
 
 export default function GuidePage() {

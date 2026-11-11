@@ -41,8 +41,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Buyback Service Not Found | Lalani Computers" };
   }
 
+  const primarySlugMap: Record<string, string> = {
+    "bulk-laptops": "corporate-it-fleets",
+    "enterprise-servers": "enterprise-servers-storage",
+    "networking-switches": "networking-switches-infrastructure",
+  };
+  const canonicalSlug = primarySlugMap[category.slug] || category.slug;
+  const canonicalUrl = `https://www.lalanicomputers.com/buyback/${canonicalSlug}`;
+
   return {
-    alternates: { canonical: `https://www.lalanicomputers.com/buyback/${category.slug}` },
+    alternates: { canonical: canonicalUrl },
     title: `${category.metaTitle} | Lalani Computers`,
     description: category.metaDescription,
     keywords: [
@@ -55,7 +63,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${category.metaTitle} | Lalani Computers`,
       description: category.metaDescription,
-      url: `https://www.lalanicomputers.com/buyback/${category.slug}`,
+      url: canonicalUrl,
       type: "article"
     }
   };

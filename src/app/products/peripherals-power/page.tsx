@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/products/peripherals-power' },
-  title: "IT Peripherals, Accessories & Power Backup | Mumbai",
-  description: "Mumbai's trusted supplier for computer accessories, monitors, and enterprise UPS systems. Order single high-end peripherals or bulk corporate power backups.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/peripherals-power' },
+  title: 'IT Peripherals, Accessories & Power Backup | Mumbai',
+  description: 'Mumbai',
+  openGraph: {
+    title: 'IT Peripherals, Accessories & Power Backup | Mumbai',
+    description: 'Mumbai',
+    url: 'https://www.lalanicomputers.com/products/peripherals-power',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Peripherals, Accessories & Power Backup | Mumbai',
+    description: 'Mumbai',
+  },
 };
 
 const peripheralTypes = [

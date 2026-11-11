@@ -27,9 +27,9 @@ import { CorporateAssetInquiry } from "@/components/conversion/CorporateAssetInq
 import { BUYBACK_CATEGORIES, PRIMARY_BUYBACK_CATEGORIES } from "@/lib/data/buybackData";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.lalanicomputers.com/buyback" },
-  title: "Corporate IT Asset Buyback & ITAD Liquidation Mumbai | Lalani Computers",
-  description: "Enterprise IT asset disposition (ITAD) for corporate laptop fleets, rack servers, SAN storage, Cisco switches & enterprise UPS systems in Mumbai. NIST 800-88 data sanitization & immediate RTGS.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/buyback' },
+  title: 'Corporate IT Asset Buyback & ITAD Mumbai | Lalani Computers',
+  description: 'Corporate IT asset disposition (ITAD) for laptop fleets, rack servers, SAN storage & Cisco switches in Mumbai. NIST 800-88 data wiping & instant RTGS.',
   keywords: [
     "corporate it asset buyback mumbai",
     "enterprise itad liquidation india",
@@ -41,11 +41,18 @@ export const metadata: Metadata = {
     "nist 800-88 data sanitization mumbai"
   ],
   openGraph: {
-    title: "Corporate IT Asset Buyback & ITAD Portal Mumbai | Lalani Computers",
-    description: "Enterprise hardware liquidation: laptop fleets, rack servers, network switches, enterprise UPS, and server enclosures. NIST 800-88 sanitized wiping and immediate corporate RTGS settlement.",
-    url: "https://www.lalanicomputers.com/buyback",
-    type: "website"
-  }
+    title: 'Corporate IT Asset Buyback & ITAD Mumbai | Lalani Computers',
+    description: 'Corporate IT asset disposition (ITAD) for laptop fleets, rack servers, SAN storage & Cisco switches in Mumbai. NIST 800-88 data wiping & instant RTGS.',
+    url: 'https://www.lalanicomputers.com/buyback',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Corporate IT Asset Buyback & ITAD Mumbai | Lalani Computers',
+    description: 'Corporate IT asset disposition (ITAD) for laptop fleets, rack servers, SAN storage & Cisco switches in Mumbai. NIST 800-88 data wiping & instant RTGS.',
+  },
 };
 
 export default function BuybackPortalPage() {

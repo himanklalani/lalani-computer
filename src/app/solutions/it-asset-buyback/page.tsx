@@ -8,9 +8,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/it-asset-buyback' },
-  title: "IT Asset Buyback Mumbai | Used Storage Server Supplier",
-  description: "Enterprise IT Asset Disposition (ITAD). We buy old servers and laptops with secure data wiping. Wholesale supplier of used server memory and hard disks.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/it-asset-buyback' },
+  title: 'IT Asset Buyback Mumbai | Used Storage Server Supplier',
+  description: 'Enterprise IT Asset Disposition (ITAD). We buy old servers and laptops with secure data wiping. Wholesale supplier of used server memory and hard disks.',
+  openGraph: {
+    title: 'IT Asset Buyback Mumbai | Used Storage Server Supplier',
+    description: 'Enterprise IT Asset Disposition (ITAD). We buy old servers and laptops with secure data wiping. Wholesale supplier of used server memory and hard disks.',
+    url: 'https://www.lalanicomputers.com/solutions/it-asset-buyback',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Asset Buyback Mumbai | Used Storage Server Supplier',
+    description: 'Enterprise IT Asset Disposition (ITAD). We buy old servers and laptops with secure data wiping. Wholesale supplier of used server memory and hard disks.',
+  },
 };
 
 export default function ITAssetBuybackPage() {

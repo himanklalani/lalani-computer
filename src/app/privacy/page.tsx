@@ -1,11 +1,25 @@
+import { Metadata } from "next";
 import React from "react";
 import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 
-export const metadata = {
-  alternates: { canonical: '/privacy' },
-  title: "Privacy Policy | Lalani Computers",
-  description: "Read the privacy policy of Lalani Computers. Learn how we collect, use, and protect your data in our corporate IT services.",
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.lalanicomputers.com/privacy' },
+  title: 'Privacy Policy | Lalani Computers',
+  description: 'Read the privacy policy of Lalani Computers. Learn how we collect, use, and protect your data in our corporate IT services.',
+  openGraph: {
+    title: 'Privacy Policy | Lalani Computers',
+    description: 'Read the privacy policy of Lalani Computers. Learn how we collect, use, and protect your data in our corporate IT services.',
+    url: 'https://www.lalanicomputers.com/privacy',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Lalani Computers',
+    description: 'Read the privacy policy of Lalani Computers. Learn how we collect, use, and protect your data in our corporate IT services.',
+  },
 };
 
 export default function PrivacyPage() {

@@ -8,9 +8,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/clients/industries/healthcare' },
-  title: "IT Infrastructure & Surveillance for Healthcare in Mumbai | Lalani Computers",
-  description: "Compliance-ready data storage, hospital surveillance (CCTV), and specialized IT hardware for healthcare facilities and pharmaceuticals in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/clients/industries/healthcare' },
+  title: 'Healthcare IT & Surveillance Mumbai | Lalani Computers',
+  description: 'Compliance-ready data storage, hospital surveillance (CCTV), and specialized IT hardware for healthcare facilities and pharmaceuticals in Mumbai.',
+  openGraph: {
+    title: 'Healthcare IT & Surveillance Mumbai | Lalani Computers',
+    description: 'Compliance-ready data storage, hospital surveillance (CCTV), and specialized IT hardware for healthcare facilities and pharmaceuticals in Mumbai.',
+    url: 'https://www.lalanicomputers.com/clients/industries/healthcare',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Healthcare IT & Surveillance Mumbai | Lalani Computers',
+    description: 'Compliance-ready data storage, hospital surveillance (CCTV), and specialized IT hardware for healthcare facilities and pharmaceuticals in Mumbai.',
+  },
 };
 
 const roomKits = [

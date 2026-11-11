@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/amc-support' },
-  title: "Computer AMC in Mumbai | Computer Network LAN AMC",
-  description: "Comprehensive Annual Maintenance Contracts (AMC), preventative maintenance, and on-site IT troubleshooting for corporate teams in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/amc-support' },
+  title: 'Computer AMC in Mumbai | Computer Network LAN AMC',
+  description: 'Comprehensive Annual Maintenance Contracts (AMC), preventative maintenance, and on-site IT troubleshooting for corporate teams in Mumbai.',
+  openGraph: {
+    title: 'Computer AMC in Mumbai | Computer Network LAN AMC',
+    description: 'Comprehensive Annual Maintenance Contracts (AMC), preventative maintenance, and on-site IT troubleshooting for corporate teams in Mumbai.',
+    url: 'https://www.lalanicomputers.com/solutions/amc-support',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Computer AMC in Mumbai | Computer Network LAN AMC',
+    description: 'Comprehensive Annual Maintenance Contracts (AMC), preventative maintenance, and on-site IT troubleshooting for corporate teams in Mumbai.',
+  },
 };
 
 const deliverables = [

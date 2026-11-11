@@ -8,9 +8,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/clients/industries/bfsi' },
-  title: "Enterprise IT Hardware & Security for BFSI in Mumbai | Lalani Computers",
-  description: "Secure branch rollouts, high-availability servers, and endpoint security hardware for Mumbai's Banking, Financial Services, and Insurance (BFSI) sector.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/clients/industries/bfsi' },
+  title: 'BFSI Enterprise IT Hardware & Security | Lalani Computers',
+  description: 'Secure branch rollouts, high-availability servers, and endpoint security hardware for Mumbai',
+  openGraph: {
+    title: 'BFSI Enterprise IT Hardware & Security | Lalani Computers',
+    description: 'Secure branch rollouts, high-availability servers, and endpoint security hardware for Mumbai',
+    url: 'https://www.lalanicomputers.com/clients/industries/bfsi',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BFSI Enterprise IT Hardware & Security | Lalani Computers',
+    description: 'Secure branch rollouts, high-availability servers, and endpoint security hardware for Mumbai',
+  },
 };
 
 const deploymentKits = [

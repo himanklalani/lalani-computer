@@ -8,10 +8,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Best Laptops Under ₹75,000: Premium Performance | Lalani Computers",
-  description: "Discover premium enterprise laptops under ₹75,000. We compare the Dell DC15250 i5, Lenovo IdeaPad Slim 3 i5, and HP 15 i5 for maximum performance.",
-  alternates: {
-    canonical: "/products/computing/best-laptops-under-75000",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/computing/best-laptops-under-75000' },
+  title: 'Best Laptops Under ₹75,000 in India | Lalani Computers',
+  description: 'Discover premium enterprise laptops under ₹75,000. We compare the Dell DC15250 i5, Lenovo IdeaPad Slim 3 i5, and HP 15 i5 for maximum performance.',
+  openGraph: {
+    title: 'Best Laptops Under ₹75,000 in India | Lalani Computers',
+    description: 'Discover premium enterprise laptops under ₹75,000. We compare the Dell DC15250 i5, Lenovo IdeaPad Slim 3 i5, and HP 15 i5 for maximum performance.',
+    url: 'https://www.lalanicomputers.com/products/computing/best-laptops-under-75000',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Laptops Under ₹75,000 in India | Lalani Computers',
+    description: 'Discover premium enterprise laptops under ₹75,000. We compare the Dell DC15250 i5, Lenovo IdeaPad Slim 3 i5, and HP 15 i5 for maximum performance.',
   },
 };
 

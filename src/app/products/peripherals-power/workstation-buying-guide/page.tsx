@@ -7,8 +7,22 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Complete Corporate Workstation & Accessories Guide 2026 | Lalani Computers",
-  description: "OEM docking stations, dual monitors, ergonomic peripherals — everything you need to build the perfect high-productivity desk setup.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/peripherals-power/workstation-buying-guide' },
+  title: 'Corporate Workstation Guide 2026 | Lalani Computers',
+  description: 'OEM docking stations, dual monitors & ergonomic peripherals. Expert guide to building high-productivity corporate desk setups in Mumbai.',
+  openGraph: {
+    title: 'Corporate Workstation Guide 2026 | Lalani Computers',
+    description: 'OEM docking stations, dual monitors & ergonomic peripherals. Expert guide to building high-productivity corporate desk setups in Mumbai.',
+    url: 'https://www.lalanicomputers.com/products/peripherals-power/workstation-buying-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Corporate Workstation Guide 2026 | Lalani Computers',
+    description: 'OEM docking stations, dual monitors & ergonomic peripherals. Expert guide to building high-productivity corporate desk setups in Mumbai.',
+  },
 };
 
 export default function GuidePage() {

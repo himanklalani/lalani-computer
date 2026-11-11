@@ -98,12 +98,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
-      url: `${BASE}/solutions/repairs`,
-      lastModified: lastMod,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
       url: `${BASE}/solutions/surveillance-security`,
       lastModified: lastMod,
       changeFrequency: 'monthly',
@@ -130,12 +124,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE}/repair/laptop-desktop-repairs`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
       url: `${BASE}/repair/motherboard-component-repair`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -152,18 +140,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.85,
-    },
-    {
-      url: `${BASE}/repair/motherboard-chip-level`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/repair/laptop-battery`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
     },
 
     // ── Dedicated IT Asset Disposition (ITAD) & Buyback Platform ─────────────
@@ -190,24 +166,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.85,
-    },
-    {
-      url: `${BASE}/buyback/bulk-laptops`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/buyback/enterprise-servers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/buyback/networking-switches`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
     },
 
     // ── Industry expertise pages ────────────────────────────────────────────
@@ -385,12 +343,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.75,
-    },
-    {
-      url: `${BASE}/products/computing/leasing-vs-buying-corporate-laptops`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.78,
     },
   ]
 }

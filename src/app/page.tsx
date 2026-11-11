@@ -47,23 +47,21 @@ const BuybackCTASection = dynamic(
 );
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/' },
-  title: "Lalani Computers | Enterprise IT Hardware & Networking Mumbai",
-  description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner. Specializing in corporate laptops, servers, and office networking.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/' },
+  title: 'Lalani Computers | Enterprise IT Hardware & Networking',
+  description: 'Mumbai',
   openGraph: {
-    title: "Lalani Computers | Enterprise IT Hardware & Networking Mumbai",
-    description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner. Specializing in corporate laptops, servers, and office networking.",
-    url: "https://www.lalanicomputers.com/",
-    siteName: "Lalani Computers",
-    images: [{ url: "https://www.lalanicomputers.com/icon.png", width: 1200, height: 630 }],
-    locale: "en_IN",
-    type: "website",
+    title: 'Lalani Computers | Enterprise IT Hardware & Networking',
+    description: 'Mumbai',
+    url: 'https://www.lalanicomputers.com/',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Lalani Computers | Enterprise IT Hardware & Networking Mumbai",
-    description: "Mumbai's premier enterprise IT hardware supplier and turnkey infrastructure deployment partner.",
-    images: ["https://www.lalanicomputers.com/icon.png"],
+    card: 'summary_large_image',
+    title: 'Lalani Computers | Enterprise IT Hardware & Networking',
+    description: 'Mumbai',
   },
 };
 

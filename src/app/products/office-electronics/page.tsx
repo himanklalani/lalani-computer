@@ -9,9 +9,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/products/office-electronics' },
-  title: "Corporate Printers & Office Electronics Mumbai | Lalani Computers",
-  description: "Procure enterprise laser printers, office projectors, EPABX telecom, and video conferencing systems for your corporate office in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/office-electronics' },
+  title: 'Office Electronics & Printers Mumbai | Lalani Computers',
+  description: 'Procure enterprise laser printers, office projectors, EPABX telecom, and video conferencing systems for your corporate office in Mumbai.',
+  openGraph: {
+    title: 'Office Electronics & Printers Mumbai | Lalani Computers',
+    description: 'Procure enterprise laser printers, office projectors, EPABX telecom, and video conferencing systems for your corporate office in Mumbai.',
+    url: 'https://www.lalanicomputers.com/products/office-electronics',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Office Electronics & Printers Mumbai | Lalani Computers',
+    description: 'Procure enterprise laser printers, office projectors, EPABX telecom, and video conferencing systems for your corporate office in Mumbai.',
+  },
 };
 
 const electronicTypes = [

@@ -11,9 +11,22 @@ import { SwipeHint } from "@/components/ui/SwipeHint";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/clients' },
-  title: "Enterprise IT Hardware Clients | Corporate IT Procurement Mumbai",
-  description: "Lalani Computers powers the IT infrastructure of top organizations in Mumbai across BFSI, Healthcare, and Manufacturing sectors with reliable hardware & turnkey setups.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/clients' },
+  title: 'Enterprise IT Hardware Clients Mumbai | Lalani Computers',
+  description: 'Lalani Computers powers enterprise IT infrastructure for leading organizations across Mumbai in BFSI, Healthcare, and Manufacturing with turnkey setups.',
+  openGraph: {
+    title: 'Enterprise IT Hardware Clients Mumbai | Lalani Computers',
+    description: 'Lalani Computers powers enterprise IT infrastructure for leading organizations across Mumbai in BFSI, Healthcare, and Manufacturing with turnkey setups.',
+    url: 'https://www.lalanicomputers.com/clients',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise IT Hardware Clients Mumbai | Lalani Computers',
+    description: 'Lalani Computers powers enterprise IT infrastructure for leading organizations across Mumbai in BFSI, Healthcare, and Manufacturing with turnkey setups.',
+  },
 };
 
 export default function ClientsPage() {

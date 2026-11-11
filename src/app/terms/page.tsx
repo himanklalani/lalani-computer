@@ -1,11 +1,25 @@
+import { Metadata } from "next";
 import React from "react";
 import { Section } from "@/components/ui/Section";
 import { Typography } from "@/components/ui/Typography";
 
-export const metadata = {
-  alternates: { canonical: '/terms' },
-  title: "Terms of Service | Lalani Computers",
-  description: "Terms of Service for Lalani Computers. Review the terms governing our enterprise IT procurement and infrastructure solutions.",
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.lalanicomputers.com/terms' },
+  title: 'Terms of Service | Lalani Computers',
+  description: 'Terms of Service for Lalani Computers. Review the terms governing our enterprise IT procurement and infrastructure solutions.',
+  openGraph: {
+    title: 'Terms of Service | Lalani Computers',
+    description: 'Terms of Service for Lalani Computers. Review the terms governing our enterprise IT procurement and infrastructure solutions.',
+    url: 'https://www.lalanicomputers.com/terms',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | Lalani Computers',
+    description: 'Terms of Service for Lalani Computers. Review the terms governing our enterprise IT procurement and infrastructure solutions.',
+  },
 };
 
 export default function TermsPage() {

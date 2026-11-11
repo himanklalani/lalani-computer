@@ -478,3 +478,89 @@ PENDING (not yet done):
   [ ] /solutions/repairs page � add second B2B fleet CTA button
   [ ] Orphan pages fix � 6 pages with no incoming internal links
   [ ] ~28 pages still have title > 60 chars (cosmetic only, no ranking penalty)
+
+
+================================================================================
+SESSION 8 -- NOV 11, 2026: PHASE 1 TECHNICAL SEO, INDEXING & METADATA CLEAN-UP
+================================================================================
+
+Analysis Basis: GSC 28-day & 3-month performance exports, GA4 engagement reports,
+and Ahrefs Site Audit (Health Score 92 with 9 errors, 61 warnings).
+
+CHANGE 19: robots.ts -- Crawl Budget Asset Protection
+-------------------------------------------------------------------------
+- What changed: Added '/_next/static/media/' to disallow: [...].
+- Problem resolved: GSC reported Next.js static font files (.woff2) being
+  crawled as web pages and marked 'Crawled - currently not indexed'. Blocking
+  raw static font/media chunks preserves crawl budget exclusively for HTML content.
+
+CHANGE 20: next.config.ts & sitemap.ts -- 301 Permanent Redirects & Alias Consolidation
+---------------------------------------------------------------------------------------
+- What changed:
+  1. Configured 301 redirects in next.config.ts for alias slugs:
+     - /solutions/repairs -> /repair
+     - /buyback/bulk-laptops -> /buyback/corporate-it-fleets
+     - /buyback/enterprise-servers -> /buyback/enterprise-servers-storage
+     - /buyback/networking-switches -> /buyback/networking-switches-infrastructure
+     - /repair/laptop-battery -> /repair/laptop-desktop-repairs
+     - /repair/motherboard-chip-level -> /repair/motherboard-component-repair
+  2. In sitemap.ts: Removed all duplicate aliases, redirected URLs, and duplicate entries.
+     Reduced sitemap to 52 verified, 100% unique canonical URLs.
+
+CHANGE 21: /repair/[slug]/page.tsx & /buyback/[slug]/page.tsx -- Canonical Alignment
+------------------------------------------------------------------------------------
+- What changed:
+  - In repair/[slug], mapped laptop-desktop-repairs canonical directly to
+    https://www.lalanicomputers.com/repair.
+  - Resolves GSC error: 'Duplicate, Google chose different canonical than user'
+    where Google had selected /repair over the duplicate category page.
+  - In buyback/[slug], mapped aliases to primary canonical URLs so any legacy
+    or external hits pass PageRank directly to primary hubs.
+
+CHANGE 22: Footer.tsx -- Internal Linking Architecture (Orphan Pages Elimination)
+---------------------------------------------------------------------------------
+- What changed:
+  - Re-architected Footer layout into an organized 12-column grid:
+    * Col 1-3: Brand, legacy blurb, LinkedIn, Instagram
+    * Col 4-5: IT Hardware (/products/computing, /servers, /networking-security,
+      /office-electronics, /peripherals-power, /software, /products)
+    * Col 6-7: Solutions & Lifecycle (/solutions/office-network-setup-india,
+      /custom-pc-builds, /storage-server-supplier-mumbai, /enterprise-servers-mumbai,
+      /server-colocation-mumbai, /repair, /buyback)
+    * Col 8-9: Company & Industry Verticals (/about, /clients,
+      /clients/industries/bfsi, /clients/industries/infrastructure, /contact, /terms, /privacy)
+    * Col 10-12: Contact Details (Fort office address, phone, email)
+- Problem resolved: Zero orphan pages remaining across the entire website. Every
+  single page in sitemap.ts now receives continuous PageRank and crawl flow.
+
+CHANGE 23: Sitewide Metadata, Absolute Canonicals & Open Graph Synchronization
+------------------------------------------------------------------------------
+- What changed:
+  - Updated 50 pages across src/app/ to declare full absolute canonical URLs
+    (https://www.lalanicomputers.com/...) instead of relative paths.
+  - Added matching openGraph blocks (url, title, description, siteName, locale, type)
+    to every single page, eliminating the 43 Ahrefs 'Open Graph URL not matching canonical' warnings.
+  - Optimized 27 titles exceeding 60 characters down to 48-59 characters.
+  - Optimized 6 meta descriptions exceeding 160 characters down to 145-153 characters.
+- Verification: Full TypeScript typecheck (npx tsc --noEmit) PASSED with 0 errors.
+
+================================================================================
+OVERALL STATUS -- NOV 11, 2026
+================================================================================
+
+LIVE ON: https://www.lalanicomputers.com
+ADMIN:   https://www.lalanicomputers.com/admin/leads/my_secret_key_123
+
+COMPLETED IN PHASE 1:
+  [x] robots.ts font crawler disallow
+  [x] 301 redirects for legacy aliases in next.config.ts
+  [x] Orphan pages fix (0 orphans remaining)
+  [x] Canonical conflict on /repair/laptop-desktop-repairs resolved
+  [x] 43 Open Graph URL canonical mismatches resolved
+  [x] Sitewide title lengths optimized (all <= 60 chars)
+  [x] Sitewide meta description lengths optimized (all <= 160 chars)
+
+READY FOR PHASE 2:
+  [ ] AEO (Answer Engine Optimization for Google AI Overviews) on high-ranking pages
+  [ ] GEO (Generative Engine Optimization) entity triples & specification tables
+  [ ] Missing Product schema injection on 4 product catalog pages

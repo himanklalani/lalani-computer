@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "Enterprise Wi-Fi Setup Guide | Lalani Computers",
-  description: "Step-by-step guide to deploying secure, seamless, and high-density wireless networks using enterprise access points.",
-  alternates: { canonical: '/solutions/networking-wifi/wifi-setup-guide' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/networking-wifi/wifi-setup-guide' },
+  title: 'Enterprise Wi-Fi Setup Guide | Lalani Computers',
+  description: 'Step-by-step guide to deploying secure, seamless, and high-density wireless networks using enterprise access points.',
+  openGraph: {
+    title: 'Enterprise Wi-Fi Setup Guide | Lalani Computers',
+    description: 'Step-by-step guide to deploying secure, seamless, and high-density wireless networks using enterprise access points.',
+    url: 'https://www.lalanicomputers.com/solutions/networking-wifi/wifi-setup-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Wi-Fi Setup Guide | Lalani Computers',
+    description: 'Step-by-step guide to deploying secure, seamless, and high-density wireless networks using enterprise access points.',
+  },
 };
 
 export default function GuidePage() {

@@ -9,9 +9,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/products/networking-security' },
-  title: "Networking & Security Hardware | Cisco, Fortinet, Hikvision Mumbai",
-  description: "Enterprise networking gear, Wi-Fi access points, hardware firewalls, and corporate CCTV surveillance systems supplied and installed across Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/networking-security' },
+  title: 'Networking & Security Hardware Mumbai | Cisco & Fortinet',
+  description: 'Enterprise networking gear, Wi-Fi access points, hardware firewalls, and corporate CCTV surveillance systems supplied and installed across Mumbai.',
+  openGraph: {
+    title: 'Networking & Security Hardware Mumbai | Cisco & Fortinet',
+    description: 'Enterprise networking gear, Wi-Fi access points, hardware firewalls, and corporate CCTV surveillance systems supplied and installed across Mumbai.',
+    url: 'https://www.lalanicomputers.com/products/networking-security',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Networking & Security Hardware Mumbai | Cisco & Fortinet',
+    description: 'Enterprise networking gear, Wi-Fi access points, hardware firewalls, and corporate CCTV surveillance systems supplied and installed across Mumbai.',
+  },
 };
 
 const networkTypes = [

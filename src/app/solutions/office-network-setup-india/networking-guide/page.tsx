@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "Office Networking Guide 2026 | Lalani Computers",
-  description: "Best practices for setting up secure, high-speed wired and wireless networks for modern Indian offices.",
-  alternates: { canonical: '/solutions/office-network-setup-india/networking-guide' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/office-network-setup-india/networking-guide' },
+  title: 'Office Networking Guide 2026 | Lalani Computers',
+  description: 'Best practices for setting up secure, high-speed wired and wireless networks for modern Indian offices.',
+  openGraph: {
+    title: 'Office Networking Guide 2026 | Lalani Computers',
+    description: 'Best practices for setting up secure, high-speed wired and wireless networks for modern Indian offices.',
+    url: 'https://www.lalanicomputers.com/solutions/office-network-setup-india/networking-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Office Networking Guide 2026 | Lalani Computers',
+    description: 'Best practices for setting up secure, high-speed wired and wireless networks for modern Indian offices.',
+  },
 };
 
 export default function GuidePage() {

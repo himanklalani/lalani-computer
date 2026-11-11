@@ -41,8 +41,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Repair Service Not Found | Lalani Computers" };
   }
 
+  const canonicalUrl = category.slug === "laptop-desktop-repairs"
+    ? "https://www.lalanicomputers.com/repair"
+    : `https://www.lalanicomputers.com/repair/${category.slug}`;
+
   return {
-    alternates: { canonical: `https://www.lalanicomputers.com/repair/${category.slug}` },
+    alternates: { canonical: canonicalUrl },
     title: `${category.metaTitle} | Lalani Computers`,
     description: category.metaDescription,
     keywords: [
@@ -55,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${category.metaTitle} | Lalani Computers`,
       description: category.metaDescription,
-      url: `https://www.lalanicomputers.com/repair/${category.slug}`,
+      url: canonicalUrl,
       type: "article"
     }
   };

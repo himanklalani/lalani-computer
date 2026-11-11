@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "CCTV & Security Buying Guide | Lalani Computers",
-  description: "How to design a robust IP camera and biometric access control topology for corporate buildings.",
-  alternates: { canonical: '/solutions/surveillance-security/cctv-buying-guide' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/surveillance-security/cctv-buying-guide' },
+  title: 'CCTV & Security Buying Guide | Lalani Computers',
+  description: 'How to design a robust IP camera and biometric access control topology for corporate buildings.',
+  openGraph: {
+    title: 'CCTV & Security Buying Guide | Lalani Computers',
+    description: 'How to design a robust IP camera and biometric access control topology for corporate buildings.',
+    url: 'https://www.lalanicomputers.com/solutions/surveillance-security/cctv-buying-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CCTV & Security Buying Guide | Lalani Computers',
+    description: 'How to design a robust IP camera and biometric access control topology for corporate buildings.',
+  },
 };
 
 export default function GuidePage() {

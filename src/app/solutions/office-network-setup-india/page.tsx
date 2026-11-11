@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "Office Network Setup Company India | Lalani Computers",
-  description: "Expert office network setup company in India. We design, install, and manage corporate LAN/WAN networking and seamless Wi-Fi infrastructure for modern workplaces.",
-  alternates: { canonical: '/solutions/office-network-setup-india' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/office-network-setup-india' },
+  title: 'Office Network Setup Company India | Lalani Computers',
+  description: 'Top office network setup company in India. We design, install, and manage corporate LAN/WAN networking, structured cabling & enterprise Wi-Fi for workplaces.',
+  openGraph: {
+    title: 'Office Network Setup Company India | Lalani Computers',
+    description: 'Top office network setup company in India. We design, install, and manage corporate LAN/WAN networking, structured cabling & enterprise Wi-Fi for workplaces.',
+    url: 'https://www.lalanicomputers.com/solutions/office-network-setup-india',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Office Network Setup Company India | Lalani Computers',
+    description: 'Top office network setup company in India. We design, install, and manage corporate LAN/WAN networking, structured cabling & enterprise Wi-Fi for workplaces.',
+  },
 };
 
 const deliverables = [

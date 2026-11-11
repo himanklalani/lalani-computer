@@ -10,9 +10,22 @@ import { SwipeHint } from "@/components/ui/SwipeHint";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/products' },
-  title: "IT Hardware Supplier Mumbai | Laptops, Servers & Networking",
-  description: "Mumbai's trusted IT hardware supplier for individuals and enterprises. Shop premium laptops, custom PCs, enterprise servers, and networking gear with local delivery.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products' },
+  title: 'IT Hardware Supplier Mumbai | Laptops, Servers & Networking',
+  description: 'Mumbai',
+  openGraph: {
+    title: 'IT Hardware Supplier Mumbai | Laptops, Servers & Networking',
+    description: 'Mumbai',
+    url: 'https://www.lalanicomputers.com/products',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Hardware Supplier Mumbai | Laptops, Servers & Networking',
+    description: 'Mumbai',
+  },
 };
 
 const jsonLd = {

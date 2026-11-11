@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "Enterprise Servers and Storage Solutions in Mumbai | Lalani Computers",
-  description: "Looking for enterprise servers and storage solutions in Mumbai? Lalani Computers provides high-performance rack, tower, and blade servers for corporate data centers.",
-  alternates: { canonical: '/solutions/enterprise-servers-mumbai' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/enterprise-servers-mumbai' },
+  title: 'Enterprise Servers & Storage Mumbai | Lalani Computers',
+  description: 'Enterprise servers and storage solutions in Mumbai. High-performance rack, tower, and blade servers for corporate data centers with same-day Mumbai delivery.',
+  openGraph: {
+    title: 'Enterprise Servers & Storage Mumbai | Lalani Computers',
+    description: 'Enterprise servers and storage solutions in Mumbai. High-performance rack, tower, and blade servers for corporate data centers with same-day Mumbai delivery.',
+    url: 'https://www.lalanicomputers.com/solutions/enterprise-servers-mumbai',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Servers & Storage Mumbai | Lalani Computers',
+    description: 'Enterprise servers and storage solutions in Mumbai. High-performance rack, tower, and blade servers for corporate data centers with same-day Mumbai delivery.',
+  },
 };
 
 const deliverables = [

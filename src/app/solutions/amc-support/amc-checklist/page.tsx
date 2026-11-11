@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "Definitive AMC Checklist for 2026 | Lalani Computers",
-  description: "What to look for in a corporate IT Annual Maintenance Contract (AMC) to ensure zero downtime.",
-  alternates: { canonical: '/solutions/amc-support/amc-checklist' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/amc-support/amc-checklist' },
+  title: 'Definitive AMC Checklist for 2026 | Lalani Computers',
+  description: 'What to look for in a corporate IT Annual Maintenance Contract (AMC) to ensure zero downtime.',
+  openGraph: {
+    title: 'Definitive AMC Checklist for 2026 | Lalani Computers',
+    description: 'What to look for in a corporate IT Annual Maintenance Contract (AMC) to ensure zero downtime.',
+    url: 'https://www.lalanicomputers.com/solutions/amc-support/amc-checklist',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Definitive AMC Checklist for 2026 | Lalani Computers',
+    description: 'What to look for in a corporate IT Annual Maintenance Contract (AMC) to ensure zero downtime.',
+  },
 };
 
 export default function GuidePage() {

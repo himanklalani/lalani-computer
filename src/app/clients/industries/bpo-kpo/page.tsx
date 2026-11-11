@@ -8,9 +8,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/clients/industries/bpo-kpo' },
-  title: "Bulk IT Hardware & Thin Clients for BPO/KPO in Mumbai | Lalani Computers",
-  description: "Mass deployment of thin clients, UPS backups, and enterprise networking gear for BPO and KPO call centers. Turnkey IT setups with 24/7 AMC support.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/clients/industries/bpo-kpo' },
+  title: 'BPO/KPO Bulk IT Hardware & Thin Clients | Lalani Computers',
+  description: 'Mass deployment of thin clients, UPS backups, and enterprise networking gear for BPO and KPO call centers. Turnkey IT setups with 24/7 AMC support.',
+  openGraph: {
+    title: 'BPO/KPO Bulk IT Hardware & Thin Clients | Lalani Computers',
+    description: 'Mass deployment of thin clients, UPS backups, and enterprise networking gear for BPO and KPO call centers. Turnkey IT setups with 24/7 AMC support.',
+    url: 'https://www.lalanicomputers.com/clients/industries/bpo-kpo',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BPO/KPO Bulk IT Hardware & Thin Clients | Lalani Computers',
+    description: 'Mass deployment of thin clients, UPS backups, and enterprise networking gear for BPO and KPO call centers. Turnkey IT setups with 24/7 AMC support.',
+  },
 };
 
 const seatKits = [

@@ -28,9 +28,9 @@ import { RepairServiceBooking } from "@/components/conversion/RepairServiceBooki
 import { REPAIR_CATEGORIES, PRIMARY_REPAIR_CATEGORIES } from "@/lib/data/repairData";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.lalanicomputers.com/repair" },
-  title: "IT Hardware Repair & Laptop Service Mumbai | Doorstep & On-Site Support",
-  description: "End-to-end laptop and desktop repairs, broken screens, batteries, hinges, SSD upgrades & enterprise server maintenance in Mumbai. Scheduled doorstep pickup & on-site corporate service.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/repair' },
+  title: 'Laptop & IT Hardware Repair Mumbai | Doorstep & On-Site',
+  description: 'Doorstep laptop & desktop repair across Mumbai. Screen & battery replacement, broken hinges, SSD upgrades & server maintenance with 30-day warranty.',
   keywords: [
     "laptop repair mumbai",
     "desktop hardware service mumbai",
@@ -42,11 +42,18 @@ export const metadata: Metadata = {
     "on site it repair mumbai"
   ],
   openGraph: {
-    title: "Complete IT Hardware Repair & Maintenance in Mumbai | Lalani Computers",
-    description: "Doorstep pickup across Mumbai MMR and on-site corporate IT fleet servicing. Laptops, desktops, workstations, and enterprise infrastructure.",
-    url: "https://www.lalanicomputers.com/repair",
-    type: "website"
-  }
+    title: 'Laptop & IT Hardware Repair Mumbai | Doorstep & On-Site',
+    description: 'Doorstep laptop & desktop repair across Mumbai. Screen & battery replacement, broken hinges, SSD upgrades & server maintenance with 30-day warranty.',
+    url: 'https://www.lalanicomputers.com/repair',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Laptop & IT Hardware Repair Mumbai | Doorstep & On-Site',
+    description: 'Doorstep laptop & desktop repair across Mumbai. Screen & battery replacement, broken hinges, SSD upgrades & server maintenance with 30-day warranty.',
+  },
 };
 
 export default function RepairHubPage() {

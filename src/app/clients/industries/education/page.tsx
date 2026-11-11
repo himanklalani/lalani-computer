@@ -8,9 +8,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/clients/industries/education' },
-  title: "IT Hardware & Smart Classroom Setup for Education | Lalani Computers",
-  description: "Campus-wide Wi-Fi networking, smart projectors, and computer lab setups for schools, colleges, and educational institutions in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/clients/industries/education' },
+  title: 'Education IT Hardware & Smart Classrooms | Lalani Computers',
+  description: 'Campus-wide Wi-Fi networking, smart projectors, and computer lab setups for schools, colleges, and educational institutions in Mumbai.',
+  openGraph: {
+    title: 'Education IT Hardware & Smart Classrooms | Lalani Computers',
+    description: 'Campus-wide Wi-Fi networking, smart projectors, and computer lab setups for schools, colleges, and educational institutions in Mumbai.',
+    url: 'https://www.lalanicomputers.com/clients/industries/education',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Education IT Hardware & Smart Classrooms | Lalani Computers',
+    description: 'Campus-wide Wi-Fi networking, smart projectors, and computer lab setups for schools, colleges, and educational institutions in Mumbai.',
+  },
 };
 
 const campusKits = [

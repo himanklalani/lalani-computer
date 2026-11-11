@@ -9,10 +9,21 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "Best PC Builder in Mumbai: Custom Gaming & Office Workstations",
-  description: "Looking for the best PC builder in Mumbai? Lalani Computers specializes in building custom high-performance desktops for gaming, editing, and corporate offices.",
-  alternates: {
-    canonical: "/solutions/custom-pc-builds",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/custom-pc-builds' },
+  title: 'Best Custom PC Builder in Mumbai | Workstations & Gaming',
+  description: 'Looking for the best PC builder in Mumbai? Lalani Computers specializes in building custom high-performance desktops for gaming, editing, and corporate offices.',
+  openGraph: {
+    title: 'Best Custom PC Builder in Mumbai | Workstations & Gaming',
+    description: 'Looking for the best PC builder in Mumbai? Lalani Computers specializes in building custom high-performance desktops for gaming, editing, and corporate offices.',
+    url: 'https://www.lalanicomputers.com/solutions/custom-pc-builds',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Custom PC Builder in Mumbai | Workstations & Gaming',
+    description: 'Looking for the best PC builder in Mumbai? Lalani Computers specializes in building custom high-performance desktops for gaming, editing, and corporate offices.',
   },
 };
 

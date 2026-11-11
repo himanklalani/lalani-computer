@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/solutions/networking-wifi' },
-  title: "Enterprise Networking & Wi-Fi Design Mumbai | Lalani Computers",
-  description: "Corporate routing, switching, seamless Wi-Fi coverage, and secure hardware firewall installations for large facilities.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/networking-wifi' },
+  title: 'Enterprise Networking & Wi-Fi Mumbai | Lalani Computers',
+  description: 'Corporate routing, switching, seamless Wi-Fi coverage, and secure hardware firewall installations for large facilities.',
+  openGraph: {
+    title: 'Enterprise Networking & Wi-Fi Mumbai | Lalani Computers',
+    description: 'Corporate routing, switching, seamless Wi-Fi coverage, and secure hardware firewall installations for large facilities.',
+    url: 'https://www.lalanicomputers.com/solutions/networking-wifi',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Networking & Wi-Fi Mumbai | Lalani Computers',
+    description: 'Corporate routing, switching, seamless Wi-Fi coverage, and secure hardware firewall installations for large facilities.',
+  },
 };
 
 const deliverables = [

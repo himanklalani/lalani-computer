@@ -8,10 +8,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Best Laptops Under ₹50,000 in India (2026 Guide) | Lalani Computers",
-  description: "Looking for a reliable work laptop on a budget? We review the best corporate laptops under ₹50,000 including the HP 255 G10, Lenovo V14 Ryzen 3, and Dell DC15250.",
-  alternates: {
-    canonical: "/products/computing/best-laptops-under-50000",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/computing/best-laptops-under-50000' },
+  title: 'Best Laptops Under ₹50,000 (2026 Guide) | Lalani Computers',
+  description: 'Looking for a reliable work laptop on a budget? Expert review of the best corporate laptops under ₹50,000 including HP 255 G10, Lenovo V14, and Dell Inspiron.',
+  openGraph: {
+    title: 'Best Laptops Under ₹50,000 (2026 Guide) | Lalani Computers',
+    description: 'Looking for a reliable work laptop on a budget? Expert review of the best corporate laptops under ₹50,000 including HP 255 G10, Lenovo V14, and Dell Inspiron.',
+    url: 'https://www.lalanicomputers.com/products/computing/best-laptops-under-50000',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Laptops Under ₹50,000 (2026 Guide) | Lalani Computers',
+    description: 'Looking for a reliable work laptop on a budget? Expert review of the best corporate laptops under ₹50,000 including HP 255 G10, Lenovo V14, and Dell Inspiron.',
   },
 };
 

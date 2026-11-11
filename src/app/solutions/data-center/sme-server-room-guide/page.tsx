@@ -3,9 +3,22 @@ import { Metadata } from "next";
 import { GuideLayout } from "@/components/ui/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "How to Build an SME Server Room | Lalani Computers",
-  description: "Expert advice on building secure, scalable server rooms with proper cooling and power management for SMEs.",
-  alternates: { canonical: '/solutions/data-center/sme-server-room-guide' },
+  alternates: { canonical: 'https://www.lalanicomputers.com/solutions/data-center/sme-server-room-guide' },
+  title: 'How to Build an SME Server Room | Lalani Computers',
+  description: 'Expert advice on building secure, scalable server rooms with proper cooling and power management for SMEs.',
+  openGraph: {
+    title: 'How to Build an SME Server Room | Lalani Computers',
+    description: 'Expert advice on building secure, scalable server rooms with proper cooling and power management for SMEs.',
+    url: 'https://www.lalanicomputers.com/solutions/data-center/sme-server-room-guide',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Build an SME Server Room | Lalani Computers',
+    description: 'Expert advice on building secure, scalable server rooms with proper cooling and power management for SMEs.',
+  },
 };
 
 export default function GuidePage() {

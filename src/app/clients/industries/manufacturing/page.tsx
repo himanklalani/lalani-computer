@@ -8,9 +8,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/clients/industries/manufacturing' },
-  title: "Rugged IT Hardware & Factory Networking Mumbai | Lalani Computers",
-  description: "Industrial PCs, factory-floor Wi-Fi networking, and robust IT setups designed for manufacturing plants and warehouses across India.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/clients/industries/manufacturing' },
+  title: 'Factory IT Hardware & Networking Mumbai | Lalani Computers',
+  description: 'Industrial PCs, factory-floor Wi-Fi networking, and robust IT setups designed for manufacturing plants and warehouses across India.',
+  openGraph: {
+    title: 'Factory IT Hardware & Networking Mumbai | Lalani Computers',
+    description: 'Industrial PCs, factory-floor Wi-Fi networking, and robust IT setups designed for manufacturing plants and warehouses across India.',
+    url: 'https://www.lalanicomputers.com/clients/industries/manufacturing',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Factory IT Hardware & Networking Mumbai | Lalani Computers',
+    description: 'Industrial PCs, factory-floor Wi-Fi networking, and robust IT setups designed for manufacturing plants and warehouses across India.',
+  },
 };
 
 const factoryKits = [

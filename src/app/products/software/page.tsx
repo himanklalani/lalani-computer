@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/products/software' },
-  title: "Enterprise Software Licensing & Security | Mumbai",
-  description: "Procure corporate software licenses, Microsoft 365, endpoint security (EDR), and backup solutions for your business. Fast deployment and compliance audits.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/software' },
+  title: 'Enterprise Software Licensing & Security | Mumbai',
+  description: 'Procure corporate software licenses, Microsoft 365, endpoint security (EDR), and backup solutions for your business. Fast deployment and compliance audits.',
+  openGraph: {
+    title: 'Enterprise Software Licensing & Security | Mumbai',
+    description: 'Procure corporate software licenses, Microsoft 365, endpoint security (EDR), and backup solutions for your business. Fast deployment and compliance audits.',
+    url: 'https://www.lalanicomputers.com/products/software',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Software Licensing & Security | Mumbai',
+    description: 'Procure corporate software licenses, Microsoft 365, endpoint security (EDR), and backup solutions for your business. Fast deployment and compliance audits.',
+  },
 };
 
 const softwareTypes = [

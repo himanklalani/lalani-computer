@@ -8,10 +8,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Best Laptops Under ₹60,000 for Professionals (2026) | Lalani Computers",
-  description: "Step up your productivity. Here are the top enterprise laptops under ₹60,000 featuring the Lenovo V15 Ryzen 5, Dell 15 Ryzen 7, and Acer AL15 i5.",
-  alternates: {
-    canonical: "/products/computing/best-laptops-under-60000",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/computing/best-laptops-under-60000' },
+  title: 'Best Laptops Under ₹60,000 in India | Lalani Computers',
+  description: 'Step up your productivity. Here are the top enterprise laptops under ₹60,000 featuring the Lenovo V15 Ryzen 5, Dell 15 Ryzen 7, and Acer AL15 i5.',
+  openGraph: {
+    title: 'Best Laptops Under ₹60,000 in India | Lalani Computers',
+    description: 'Step up your productivity. Here are the top enterprise laptops under ₹60,000 featuring the Lenovo V15 Ryzen 5, Dell 15 Ryzen 7, and Acer AL15 i5.',
+    url: 'https://www.lalanicomputers.com/products/computing/best-laptops-under-60000',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Laptops Under ₹60,000 in India | Lalani Computers',
+    description: 'Step up your productivity. Here are the top enterprise laptops under ₹60,000 featuring the Lenovo V15 Ryzen 5, Dell 15 Ryzen 7, and Acer AL15 i5.',
   },
 };
 

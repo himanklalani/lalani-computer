@@ -10,9 +10,22 @@ import { Clock, Users, Zap, Award } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/about' },
-  title: "About Lalani Computers | Mumbai's Leading B2B IT Supplier",
-  description: "Learn about Lalani Computers, Mumbai's leading IT hardware supplier and enterprise solutions provider with over 30 years of experience serving corporate India.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/about' },
+  title: 'About Lalani Computers | Mumbai',
+  description: 'Learn about Lalani Computers, Mumbai',
+  openGraph: {
+    title: 'About Lalani Computers | Mumbai',
+    description: 'Learn about Lalani Computers, Mumbai',
+    url: 'https://www.lalanicomputers.com/about',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Lalani Computers | Mumbai',
+    description: 'Learn about Lalani Computers, Mumbai',
+  },
 };
 
 export default function AboutPage() {

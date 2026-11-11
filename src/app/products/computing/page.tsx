@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/products/computing' },
-  title: "Corporate Laptops & Desktops | IT Hardware Supplier Mumbai",
-  description: "Bulk procurement of corporate laptops, business desktops, and heavy-duty workstations from HP, Dell, Lenovo, and Apple in Mumbai.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/computing' },
+  title: 'Corporate Laptops & Desktops | IT Hardware Supplier Mumbai',
+  description: 'Bulk procurement of corporate laptops, business desktops, and heavy-duty workstations from HP, Dell, Lenovo, and Apple in Mumbai.',
+  openGraph: {
+    title: 'Corporate Laptops & Desktops | IT Hardware Supplier Mumbai',
+    description: 'Bulk procurement of corporate laptops, business desktops, and heavy-duty workstations from HP, Dell, Lenovo, and Apple in Mumbai.',
+    url: 'https://www.lalanicomputers.com/products/computing',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Corporate Laptops & Desktops | IT Hardware Supplier Mumbai',
+    description: 'Bulk procurement of corporate laptops, business desktops, and heavy-duty workstations from HP, Dell, Lenovo, and Apple in Mumbai.',
+  },
 };
 
 const computingTypes = [

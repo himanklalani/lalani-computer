@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
           {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col items-start">
+          <div className="lg:col-span-3 flex flex-col items-start">
             <Link href="/" className="inline-block group mb-6">
               <div className="relative h-12 md:h-16">
                 <img 
@@ -87,26 +87,42 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-2 lg:col-start-6">
-            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">IT Solutions</h3>
-            <ul className="space-y-4">
-              <FooterLink href="/products">All Products</FooterLink>
+          {/* IT Products & Hardware */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">IT Hardware</h3>
+            <ul className="space-y-3.5">
+              <FooterLink href="/products/computing">Laptops & Desktops</FooterLink>
               <FooterLink href="/products/servers">Servers & Storage</FooterLink>
-              <FooterLink href="/products/networking-security">Networking</FooterLink>
-              <FooterLink href="/solutions">Turnkey IT Setups</FooterLink>
-              <FooterLink href="/repair">Hardware Repairs</FooterLink>
-              <FooterLink href="/buyback">Corporate IT Buyback</FooterLink>
-              <FooterLink href="/clients/industries/bfsi">BFSI IT Services</FooterLink>
+              <FooterLink href="/products/networking-security">Networking & Security</FooterLink>
+              <FooterLink href="/products/office-electronics">Printers & Peripherals</FooterLink>
+              <FooterLink href="/products/peripherals-power">Power & Accessories</FooterLink>
+              <FooterLink href="/products/software">Enterprise Software</FooterLink>
+              <FooterLink href="/products">All IT Hardware</FooterLink>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Solutions & Lifecycle Services */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Solutions</h3>
+            <ul className="space-y-3.5">
+              <FooterLink href="/solutions/office-network-setup-india">Office Network Setup</FooterLink>
+              <FooterLink href="/solutions/custom-pc-builds">Custom PC Builds</FooterLink>
+              <FooterLink href="/solutions/storage-server-supplier-mumbai">Storage Servers</FooterLink>
+              <FooterLink href="/solutions/enterprise-servers-mumbai">Enterprise Servers</FooterLink>
+              <FooterLink href="/solutions/server-colocation-mumbai">Server Colocation</FooterLink>
+              <FooterLink href="/repair">Doorstep IT Repair</FooterLink>
+              <FooterLink href="/buyback">Corporate ITAD Buyback</FooterLink>
+            </ul>
+          </div>
+
+          {/* Support & Industries */}
           <div className="lg:col-span-2">
             <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Company</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3.5">
               <FooterLink href="/about">About Us</FooterLink>
               <FooterLink href="/clients">Our Clients</FooterLink>
+              <FooterLink href="/clients/industries/bfsi">BFSI Solutions</FooterLink>
+              <FooterLink href="/clients/industries/infrastructure">Infrastructure & Sites</FooterLink>
               <FooterLink href="/contact">Contact Sales</FooterLink>
               <FooterLink href="/terms">Terms</FooterLink>
               <FooterLink href="/privacy">Privacy</FooterLink>
@@ -115,7 +131,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-3 lg:col-start-10">
+          <div className="lg:col-span-3">
             <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Contact Us</h3>
             <ul className="space-y-5">
               <li className="flex items-start gap-3 text-beige/70 group">

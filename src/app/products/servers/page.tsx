@@ -9,9 +9,22 @@ import { Metadata } from "next";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/products/servers' },
-  title: "Enterprise Server Dealer Mumbai | Buy Dell, HPE, Lenovo Servers",
-  description: "Authorized dealer for Dell, HPE, and Lenovo enterprise servers in Mumbai. We provide tower, rack, and blade servers with full installation and AMC support.",
+  alternates: { canonical: 'https://www.lalanicomputers.com/products/servers' },
+  title: 'Enterprise Server Dealer Mumbai | Dell, HPE & Lenovo',
+  description: 'Authorized dealer for Dell, HPE, and Lenovo enterprise servers in Mumbai. We provide tower, rack, and blade servers with full installation and AMC support.',
+  openGraph: {
+    title: 'Enterprise Server Dealer Mumbai | Dell, HPE & Lenovo',
+    description: 'Authorized dealer for Dell, HPE, and Lenovo enterprise servers in Mumbai. We provide tower, rack, and blade servers with full installation and AMC support.',
+    url: 'https://www.lalanicomputers.com/products/servers',
+    siteName: 'Lalani Computers',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Server Dealer Mumbai | Dell, HPE & Lenovo',
+    description: 'Authorized dealer for Dell, HPE, and Lenovo enterprise servers in Mumbai. We provide tower, rack, and blade servers with full installation and AMC support.',
+  },
 };
 
 const serverTypes = [
